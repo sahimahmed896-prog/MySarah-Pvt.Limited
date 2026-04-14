@@ -1,0 +1,273 @@
+{
+  "name": "Hindi",
+  "nativeName": "हिन्दी",
+  "strings": {
+    "Home": "होम",
+    "Sectors": "सेक्टर्स",
+    "About": "हमारे बारे में",
+    "Contact": "संपर्क",
+    "Language": "भाषा",
+    "Select language": "भाषा चुनें",
+    "Explore": "एक्सप्लोर",
+    "Mission": "मिशन",
+    "Building a multi-sector technology platform from Assam with a strong foundation in clean energy and scalable service delivery.": "असम से एक बहु-क्षेत्रीय तकनीकी प्लेटफ़ॉर्म का निर्माण, स्वच्छ ऊर्जा और स्केलेबल सेवा डिलीवरी की मजबूत नींव के साथ।",
+    "All rights reserved.": "सर्वाधिकार सुरक्षित।",
+    "Contact Form": "संपर्क फ़ॉर्म",
+    "Get in touch": "संपर्क करें",
+    "Name": "नाम",
+    "Phone": "फोन",
+    "Location": "लोकेशन",
+    "Request Type": "अनुरोध प्रकार",
+    "Quote": "कोटेशन",
+    "Contact": "संपर्क",
+    "Order": "ऑर्डर",
+    "Message": "संदेश",
+    "Submit": "सबमिट",
+    "Submitting...": "सबमिट हो रहा है...",
+    "Thank you. Our team will contact you shortly.": "धन्यवाद। हमारी टीम जल्द ही आपसे संपर्क करेगी।",
+    "Network issue. Please try again.": "नेटवर्क समस्या। कृपया फिर से प्रयास करें।",
+    "Unable to submit request.": "अनुरोध सबमिट नहीं हो सका।",
+    "Digital Intake": "डिजिटल इंटेक",
+    "Solar Installation Application": "सोलर इंस्टॉलेशन आवेदन",
+    "Structured and trackable": "संरचित और ट्रैकेबल",
+    "First Name": "पहला नाम",
+    "Last Name": "अंतिम नाम",
+    "Phone Number": "फोन नंबर",
+    "Email": "ईमेल",
+    "Address": "पता",
+    "City": "शहर",
+    "State": "राज्य",
+    "Pincode": "पिनकोड",
+    "Property Type": "संपत्ति प्रकार",
+    "Residential": "आवासीय",
+    "Commercial": "वाणिज्यिक",
+    "Industrial": "औद्योगिक",
+    "Roof Type": "छत का प्रकार",
+    "Metal Sheet": "मेटल शीट",
+    "Ground Mount": "ग्राउंड माउंट",
+    "Monthly Electricity Bill (INR)": "मासिक बिजली बिल (INR)",
+    "Sanctioned Load (kW)": "स्वीकृत लोड (kW)",
+    "Preferred System Size (kW)": "वांछित सिस्टम साइज़ (kW)",
+    "Installation Timeline": "इंस्टॉलेशन टाइमलाइन",
+    "Urgent (Within 2 weeks)": "तत्काल (2 सप्ताह के भीतर)",
+    "Within 30 days": "30 दिनों के भीतर",
+    "Within 60 days": "60 दिनों के भीतर",
+    "Just exploring": "सिर्फ जानकारी ले रहे हैं",
+    "GPS Coordinates": "GPS निर्देशांक",
+    "Use Current GPS": "वर्तमान GPS उपयोग करें",
+    "Fetching GPS...": "GPS प्राप्त किया जा रहा है...",
+    "Open in Map": "मैप में खोलें",
+    "Latitude": "अक्षांश",
+    "Longitude": "देशांतर",
+    "Capture GPS for exact rooftop location and faster feasibility checks.": "सटीक रूफटॉप लोकेशन और तेज़ व्यवहार्यता जांच के लिए GPS कैप्चर करें।",
+    "Site Notes": "साइट नोट्स",
+    "Submit Digital Application": "डिजिटल आवेदन सबमिट करें",
+    "Submitting Application...": "आवेदन सबमिट हो रहा है...",
+    "Application submitted successfully. Our team will review and contact you.": "आवेदन सफलतापूर्वक सबमिट हुआ। हमारी टीम समीक्षा करके आपसे संपर्क करेगी।",
+    "Unable to submit the application right now.": "अभी आवेदन सबमिट नहीं हो सका।",
+    "Network issue while submitting. Please try again.": "सबमिट करते समय नेटवर्क समस्या। कृपया फिर से प्रयास करें।",
+    "GPS is not available in this browser.": "इस ब्राउज़र में GPS उपलब्ध नहीं है।",
+    "GPS captured successfully.": "GPS सफलतापूर्वक कैप्चर हुआ।",
+    "Unable to fetch GPS. Please allow location permission and try again.": "GPS प्राप्त नहीं हो सका। कृपया लोकेशन परमिशन दें और फिर प्रयास करें।",
+    "Active": "सक्रिय",
+    "Coming Soon": "जल्द आ रहा है",
+    "Explore Sector": "सेक्टर देखें",
+    "Chat on WhatsApp": "व्हाट्सऐप पर चैट करें",
+    "WhatsApp": "व्हाट्सऐप",
+    "Loading map...": "मैप लोड हो रहा है...",
+    "Loading installation analytics...": "इंस्टॉलेशन एनालिटिक्स लोड हो रहा है...",
+    "Unable to load insights.": "इनसाइट्स लोड नहीं हो सकीं।",
+    "No installation analytics available yet.": "अभी इंस्टॉलेशन एनालिटिक्स उपलब्ध नहीं हैं।",
+    "Live Impact": "लाइव इम्पैक्ट",
+    "Solar installation footprint": "सोलर इंस्टॉलेशन फुटप्रिंट",
+    "installs": "इंस्टॉल",
+    "Solar Installed": "सोलर इंस्टॉल्ड",
+    "Visit Confirmed": "विजिट कन्फर्म",
+    "Completion Rate": "कम्प्लीशन रेट"
+    ,"Multi-Sector Corporate Platform": "मल्टी-सेक्टर कॉर्पोरेट प्लेटफ़ॉर्म"
+    ,"Explore Solar Services": "सोलर सेवाएं देखें"
+    ,"Request a Quote": "कोटेशन मांगें"
+    ,"Active sector live": "सक्रिय सेक्टर लाइव"
+    ,"Total sector roadmap": "कुल सेक्टर रोडमैप"
+    ,"Unified digital architecture": "एकीकृत डिजिटल आर्किटेक्चर"
+    ,"Execution Framework": "एक्जीक्यूशन फ़्रेमवर्क"
+    ,"Corporate governance with startup agility": "स्टार्टअप गति के साथ कॉर्पोरेट गवर्नेंस"
+    ,"Solar Installations": "सोलर इंस्टॉलेशन"
+    ,"Commercial Projects": "कमर्शियल प्रोजेक्ट्स"
+    ,"Residential Rooftops": "रेजिडेंशियल रूफटॉप्स"
+    ,"Future Sectors": "भविष्य के सेक्टर"
+    ,"Assam Operations": "असम ऑपरेशंस"
+    ,"Who We Are": "हम कौन हैं"
+    ,"A premium operational model built for scale": "स्केल के लिए बना प्रीमियम ऑपरेशनल मॉडल"
+    ,"Active sector operating": "सक्रिय संचालित सेक्टर"
+    ,"Planned sector roadmap": "योजना-बद्ध सेक्टर रोडमैप"
+    ,"Client communication support": "क्लाइंट कम्युनिकेशन सपोर्ट"
+    ,"Future Narrative": "भविष्य की दिशा"
+    ,"Smarter Decisions": "स्मार्ट निर्णय"
+    ,"Operational Visibility": "ऑपरेशनल दृश्यता"
+    ,"Scalable Expansion": "स्केलेबल विस्तार"
+    ,"Operating Blueprint": "ऑपरेटिंग ब्लूप्रिंट"
+    ,"How we execute from lead to lifecycle support": "हम लीड से लाइफसाइकल सपोर्ट तक कैसे काम करते हैं"
+    ,"Multi-sector corporate roadmap": "मल्टी-सेक्टर कॉर्पोरेट रोडमैप"
+    ,"View All Sectors": "सभी सेक्टर देखें"
+    ,"Explore Solar": "सोलर देखें"
+    ,"Contact Team": "टीम से संपर्क करें"
+    ,"Execution Intelligence": "एक्जीक्यूशन इंटेलिजेंस"
+    ,"Live installation data from admin workflow": "एडमिन वर्कफ़्लो से लाइव इंस्टॉलेशन डेटा"
+    ,"Roadmap": "रोडमैप"
+    ,"A structured multi-sector roadmap": "एक संरचित मल्टी-सेक्टर रोडमैप"
+    ,"Priority cluster": "प्राथमिकता क्लस्टर"
+    ,"Core Services": "मुख्य सेवाएं"
+    ,"Business & Industry": "व्यवसाय और उद्योग"
+    ,"Lifestyle & Public Services": "लाइफस्टाइल और सार्वजनिक सेवाएं"
+    ,"Technology & Innovation": "प्रौद्योगिकी और नवाचार"
+    ,"Agriculture": "कृषि"
+    ,"Reach Us": "हम तक पहुंचें"
+    ,"Mysarah Modern Tech Location": "मायसारा मॉडर्न टेक लोकेशन"
+    ,"Solar Installation, Built as a Digital Service Layer": "डिजिटल सेवा लेयर के रूप में निर्मित सोलर इंस्टॉलेशन"
+    ,"Active Sector": "सक्रिय सेक्टर"
+    ,"Start Application": "आवेदन शुरू करें"
+    ,"Speak to Team": "टीम से बात करें"
+    ,"Digital Flow": "डिजिटल फ्लो"
+    ,"Execution Stack": "एक्जीक्यूशन स्टैक"
+    ,"Systematic process for solar deployment": "सोलर तैनाती के लिए व्यवस्थित प्रक्रिया"
+    ,"Application Intake": "आवेदन इंटेक"
+    ,"Geo Verification": "जियो सत्यापन"
+    ,"Technical Qualification": "तकनीकी क्वालिफिकेशन"
+    ,"Execution Planning": "एक्जीक्यूशन प्लानिंग"
+    ,"Customer Application": "ग्राहक आवेदन"
+    ,"Submit your solar installation details": "अपने सोलर इंस्टॉलेशन विवरण सबमिट करें"
+    ,"Back to Sectors": "सेक्टर्स पर वापस जाएं"
+    ,"Let&apos;s plan your project": "आइए आपके प्रोजेक्ट की योजना बनाएं"
+    ,"Field Experience": "मैदानी अनुभव"
+    ,"Beginning with Solar": "सोलर से शुरुआत"
+    ,"Going Digital": "डिजिटल की ओर"
+    ,"Multi-Sector Vision": "मल्टी-सेक्टर विज़न"
+    ,"Core Values": "मूल्य"
+    ,"Future Vision": "भविष्य दृष्टि"
+    ,"Partnership CTA": "साझेदारी CTA"
+    ,"Trust": "विश्वास"
+    ,"Reliability": "विश्वसनीयता"
+    ,"Sustainability": "स्थिरता"
+    ,"Innovation": "नवाचार"
+    ,"Partnership": "साझेदारी"
+    ,"Contact Us": "संपर्क करें"
+    ,"Get Quote": "कोटेशन लें"
+    ,"RCC": "RCC"
+    ,"e.g. 4500": "जैसे 4500"
+    ,"e.g. 5": "जैसे 5"
+    ,"e.g. 3": "जैसे 3"
+    ,"e.g. 26.144516": "जैसे 26.144516"
+    ,"e.g. 91.736237": "जैसे 91.736237"
+    ,"Any roof condition, shading, access notes, or preferred call time": "छत की स्थिति, छाया, पहुंच नोट्स, या पसंदीदा कॉल समय लिखें"
+    ,"We are focused on disciplined growth, stronger digital execution, and sector expansion that creates durable long-term value.": "हम अनुशासित विकास, मजबूत डिजिटल एक्जीक्यूशन और ऐसे सेक्टर विस्तार पर केंद्रित हैं जो दीर्घकालिक स्थायी मूल्य बनाते हैं।"
+    ,"Let's Build the Future Together": "आइए भविष्य साथ मिलकर बनाएं"
+    ,"Connect with our team to start your next project with a company built for reliable execution.": "अपने अगले प्रोजेक्ट की शुरुआत हमारी टीम के साथ करें, एक ऐसी कंपनी के साथ जो भरोसेमंद निष्पादन के लिए बनी है।"
+    ,"Our Story Hero": "हमारी कहानी हीरो सेक्शन"
+    ,"Field operations and modern infrastructure": "मैदानी कार्य और आधुनिक अवसंरचना"
+    ,"Our Story": "हमारी कहानी"
+    ,"Rooted in Experience. Growing with Technology.": "अनुभव में जड़ें, तकनीक के साथ विकास।"
+    ,"Mysarah Modern Tech Private Limited began with real field operations in Assam and is now evolving into a digitally enabled multi-sector platform built for long-term impact.": "मायसारा मॉडर्न टेक प्राइवेट लिमिटेड ने असम में वास्तविक मैदानी कार्यों से शुरुआत की और अब दीर्घकालिक प्रभाव के लिए एक डिजिटल-सक्षम बहु-क्षेत्रीय प्लेटफ़ॉर्म में विकसित हो रही है।"
+    ,"Back to top": "ऊपर जाएं"
+    ,"Our story chapter navigation": "हमारी कहानी अध्याय नेविगेशन"
+    ,"Start here: the revenue engines": "यहीं से शुरू करें: राजस्व के मुख्य इंजन"
+    ,"These are the first services to lead the website and the strongest business drivers.": "ये वे प्राथमिक सेवाएं हैं जो वेबसाइट का नेतृत्व करती हैं और सबसे मजबूत बिज़नेस ड्राइवर्स हैं।"
+    ,"Commercial and operational sectors": "वाणिज्यिक और परिचालन सेक्टर"
+    ,"Industry-facing services that support trading, production, execution, and field operations.": "ऐसी उद्योग-केंद्रित सेवाएं जो ट्रेडिंग, प्रोडक्शन, एक्जीक्यूशन और मैदानी संचालन को समर्थन देती हैं।"
+    ,"Public-facing sectors and community services": "जन-केंद्रित सेक्टर और सामुदायिक सेवाएं"
+    ,"The service set that supports public engagement, experiences, and everyday life programs.": "सेवाओं का वह समूह जो सार्वजनिक सहभागिता, अनुभव और रोज़मर्रा के जीवन कार्यक्रमों का समर्थन करता है।"
+    ,"Digital growth and intelligence": "डिजिटल विकास और इंटेलिजेंस"
+    ,"The future-facing technology sectors that support automation, software, and AI-driven growth.": "भविष्य-केंद्रित प्रौद्योगिकी सेक्टर जो ऑटोमेशन, सॉफ्टवेयर और AI-आधारित विकास को समर्थन देते हैं।"
+    ,"Kept separate as a standalone strength": "स्वतंत्र ताकत के रूप में अलग रखा गया"
+    ,"Agriculture remains its own dedicated vertical because it is a key sector in Assam.": "कृषि को अलग समर्पित वर्टिकल रखा गया है क्योंकि यह असम का एक प्रमुख सेक्टर है।"
+    ,"Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy.": "सोलर शीर्ष पर सक्रिय रहता है, और बाकी पोर्टफोलियो को एक अधिक स्पष्ट बिज़नेस संरचना में समूहित किया गया है।"
+    ,"summary": "सारांश"
+    ,"sectors": "सेक्टर्स"
+    ,"Curated for a cleaner business narrative and stronger visual hierarchy.": "अधिक साफ़ बिज़नेस नैरेटिव और मजबूत विज़ुअल हाइरार्की के लिए क्यूरेट किया गया।"
+    ,"Sector showcase slider": "सेक्टर शोकेस स्लाइडर"
+    ,"Brand Presence": "ब्रांड उपस्थिति"
+    ,"Solar EPC": "सोलर EPC"
+    ,"Engineering the clean-energy transition": "स्वच्छ ऊर्जा परिवर्तन की इंजीनियरिंग"
+    ,"Residential rooftops, commercial campuses, and industrial deployments.": "आवासीय रूफटॉप, वाणिज्यिक कैंपस और औद्योगिक तैनाती।"
+    ,"EV Infrastructure": "EV अवसंरचना"
+    ,"Connected charging for the next mobility wave": "अगली मोबिलिटी लहर के लिए कनेक्टेड चार्जिंग"
+    ,"Fast, reliable charging ecosystems for urban and highway growth.": "शहरी और हाईवे विकास के लिए तेज़ और भरोसेमंद चार्जिंग इकोसिस्टम।"
+    ,"Smart Buildings": "स्मार्ट बिल्डिंग्स"
+    ,"Digital systems for resilient facilities": "मजबूत सुविधाओं के लिए डिजिटल सिस्टम"
+    ,"Automation, security, and energy intelligence in one view.": "एक ही दृश्य में ऑटोमेशन, सुरक्षा और ऊर्जा इंटेलिजेंस।"
+    ,"Go to slide": "स्लाइड पर जाएं"
+    ,"Private Limited": "प्राइवेट लिमिटेड"
+    ,"Consult & Assess": "कंसल्ट और असेस"
+    ,"Discovery and Feasibility": "डिस्कवरी और व्यवहार्यता"
+    ,"We capture technical baseline, energy patterns, and business goals to build a viable project scope with realistic ROI expectations.": "हम तकनीकी आधार, ऊर्जा पैटर्न और व्यावसायिक लक्ष्यों का आकलन करके यथार्थवादी ROI के साथ व्यवहार्य प्रोजेक्ट स्कोप तैयार करते हैं।"
+    ,"Engineer & Plan": "इंजीनियर और प्लान"
+    ,"Design and Execution Planning": "डिज़ाइन और एक्जीक्यूशन प्लानिंग"
+    ,"Our team finalizes system sizing, engineering documents, project timeline, and resource plan with clear milestones and accountability.": "हमारी टीम स्पष्ट माइलस्टोन और जवाबदेही के साथ सिस्टम साइजिंग, इंजीनियरिंग दस्तावेज़, प्रोजेक्ट टाइमलाइन और रिसोर्स प्लान को अंतिम रूप देती है।"
+    ,"Deploy & Optimize": "डिप्लॉय और ऑप्टिमाइज़"
+    ,"Delivery to Lifecycle Support": "डिलीवरी से लाइफसाइकल सपोर्ट तक"
+    ,"From installation and commissioning to post-go-live performance reviews, we ensure long-term efficiency and expansion readiness.": "इंस्टॉलेशन और कमिशनिंग से लेकर गो-लाइव के बाद प्रदर्शन समीक्षा तक, हम दीर्घकालिक दक्षता और विस्तार की तैयारी सुनिश्चित करते हैं।"
+    ,"blends disciplined governance with fast execution to build long-term value across sectors from": "अनुशासित गवर्नेंस और तेज़ निष्पादन को मिलाकर विभिन्न सेक्टर्स में दीर्घकालिक मूल्य बनाता है,"
+    ,"Why": "क्यों"
+    ,"technology": "तकनीक"
+    ,"leads the future of infrastructure": "इन्फ्रास्ट्रक्चर के भविष्य का नेतृत्व करती है"
+    ,"We believe the next decade belongs to businesses that combine physical execution with digital intelligence. From planning and deployment to monitoring and optimization, technology converts projects into scalable, measurable systems.": "हम मानते हैं कि अगला दशक उन्हीं व्यवसायों का है जो फिजिकल एक्जीक्यूशन को डिजिटल इंटेलिजेंस के साथ जोड़ते हैं। प्लानिंग और डिप्लॉयमेंट से लेकर मॉनिटरिंग और ऑप्टिमाइज़ेशन तक, तकनीक प्रोजेक्ट्स को स्केलेबल और मापने योग्य सिस्टम में बदल देती है।"
+    ,"Data-backed planning improves technical accuracy, speed, and lifecycle outcomes.": "डेटा-आधारित प्लानिंग तकनीकी सटीकता, गति और लाइफसाइकल परिणामों को बेहतर बनाती है।"
+    ,"Real-time monitoring and transparent status tracking strengthen trust and execution control.": "रीयल-टाइम मॉनिटरिंग और पारदर्शी स्टेटस ट्रैकिंग भरोसा और निष्पादन नियंत्रण को मजबूत करते हैं।"
+    ,"Reusable digital systems make it easier to launch new sectors without rebuilding from zero.": "रीयूज़ेबल डिजिटल सिस्टम नए सेक्टर शुरू करना आसान बनाते हैं, बिना सब कुछ शून्य से दोबारा बनाने के।"
+    ,"Every project follows a consistent enterprise-style framework with transparent milestones.": "हर प्रोजेक्ट पारदर्शी माइलस्टोन के साथ एक समान एंटरप्राइज-स्टाइल फ्रेमवर्क का पालन करता है।"
+    ,"Solar is active. Additional verticals are structured for phased launches with shared governance and digital foundations.": "सोलर सक्रिय है। अतिरिक्त वर्टिकल्स को साझा गवर्नेंस और डिजिटल नींव के साथ चरणबद्ध लॉन्च के लिए संरचित किया गया है।"
+    ,"Build your solar transition with boardroom-level clarity": "बोर्डरूम-स्तर की स्पष्टता के साथ अपना सोलर ट्रांज़िशन बनाएं"
+    ,"From assessment to commissioning, we deliver a structured program for residential and commercial assets.": "असेसमेंट से कमिशनिंग तक, हम आवासीय और वाणिज्यिक एसेट्स के लिए एक संरचित प्रोग्राम प्रदान करते हैं।"
+    ,"Each completed installation from the admin panel updates this dashboard with location-wise footprint and progress analytics.": "एडमिन पैनल से हर पूर्ण इंस्टॉलेशन इस डैशबोर्ड को स्थान-आधारित फुटप्रिंट और प्रगति एनालिटिक्स के साथ अपडेट करता है।"
+    ,"Powering Assam with modern solar infrastructure": "आधुनिक सोलर इन्फ्रास्ट्रक्चर से असम को ऊर्जा देना"
+    ,"Powering": "ऊर्जा देना"
+    ,"Assam": "असम"
+    ,"with modern solar infrastructure": "आधुनिक सोलर इन्फ्रास्ट्रक्चर के साथ"
+    ,"Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions.": "मायसारा मॉडर्न टेक प्राइवेट लिमिटेड स्वच्छ ऊर्जा समाधान से शुरुआत करते हुए भविष्य-तैयार बहु-क्षेत्रीय प्लेटफ़ॉर्म बना रही है।"
+    ,"Corporate execution with startup speed": "स्टार्टअप गति के साथ कॉर्पोरेट निष्पादन"
+    ,"Corporate": "कॉर्पोरेट"
+    ,"execution with startup speed": "स्टार्टअप गति के साथ निष्पादन"
+    ,"Structured delivery, transparent process, and technology-first field operations for residential and commercial projects.": "आवासीय और वाणिज्यिक प्रोजेक्ट्स के लिए संरचित डिलीवरी, पारदर्शी प्रक्रिया और टेक्नोलॉजी-फर्स्ट फील्ड ऑपरेशंस।"
+    ,"Designed to scale across sectors": "विभिन्न सेक्टर्स में स्केल के लिए डिज़ाइन किया गया"
+    ,"Designed to scale across": "स्केल के लिए डिज़ाइन किया गया"
+    ,"A modular service architecture that expands from solar into smart infrastructure without redesigning the business core.": "एक मॉड्यूलर सेवा आर्किटेक्चर जो बिज़नेस कोर को दोबारा डिज़ाइन किए बिना सोलर से स्मार्ट इन्फ्रास्ट्रक्चर तक विस्तार करता है।"
+    ,"Hero slide indicators": "हीरो स्लाइड इंडिकेटर्स"
+    ,"Show slide": "स्लाइड दिखाएं"
+    ,"home.blueprint.description": "हर प्रोजेक्ट पारदर्शी माइलस्टोन के साथ एक समान एंटरप्राइज-स्टाइल फ्रेमवर्क का पालन करता है।"
+    ,"home.blueprint.card1.title": "कंसल्ट और असेस"
+    ,"home.blueprint.card1.backTitle": "डिस्कवरी और व्यवहार्यता"
+    ,"home.blueprint.card1.backText": "हम तकनीकी आधार, ऊर्जा पैटर्न और व्यावसायिक लक्ष्यों का आकलन करके यथार्थवादी ROI के साथ व्यवहार्य प्रोजेक्ट स्कोप तैयार करते हैं।"
+    ,"home.blueprint.card2.title": "इंजीनियर और प्लान"
+    ,"home.blueprint.card2.backTitle": "डिज़ाइन और एक्जीक्यूशन प्लानिंग"
+    ,"home.blueprint.card2.backText": "हमारी टीम स्पष्ट माइलस्टोन और जवाबदेही के साथ सिस्टम साइजिंग, इंजीनियरिंग दस्तावेज़, प्रोजेक्ट टाइमलाइन और रिसोर्स प्लान को अंतिम रूप देती है।"
+    ,"home.blueprint.card3.title": "डिप्लॉय और ऑप्टिमाइज़"
+    ,"home.blueprint.card3.backTitle": "डिलीवरी से लाइफसाइकल सपोर्ट तक"
+    ,"home.blueprint.card3.backText": "इंस्टॉलेशन और कमिशनिंग से लेकर गो-लाइव के बाद प्रदर्शन समीक्षा तक, हम दीर्घकालिक दक्षता और विस्तार की तैयारी सुनिश्चित करते हैं।"
+    ,"We deliver with transparency, realistic commitments, and accountable execution at every stage.": "हम पारदर्शिता, यथार्थवादी प्रतिबद्धताओं और हर चरण पर जवाबदेह निष्पादन के साथ कार्य करते हैं।"
+    ,"Our teams follow repeatable systems so quality remains consistent across projects and timelines.": "हमारी टीमें दोहराने योग्य प्रणालियों का पालन करती हैं ताकि गुणवत्ता सभी प्रोजेक्ट्स और समयसीमाओं में एकसमान रहे।"
+    ,"From solar adoption to process discipline, we focus on long-term value for communities and clients.": "सोलर अपनाने से लेकर प्रक्रिया अनुशासन तक, हम समुदायों और ग्राहकों के लिए दीर्घकालिक मूल्य पर ध्यान देते हैं।"
+    ,"We combine operational learning with digital tools to make each next project smarter than the last.": "हम परिचालन अनुभव को डिजिटल टूल्स के साथ जोड़कर हर अगले प्रोजेक्ट को पिछले से बेहतर बनाते हैं।"
+    ,"Field experience built our foundation": "मैदानी अनुभव ने हमारी नींव बनाई"
+    ,"Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers.": "हमारी यात्रा स्लाइड डेक से नहीं, ज़मीनी वास्तविकताओं से शुरू हुई। हमने वास्तविक प्रोजेक्ट निष्पादन, साइट चुनौतियों के प्रबंधन और मापनीय परिणामों से भरोसा बनाया।"
+    ,"Engineers inspecting a solar installation site": "इंजीनियर सोलर इंस्टॉलेशन साइट का निरीक्षण करते हुए"
+    ,"We began with residential and commercial solar": "हमने आवासीय और वाणिज्यिक सोलर से शुरुआत की"
+    ,"Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking.": "सोलर हमारा पहला प्रमुख निष्पादन इंजन बना। इससे हमें प्रोजेक्ट प्लानिंग, इंस्टॉलेशन गुणवत्ता, ग्राहक सहायता और पोस्ट-इंस्टॉलेशन ट्रैकिंग में सिद्ध संचालन मॉडल मिला।"
+    ,"Large solar panel setup for commercial operations": "वाणिज्यिक संचालन के लिए बड़े सोलर पैनल सेटअप"
+    ,"Residential rooftop installation programs": "आवासीय रूफटॉप इंस्टॉलेशन कार्यक्रम"
+    ,"Commercial solar deployment and maintenance": "वाणिज्यिक सोलर तैनाती और रखरखाव"
+    ,"Standardized workflow from survey to commissioning": "सर्वे से कमिशनिंग तक मानकीकृत वर्कफ़्लो"
+    ,"Then we started going digital": "फिर हमने डिजिटल दिशा में कदम बढ़ाया"
+    ,"As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility.": "जैसे-जैसे प्रोजेक्ट्स बढ़े, हमने ग्राहक टचपॉइंट्स और आंतरिक वर्कफ़्लो के डिजिटलीकरण पर ध्यान दिया। इससे प्रतिक्रिया समय बेहतर हुआ, पहुंच बढ़ी और संचालन दृश्यता मजबूत हुई।"
+    ,"Modern technology and digital systems workspace": "आधुनिक तकनीक और डिजिटल सिस्टम कार्यक्षेत्र"
+    ,"Corporate expansion roadmap and infrastructure planning": "कॉर्पोरेट विस्तार रोडमैप और अवसंरचना योजना"
+    ,"Our vision is multi-sector and future-ready": "हमारा विज़न बहु-क्षेत्रीय और भविष्य-तैयार है"
+    ,"With solar as our proven base, we are preparing structured expansion into electrical services, agriculture-linked initiatives, and smart technology operations.": "सोलर को सिद्ध आधार बनाकर हम इलेक्ट्रिकल सेवाओं, कृषि-सम्बद्ध पहलों और स्मार्ट टेक्नोलॉजी संचालन में संरचित विस्तार की तैयारी कर रहे हैं।"
+    ,"Electrical": "इलेक्ट्रिकल"
+    ,"Field reliability and infrastructure-grade execution systems.": "मैदानी विश्वसनीयता और अवसंरचना-स्तरीय निष्पादन प्रणालियाँ।"
+    ,"Operational models that strengthen productivity and sustainability.": "ऐसे परिचालन मॉडल जो उत्पादकता और स्थिरता को मजबूत करें।"
+    ,"Smart Tech": "स्मार्ट टेक"
+    ,"Digital layers for visibility, control, and scalable growth.": "दृश्यता, नियंत्रण और स्केलेबल विकास के लिए डिजिटल परतें।"
+    ,"The principles that shape every decision": "वे सिद्धांत जो हर निर्णय को दिशा देते हैं"
+    ,"Building a trusted multi-sector corporate platform from Assam for the next decade.": "असम से अगले दशक के लिए एक विश्वसनीय बहु-क्षेत्रीय कॉर्पोरेट प्लेटफ़ॉर्म का निर्माण।"
+  }
+}

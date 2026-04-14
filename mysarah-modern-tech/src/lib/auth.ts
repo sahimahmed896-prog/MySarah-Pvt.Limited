@@ -25,7 +25,12 @@ export async function verifyAdminCredentials(username: string, password: string)
   if (username !== ADMIN_USERNAME) {
     return false;
   }
-  return bcrypt.compare(password, ADMIN_PASSWORD_HASH);
+
+  try {
+    return await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
+  } catch {
+    return false;
+  }
 }
 
 export function createAdminToken(payload: { username: string }) {

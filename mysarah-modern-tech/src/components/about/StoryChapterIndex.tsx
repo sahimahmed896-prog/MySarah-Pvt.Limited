@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ChapterItem {
   id: string;
@@ -13,6 +14,7 @@ interface StoryChapterIndexProps {
 
 export default function StoryChapterIndex({ items }: StoryChapterIndexProps) {
   const [activeId, setActiveId] = useState(items[0]?.id || "");
+  const { t } = useTranslation();
 
   const ids = useMemo(() => items.map((item) => item.id), [items]);
 
@@ -49,7 +51,7 @@ export default function StoryChapterIndex({ items }: StoryChapterIndexProps) {
   }, [ids]);
 
   return (
-    <nav className="story-chapter-index" aria-label="Our story chapter navigation">
+    <nav className="story-chapter-index" aria-label={t("Our story chapter navigation")}>
       <ul>
         {items.map((item) => {
           const active = item.id === activeId;

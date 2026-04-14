@@ -1,0 +1,276 @@
+{
+  "name": "English",
+  "nativeName": "English",
+  "strings": {
+    "Home": "Home",
+    "Sectors": "Sectors",
+    "About": "About",
+    "Contact": "Contact",
+    "Language": "Language",
+    "Select language": "Select language",
+    "Explore": "Explore",
+    "Mission": "Mission",
+    "Building a multi-sector technology platform from Assam with a strong foundation in clean energy and scalable service delivery.": "Building a multi-sector technology platform from Assam with a strong foundation in clean energy and scalable service delivery.",
+    "All rights reserved.": "All rights reserved.",
+    "Contact Form": "Contact Form",
+    "Get in touch": "Get in touch",
+    "Name": "Name",
+    "Phone": "Phone",
+    "Location": "Location",
+    "Request Type": "Request Type",
+    "Quote": "Quote",
+    "Contact": "Contact",
+    "Order": "Order",
+    "Message": "Message",
+    "Submit": "Submit",
+    "Submitting...": "Submitting...",
+    "Thank you. Our team will contact you shortly.": "Thank you. Our team will contact you shortly.",
+    "Network issue. Please try again.": "Network issue. Please try again.",
+    "Unable to submit request.": "Unable to submit request.",
+    "Digital Intake": "Digital Intake",
+    "Solar Installation Application": "Solar Installation Application",
+    "Structured and trackable": "Structured and trackable",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+    "Phone Number": "Phone Number",
+    "Email": "Email",
+    "Address": "Address",
+    "City": "City",
+    "State": "State",
+    "Pincode": "Pincode",
+    "Property Type": "Property Type",
+    "Residential": "Residential",
+    "Commercial": "Commercial",
+    "Industrial": "Industrial",
+    "Roof Type": "Roof Type",
+    "Metal Sheet": "Metal Sheet",
+    "Ground Mount": "Ground Mount",
+    "Monthly Electricity Bill (INR)": "Monthly Electricity Bill (INR)",
+    "Sanctioned Load (kW)": "Sanctioned Load (kW)",
+    "Preferred System Size (kW)": "Preferred System Size (kW)",
+    "Installation Timeline": "Installation Timeline",
+    "Urgent (Within 2 weeks)": "Urgent (Within 2 weeks)",
+    "Within 30 days": "Within 30 days",
+    "Within 60 days": "Within 60 days",
+    "Just exploring": "Just exploring",
+    "GPS Coordinates": "GPS Coordinates",
+    "Use Current GPS": "Use Current GPS",
+    "Fetching GPS...": "Fetching GPS...",
+    "Open in Map": "Open in Map",
+    "Latitude": "Latitude",
+    "Longitude": "Longitude",
+    "Capture GPS for exact rooftop location and faster feasibility checks.": "Capture GPS for exact rooftop location and faster feasibility checks.",
+    "Site Notes": "Site Notes",
+    "Submit Digital Application": "Submit Digital Application",
+    "Submitting Application...": "Submitting Application...",
+    "Application submitted successfully. Our team will review and contact you.": "Application submitted successfully. Our team will review and contact you.",
+    "Unable to submit the application right now.": "Unable to submit the application right now.",
+    "Network issue while submitting. Please try again.": "Network issue while submitting. Please try again.",
+    "GPS is not available in this browser.": "GPS is not available in this browser.",
+    "GPS captured successfully.": "GPS captured successfully.",
+    "Unable to fetch GPS. Please allow location permission and try again.": "Unable to fetch GPS. Please allow location permission and try again.",
+    "Active": "Active",
+    "Coming Soon": "Coming Soon",
+    "Explore Sector": "Explore Sector",
+    "Chat on WhatsApp": "Chat on WhatsApp",
+    "WhatsApp": "WhatsApp",
+    "Loading map...": "Loading map...",
+    "Loading installation analytics...": "Loading installation analytics...",
+    "Unable to load insights.": "Unable to load insights.",
+    "No installation analytics available yet.": "No installation analytics available yet.",
+    "Live Impact": "Live Impact",
+    "Solar installation footprint": "Solar installation footprint",
+    "installs": "installs",
+    "Solar Installed": "Solar Installed",
+    "Visit Confirmed": "Visit Confirmed",
+    "Completion Rate": "Completion Rate"
+    ,"Multi-Sector Corporate Platform": "Multi-Sector Corporate Platform"
+    ,"Explore Solar Services": "Explore Solar Services"
+    ,"Request a Quote": "Request a Quote"
+    ,"Active sector live": "Active sector live"
+    ,"Total sector roadmap": "Total sector roadmap"
+    ,"Unified digital architecture": "Unified digital architecture"
+    ,"Execution Framework": "Execution Framework"
+    ,"Corporate governance with startup agility": "Corporate governance with startup agility"
+    ,"Solar Installations": "Solar Installations"
+    ,"Commercial Projects": "Commercial Projects"
+    ,"Residential Rooftops": "Residential Rooftops"
+    ,"Future Sectors": "Future Sectors"
+    ,"Assam Operations": "Assam Operations"
+    ,"Who We Are": "Who We Are"
+    ,"A premium operational model built for scale": "A premium operational model built for scale"
+    ,"Active sector operating": "Active sector operating"
+    ,"Planned sector roadmap": "Planned sector roadmap"
+    ,"Client communication support": "Client communication support"
+    ,"Future Narrative": "Future Narrative"
+    ,"Smarter Decisions": "Smarter Decisions"
+    ,"Operational Visibility": "Operational Visibility"
+    ,"Scalable Expansion": "Scalable Expansion"
+    ,"Operating Blueprint": "Operating Blueprint"
+    ,"How we execute from lead to lifecycle support": "How we execute from lead to lifecycle support"
+    ,"Sectors": "Sectors"
+    ,"Multi-sector corporate roadmap": "Multi-sector corporate roadmap"
+    ,"View All Sectors": "View All Sectors"
+    ,"Explore Solar": "Explore Solar"
+    ,"Contact Team": "Contact Team"
+    ,"Execution Intelligence": "Execution Intelligence"
+    ,"Live installation data from admin workflow": "Live installation data from admin workflow"
+    ,"Roadmap": "Roadmap"
+    ,"A structured multi-sector roadmap": "A structured multi-sector roadmap"
+    ,"Priority cluster": "Priority cluster"
+    ,"Core Services": "Core Services"
+    ,"Business & Industry": "Business & Industry"
+    ,"Lifestyle & Public Services": "Lifestyle & Public Services"
+    ,"Technology & Innovation": "Technology & Innovation"
+    ,"Agriculture": "Agriculture"
+    ,"Reach Us": "Reach Us"
+    ,"Mysarah Modern Tech Location": "Mysarah Modern Tech Location"
+    ,"Solar Installation, Built as a Digital Service Layer": "Solar Installation, Built as a Digital Service Layer"
+    ,"Active Sector": "Active Sector"
+    ,"Start Application": "Start Application"
+    ,"Speak to Team": "Speak to Team"
+    ,"Digital Flow": "Digital Flow"
+    ,"Execution Stack": "Execution Stack"
+    ,"Systematic process for solar deployment": "Systematic process for solar deployment"
+    ,"Application Intake": "Application Intake"
+    ,"Geo Verification": "Geo Verification"
+    ,"Technical Qualification": "Technical Qualification"
+    ,"Execution Planning": "Execution Planning"
+    ,"Customer Application": "Customer Application"
+    ,"Submit your solar installation details": "Submit your solar installation details"
+    ,"Coming Soon": "Coming Soon"
+    ,"Back to Sectors": "Back to Sectors"
+    ,"Let&apos;s plan your project": "Let&apos;s plan your project"
+    ,"Contact": "Contact"
+    ,"Field Experience": "Field Experience"
+    ,"Beginning with Solar": "Beginning with Solar"
+    ,"Going Digital": "Going Digital"
+    ,"Multi-Sector Vision": "Multi-Sector Vision"
+    ,"Core Values": "Core Values"
+    ,"Future Vision": "Future Vision"
+    ,"Partnership CTA": "Partnership CTA"
+    ,"Trust": "Trust"
+    ,"Reliability": "Reliability"
+    ,"Sustainability": "Sustainability"
+    ,"Innovation": "Innovation"
+    ,"Partnership": "Partnership"
+    ,"Contact Us": "Contact Us"
+    ,"Get Quote": "Get Quote"
+    ,"RCC": "RCC"
+    ,"e.g. 4500": "e.g. 4500"
+    ,"e.g. 5": "e.g. 5"
+    ,"e.g. 3": "e.g. 3"
+    ,"e.g. 26.144516": "e.g. 26.144516"
+    ,"e.g. 91.736237": "e.g. 91.736237"
+    ,"Any roof condition, shading, access notes, or preferred call time": "Any roof condition, shading, access notes, or preferred call time"
+    ,"We are focused on disciplined growth, stronger digital execution, and sector expansion that creates durable long-term value.": "We are focused on disciplined growth, stronger digital execution, and sector expansion that creates durable long-term value."
+    ,"Let's Build the Future Together": "Let's Build the Future Together"
+    ,"Connect with our team to start your next project with a company built for reliable execution.": "Connect with our team to start your next project with a company built for reliable execution."
+    ,"Our Story Hero": "Our Story Hero"
+    ,"Field operations and modern infrastructure": "Field operations and modern infrastructure"
+    ,"Our Story": "Our Story"
+    ,"Rooted in Experience. Growing with Technology.": "Rooted in Experience. Growing with Technology."
+    ,"Mysarah Modern Tech Private Limited began with real field operations in Assam and is now evolving into a digitally enabled multi-sector platform built for long-term impact.": "Mysarah Modern Tech Private Limited began with real field operations in Assam and is now evolving into a digitally enabled multi-sector platform built for long-term impact."
+    ,"Back to top": "Back to top"
+    ,"Our story chapter navigation": "Our story chapter navigation"
+    ,"Start here: the revenue engines": "Start here: the revenue engines"
+    ,"These are the first services to lead the website and the strongest business drivers.": "These are the first services to lead the website and the strongest business drivers."
+    ,"Commercial and operational sectors": "Commercial and operational sectors"
+    ,"Industry-facing services that support trading, production, execution, and field operations.": "Industry-facing services that support trading, production, execution, and field operations."
+    ,"Public-facing sectors and community services": "Public-facing sectors and community services"
+    ,"The service set that supports public engagement, experiences, and everyday life programs.": "The service set that supports public engagement, experiences, and everyday life programs."
+    ,"Digital growth and intelligence": "Digital growth and intelligence"
+    ,"The future-facing technology sectors that support automation, software, and AI-driven growth.": "The future-facing technology sectors that support automation, software, and AI-driven growth."
+    ,"Kept separate as a standalone strength": "Kept separate as a standalone strength"
+    ,"Agriculture remains its own dedicated vertical because it is a key sector in Assam.": "Agriculture remains its own dedicated vertical because it is a key sector in Assam."
+    ,"Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy.": "Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy."
+    ,"summary": "summary"
+    ,"sectors": "sectors"
+    ,"Curated for a cleaner business narrative and stronger visual hierarchy.": "Curated for a cleaner business narrative and stronger visual hierarchy."
+    ,"Sector showcase slider": "Sector showcase slider"
+    ,"Brand Presence": "Brand Presence"
+    ,"Solar EPC": "Solar EPC"
+    ,"Engineering the clean-energy transition": "Engineering the clean-energy transition"
+    ,"Residential rooftops, commercial campuses, and industrial deployments.": "Residential rooftops, commercial campuses, and industrial deployments."
+    ,"EV Infrastructure": "EV Infrastructure"
+    ,"Connected charging for the next mobility wave": "Connected charging for the next mobility wave"
+    ,"Fast, reliable charging ecosystems for urban and highway growth.": "Fast, reliable charging ecosystems for urban and highway growth."
+    ,"Smart Buildings": "Smart Buildings"
+    ,"Digital systems for resilient facilities": "Digital systems for resilient facilities"
+    ,"Automation, security, and energy intelligence in one view.": "Automation, security, and energy intelligence in one view."
+    ,"Go to slide": "Go to slide"
+    ,"Private Limited": "Private Limited"
+    ,"Consult & Assess": "Consult & Assess"
+    ,"Discovery and Feasibility": "Discovery and Feasibility"
+    ,"We capture technical baseline, energy patterns, and business goals to build a viable project scope with realistic ROI expectations.": "We capture technical baseline, energy patterns, and business goals to build a viable project scope with realistic ROI expectations."
+    ,"Engineer & Plan": "Engineer & Plan"
+    ,"Design and Execution Planning": "Design and Execution Planning"
+    ,"Our team finalizes system sizing, engineering documents, project timeline, and resource plan with clear milestones and accountability.": "Our team finalizes system sizing, engineering documents, project timeline, and resource plan with clear milestones and accountability."
+    ,"Deploy & Optimize": "Deploy & Optimize"
+    ,"Delivery to Lifecycle Support": "Delivery to Lifecycle Support"
+    ,"From installation and commissioning to post-go-live performance reviews, we ensure long-term efficiency and expansion readiness.": "From installation and commissioning to post-go-live performance reviews, we ensure long-term efficiency and expansion readiness."
+    ,"blends disciplined governance with fast execution to build long-term value across sectors from": "blends disciplined governance with fast execution to build long-term value across sectors from"
+    ,"Why": "Why"
+    ,"technology": "technology"
+    ,"leads the future of infrastructure": "leads the future of infrastructure"
+    ,"We believe the next decade belongs to businesses that combine physical execution with digital intelligence. From planning and deployment to monitoring and optimization, technology converts projects into scalable, measurable systems.": "We believe the next decade belongs to businesses that combine physical execution with digital intelligence. From planning and deployment to monitoring and optimization, technology converts projects into scalable, measurable systems."
+    ,"Data-backed planning improves technical accuracy, speed, and lifecycle outcomes.": "Data-backed planning improves technical accuracy, speed, and lifecycle outcomes."
+    ,"Real-time monitoring and transparent status tracking strengthen trust and execution control.": "Real-time monitoring and transparent status tracking strengthen trust and execution control."
+    ,"Reusable digital systems make it easier to launch new sectors without rebuilding from zero.": "Reusable digital systems make it easier to launch new sectors without rebuilding from zero."
+    ,"Every project follows a consistent enterprise-style framework with transparent milestones.": "Every project follows a consistent enterprise-style framework with transparent milestones."
+    ,"Solar is active. Additional verticals are structured for phased launches with shared governance and digital foundations.": "Solar is active. Additional verticals are structured for phased launches with shared governance and digital foundations."
+    ,"Build your solar transition with boardroom-level clarity": "Build your solar transition with boardroom-level clarity"
+    ,"From assessment to commissioning, we deliver a structured program for residential and commercial assets.": "From assessment to commissioning, we deliver a structured program for residential and commercial assets."
+    ,"Each completed installation from the admin panel updates this dashboard with location-wise footprint and progress analytics.": "Each completed installation from the admin panel updates this dashboard with location-wise footprint and progress analytics."
+    ,"Powering Assam with modern solar infrastructure": "Powering Assam with modern solar infrastructure"
+    ,"Powering": "Powering"
+    ,"Assam": "Assam"
+    ,"with modern solar infrastructure": "with modern solar infrastructure"
+    ,"Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions.": "Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions."
+    ,"Corporate execution with startup speed": "Corporate execution with startup speed"
+    ,"Corporate": "Corporate"
+    ,"execution with startup speed": "execution with startup speed"
+    ,"Structured delivery, transparent process, and technology-first field operations for residential and commercial projects.": "Structured delivery, transparent process, and technology-first field operations for residential and commercial projects."
+    ,"Designed to scale across sectors": "Designed to scale across sectors"
+    ,"Designed to scale across": "Designed to scale across"
+    ,"A modular service architecture that expands from solar into smart infrastructure without redesigning the business core.": "A modular service architecture that expands from solar into smart infrastructure without redesigning the business core."
+    ,"Hero slide indicators": "Hero slide indicators"
+    ,"Show slide": "Show slide"
+    ,"home.blueprint.description": "Every project follows a consistent enterprise-style framework with transparent milestones."
+    ,"home.blueprint.card1.title": "Consult & Assess"
+    ,"home.blueprint.card1.backTitle": "Discovery and Feasibility"
+    ,"home.blueprint.card1.backText": "We capture technical baseline, energy patterns, and business goals to build a viable project scope with realistic ROI expectations."
+    ,"home.blueprint.card2.title": "Engineer & Plan"
+    ,"home.blueprint.card2.backTitle": "Design and Execution Planning"
+    ,"home.blueprint.card2.backText": "Our team finalizes system sizing, engineering documents, project timeline, and resource plan with clear milestones and accountability."
+    ,"home.blueprint.card3.title": "Deploy & Optimize"
+    ,"home.blueprint.card3.backTitle": "Delivery to Lifecycle Support"
+    ,"home.blueprint.card3.backText": "From installation and commissioning to post-go-live performance reviews, we ensure long-term efficiency and expansion readiness."
+    ,"We deliver with transparency, realistic commitments, and accountable execution at every stage.": "We deliver with transparency, realistic commitments, and accountable execution at every stage."
+    ,"Our teams follow repeatable systems so quality remains consistent across projects and timelines.": "Our teams follow repeatable systems so quality remains consistent across projects and timelines."
+    ,"From solar adoption to process discipline, we focus on long-term value for communities and clients.": "From solar adoption to process discipline, we focus on long-term value for communities and clients."
+    ,"We combine operational learning with digital tools to make each next project smarter than the last.": "We combine operational learning with digital tools to make each next project smarter than the last."
+    ,"Field experience built our foundation": "Field experience built our foundation"
+    ,"Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers.": "Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers."
+    ,"Engineers inspecting a solar installation site": "Engineers inspecting a solar installation site"
+    ,"We began with residential and commercial solar": "We began with residential and commercial solar"
+    ,"Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking.": "Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking."
+    ,"Large solar panel setup for commercial operations": "Large solar panel setup for commercial operations"
+    ,"Residential rooftop installation programs": "Residential rooftop installation programs"
+    ,"Commercial solar deployment and maintenance": "Commercial solar deployment and maintenance"
+    ,"Standardized workflow from survey to commissioning": "Standardized workflow from survey to commissioning"
+    ,"Then we started going digital": "Then we started going digital"
+    ,"As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility.": "As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility."
+    ,"Modern technology and digital systems workspace": "Modern technology and digital systems workspace"
+    ,"Corporate expansion roadmap and infrastructure planning": "Corporate expansion roadmap and infrastructure planning"
+    ,"Our vision is multi-sector and future-ready": "Our vision is multi-sector and future-ready"
+    ,"With solar as our proven base, we are preparing structured expansion into electrical services, agriculture-linked initiatives, and smart technology operations.": "With solar as our proven base, we are preparing structured expansion into electrical services, agriculture-linked initiatives, and smart technology operations."
+    ,"Electrical": "Electrical"
+    ,"Field reliability and infrastructure-grade execution systems.": "Field reliability and infrastructure-grade execution systems."
+    ,"Operational models that strengthen productivity and sustainability.": "Operational models that strengthen productivity and sustainability."
+    ,"Smart Tech": "Smart Tech"
+    ,"Digital layers for visibility, control, and scalable growth.": "Digital layers for visibility, control, and scalable growth."
+    ,"The principles that shape every decision": "The principles that shape every decision"
+    ,"Building a trusted multi-sector corporate platform from Assam for the next decade.": "Building a trusted multi-sector corporate platform from Assam for the next decade."
+  }
+}
