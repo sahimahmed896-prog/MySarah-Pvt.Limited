@@ -827,6 +827,108 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.contact-page {
+  padding-bottom: 2rem;
+}
+
+.contact-hero-wrap {
+  padding: 2.2rem 0 2.8rem;
+}
+
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.contact-hero-copy {
+  border: 1px solid rgba(22, 71, 43, 0.14);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(40, 131, 70, 0.12), transparent 42%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(238, 248, 240, 0.96));
+  box-shadow: 0 18px 42px rgba(12, 33, 20, 0.12);
+  padding: 1.35rem;
+}
+
+.contact-hero-copy h1 {
+  font-size: clamp(1.95rem, 4vw, 3.1rem);
+  margin: 0.55rem 0 0.75rem;
+}
+
+.contact-hero-copy > p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.contact-hero-metrics {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.contact-hero-metrics article {
+  border: 1px solid rgba(19, 77, 46, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.7rem;
+}
+
+.contact-hero-metrics strong {
+  display: block;
+  color: #155c35;
+  font-size: 1rem;
+}
+
+.contact-hero-metrics span {
+  font-size: 0.8rem;
+  color: #4f6e5a;
+}
+
+.contact-hero-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 22px 48px rgba(12, 35, 22, 0.18);
+}
+
+.contact-hero-image {
+  object-fit: cover;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(10, 38, 20, 0.18), rgba(10, 38, 20, 0.02) 45%, rgba(10, 38, 20, 0.35));
+  pointer-events: none;
+}
+
+.contact-aside-pro {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(73, 158, 102, 0.12), transparent 35%),
+    #fff;
+}
+
+.contact-detail-list {
+  margin: 0.7rem 0 0.9rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.contact-detail-list p {
+  display: grid;
+  gap: 0.2rem;
+  color: #4b6c57;
+}
+
+.contact-detail-list a {
+  color: #15643a;
+  font-weight: 700;
+}
+
 .content-card,
 .sector-card,
 .lead-form-wrap,
@@ -2276,6 +2378,7 @@ a {
   .media-flip-grid,
   .tech-future-grid,
   .media-story-metrics,
+  .contact-hero-grid,
   .solar-grid,
   .contact-grid,
   .footer-grid {
@@ -2291,6 +2394,18 @@ a {
 
   .media-story-content {
     max-width: 100%;
+  }
+
+  .contact-hero-media {
+    min-height: 340px;
+  }
+
+  .contact-hero-copy {
+    padding: 1.1rem;
+  }
+
+  .contact-hero-metrics {
+    grid-template-columns: 1fr;
   }
 
   .hero-inner {
