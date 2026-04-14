@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createLead } from "@/lib/lead-service";
 import { sendLeadEmail } from "@/lib/mailer";
 import { leadSchema } from "@/lib/validation";
+import { rejectCrossSiteRequest } from "@/lib/security";
 
 const ipHits = new Map<string, { count: number; time: number }>();
 
@@ -19,6 +20,11 @@ function isRateLimited(ip: string) {
 }
 
 export async function POST(request: Request) {
+  const blocked = rejectCrossSiteRequest(request);
+  if (blocked) {
+    return blocked;
+  }
+
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 

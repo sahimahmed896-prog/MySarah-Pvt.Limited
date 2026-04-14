@@ -60,9 +60,10 @@ export const authCookie = {
   name: AUTH_COOKIE,
   options: {
     httpOnly: true,
-    sameSite: "lax" as const,
+    sameSite: "strict" as const,
     secure: process.env.NODE_ENV === "production",
     path: "/",
     maxAge: 60 * 60 * 24 * 2,
+    priority: "high" as const,
   },
 };

@@ -2,12 +2,18 @@ import { NextResponse } from "next/server";
 import { deleteLead, updateLeadProgress } from "@/lib/lead-service";
 import { getAdminSession } from "@/lib/auth";
 import { updateLeadStatusSchema } from "@/lib/validation";
+import { rejectCrossSiteRequest } from "@/lib/security";
 
 interface LeadParams {
   params: Promise<{ id: string }>;
 }
 
 export async function PATCH(request: Request, { params }: LeadParams) {
+  const blocked = rejectCrossSiteRequest(request);
+  if (blocked) {
+    return blocked;
+  }
+
   const session = await getAdminSession();
 
   if (!session) {
@@ -34,7 +40,12 @@ export async function PATCH(request: Request, { params }: LeadParams) {
   }
 }
 
-export async function DELETE(_: Request, { params }: LeadParams) {
+export async function DELETE(request: Request, { params }: LeadParams) {
+  const blocked = rejectCrossSiteRequest(request);
+  if (blocked) {
+    return blocked;
+  }
+
   const session = await getAdminSession();
 
   if (!session) {
