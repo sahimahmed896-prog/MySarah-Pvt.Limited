@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, useScroll } from "framer-motion";
 import { useMotionValueEvent } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function StoryBackToTop() {
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setVisible(latest > 900);
@@ -24,7 +26,7 @@ export default function StoryBackToTop() {
           exit={{ opacity: 0, y: reduceMotion ? 0 : 10 }}
           transition={{ duration: reduceMotion ? 0.2 : 0.28 }}
         >
-          Back to top
+          {t("Back to top")}
         </motion.a>
       ) : null}
     </AnimatePresence>

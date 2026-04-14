@@ -1,0 +1,273 @@
+{
+  "name": "Assamese",
+  "nativeName": "অসমীয়া",
+  "strings": {
+    "Home": "হোম",
+    "Sectors": "খণ্ডসমূহ",
+    "About": "আমাৰ বিষয়ে",
+    "Contact": "যোগাযোগ",
+    "Language": "ভাষা",
+    "Select language": "ভাষা বাছক",
+    "Explore": "অন্বেষণ",
+    "Mission": "মিছন",
+    "Building a multi-sector technology platform from Assam with a strong foundation in clean energy and scalable service delivery.": "অসমৰ পৰা স্বচ্ছ শক্তি আৰু স্কেল কৰিব পৰা সেৱা প্ৰদানৰ মজবুত ভিত্তিৰ ওপৰত এক বহুখণ্ডীয় প্ৰযুক্তি প্লেটফৰ্ম গঢ়ি তোলা।",
+    "All rights reserved.": "সকলো অধিকাৰ সংৰক্ষিত।",
+    "Contact Form": "যোগাযোগ ফৰ্ম",
+    "Get in touch": "যোগাযোগ কৰক",
+    "Name": "নাম",
+    "Phone": "ফোন",
+    "Location": "অৱস্থান",
+    "Request Type": "অনুৰোধৰ ধৰণ",
+    "Quote": "কোট",
+    "Contact": "যোগাযোগ",
+    "Order": "অৰ্ডাৰ",
+    "Message": "বার্তা",
+    "Submit": "জমা দিয়ক",
+    "Submitting...": "জমা দিয়া হৈছে...",
+    "Thank you. Our team will contact you shortly.": "ধন্যবাদ। আমাৰ টীমে অতি সোনকালে আপোনাৰ সৈতে যোগাযোগ কৰিব।",
+    "Network issue. Please try again.": "নেটৱৰ্ক সমস্যা। অনুগ্ৰহ কৰি আকৌ চেষ্টা কৰক।",
+    "Unable to submit request.": "অনুৰোধ জমা দিব পৰা নগ'ল।",
+    "Digital Intake": "ডিজিটেল ইনটেক",
+    "Solar Installation Application": "সৌৰ সংস্থাপন আবেদন",
+    "Structured and trackable": "সুশৃঙ্খল আৰু অনুসৰণযোগ্য",
+    "First Name": "প্ৰথম নাম",
+    "Last Name": "শেষ নাম",
+    "Phone Number": "ফোন নম্বৰ",
+    "Email": "ইমেইল",
+    "Address": "ঠিকনা",
+    "City": "চহৰ",
+    "State": "ৰাজ্য",
+    "Pincode": "পিনকোড",
+    "Property Type": "সম্পত্তিৰ ধৰণ",
+    "Residential": "আৱাসিক",
+    "Commercial": "বাণিজ্যিক",
+    "Industrial": "ঔদ্যোগিক",
+    "Roof Type": "ছাদৰ ধৰণ",
+    "Metal Sheet": "মেটাল শ্বীট",
+    "Ground Mount": "গ্ৰাউণ্ড মাউণ্ট",
+    "Monthly Electricity Bill (INR)": "মাহিলী বিদ্যুৎ বিল (INR)",
+    "Sanctioned Load (kW)": "অনুমোদিত লোড (kW)",
+    "Preferred System Size (kW)": "ইচ্ছুক ব্যৱস্থাৰ আকাৰ (kW)",
+    "Installation Timeline": "সংস্থাপন সময়সীমা",
+    "Urgent (Within 2 weeks)": "জৰুৰী (২ সপ্তাহৰ ভিতৰত)",
+    "Within 30 days": "৩০ দিনৰ ভিতৰত",
+    "Within 60 days": "৬০ দিনৰ ভিতৰত",
+    "Just exploring": "কেৱল জানি লওঁ",
+    "GPS Coordinates": "GPS সমন্বয়",
+    "Use Current GPS": "বৰ্তমান GPS ব্যৱহাৰ কৰক",
+    "Fetching GPS...": "GPS আনা হৈছে...",
+    "Open in Map": "মেপত খোলক",
+    "Latitude": "অক্ষাংশ",
+    "Longitude": "দ্ৰাঘিমাংশ",
+    "Capture GPS for exact rooftop location and faster feasibility checks.": "সঠিক ছাদৰ অৱস্থান আৰু ত্বৰিত সম্ভাৱ্যতা যাচাইৰ বাবে GPS ধৰি ৰাখক।",
+    "Site Notes": "সাইট টোকা",
+    "Submit Digital Application": "ডিজিটেল আবেদন জমা দিয়ক",
+    "Submitting Application...": "আবেদন জমা দিয়া হৈছে...",
+    "Application submitted successfully. Our team will review and contact you.": "আবেদন সফলভাবে জমা হৈছে। আমাৰ টীমে পৰ্যালোচনা কৰি আপোনাৰ সৈতে যোগাযোগ কৰিব।",
+    "Unable to submit the application right now.": "এই মুহূৰ্তত আবেদন জমা দিব পৰা নগ'ল।",
+    "Network issue while submitting. Please try again.": "জমা দিয়াৰ সময়ত নেটৱৰ্ক সমস্যা। অনুগ্ৰহ কৰি আকৌ চেষ্টা কৰক।",
+    "GPS is not available in this browser.": "এই ব্রাউজাৰত GPS উপলব্ধ নহয়।",
+    "GPS captured successfully.": "GPS সফলভাবে ধৰা পৰিল।",
+    "Unable to fetch GPS. Please allow location permission and try again.": "GPS পাব পৰা নগ'ল। অনুগ্ৰহ কৰি location অনুমতি দিয়ক আৰু আকৌ চেষ্টা কৰক।",
+    "Active": "চলমান",
+    "Coming Soon": "শীঘ্ৰেই আহিছে",
+    "Explore Sector": "খণ্ড অন্বেষণ কৰক",
+    "Chat on WhatsApp": "WhatsApp-ত চেট কৰক",
+    "WhatsApp": "WhatsApp",
+    "Loading map...": "মেপ লোড হৈ আছে...",
+    "Loading installation analytics...": "ইনষ্টলেশ্যন বিশ্লেষণ লোড হৈ আছে...",
+    "Unable to load insights.": "ইনছাইট লোড কৰিব পৰা নগ'ল।",
+    "No installation analytics available yet.": "এতিয়ালৈকে কোনো ইনষ্টলেশ্যন বিশ্লেষণ উপলব্ধ নহয়।",
+    "Live Impact": "লাইভ প্ৰভাৱ",
+    "Solar installation footprint": "সৌৰ ইনষ্টলেশ্যনৰ পৰিসৰ",
+    "installs": "ইনষ্টল",
+    "Solar Installed": "সৌৰ সংস্থাপন",
+    "Visit Confirmed": "ভিজিট নিশ্চিত",
+    "Completion Rate": "সম্পূৰ্ণতা হাৰ"
+    ,"Multi-Sector Corporate Platform": "বহুখণ্ডীয় কৰ্পোৰেট প্লেটফৰ্ম"
+    ,"Explore Solar Services": "সৌৰ সেৱা চাওক"
+    ,"Request a Quote": "কোট অনুৰোধ কৰক"
+    ,"Active sector live": "চলমান সক্ৰিয় খণ্ড"
+    ,"Total sector roadmap": "মুঠ খণ্ড ৰোডমেপ"
+    ,"Unified digital architecture": "একৰূপ ডিজিটেল স্থাপত্য"
+    ,"Execution Framework": "কাৰ্য সম্পাদন ফ্ৰেমৱৰ্ক"
+    ,"Corporate governance with startup agility": "ষ্টাৰ্টআপ গতিৰ সৈতে কৰ্পোৰেট শাসন"
+    ,"Solar Installations": "সৌৰ সংস্থাপন"
+    ,"Commercial Projects": "বাণিজ্যিক প্ৰকল্প"
+    ,"Residential Rooftops": "আৱাসিক ছাদ"
+    ,"Future Sectors": "ভৱিষ্যৎ খণ্ডসমূহ"
+    ,"Assam Operations": "অসম অপাৰেশ্যন"
+    ,"Who We Are": "আমি কোন"
+    ,"A premium operational model built for scale": "স্কেলৰ বাবে তৈয়াৰ কৰা প্ৰিমিয়াম অপাৰেশ্যনেল মডেল"
+    ,"Active sector operating": "সক্ৰিয় চলমান খণ্ড"
+    ,"Planned sector roadmap": "পৰিকল্পিত খণ্ড ৰোডমেপ"
+    ,"Client communication support": "গ্ৰাহক যোগাযোগ সহায়"
+    ,"Future Narrative": "ভৱিষ্যৎ দৃষ্টিভংগী"
+    ,"Smarter Decisions": "স্মাৰ্ট সিদ্ধান্ত"
+    ,"Operational Visibility": "অপাৰেশ্যনেল দৃশ্যমানতা"
+    ,"Scalable Expansion": "স্কেল কৰিব পৰা বিস্তাৰ"
+    ,"Operating Blueprint": "অপাৰেটিং ব্লুপ্ৰিণ্ট"
+    ,"How we execute from lead to lifecycle support": "লিডৰ পৰা জীৱনচক্ৰ সহায়লৈ আমি কেনেকৈ কাৰ্য সম্পাদন কৰোঁ"
+    ,"Multi-sector corporate roadmap": "বহুখণ্ডীয় কৰ্পোৰেট ৰোডমেপ"
+    ,"View All Sectors": "সকলো খণ্ড চাওক"
+    ,"Explore Solar": "সৌৰ অন্বেষণ কৰক"
+    ,"Contact Team": "টীমৰ সৈতে যোগাযোগ কৰক"
+    ,"Execution Intelligence": "কাৰ্য সম্পাদন বুদ্ধিমত্তা"
+    ,"Live installation data from admin workflow": "এডমিন ৱৰ্কফ্ল'ৰ লাইভ ইনষ্টলেশ্যন ডাটা"
+    ,"Roadmap": "ৰোডমেপ"
+    ,"A structured multi-sector roadmap": "এটা সংগঠিত বহুখণ্ডীয় ৰোডমেপ"
+    ,"Priority cluster": "অগ্ৰাধিকাৰ ক্লাষ্টাৰ"
+    ,"Core Services": "মূল সেৱাসমূহ"
+    ,"Business & Industry": "ব্যৱসায় আৰু উদ্যোগ"
+    ,"Lifestyle & Public Services": "জীৱনধারা আৰু জনসেৱা"
+    ,"Technology & Innovation": "প্ৰযুক্তি আৰু নতুনত্ব"
+    ,"Agriculture": "কৃষি"
+    ,"Reach Us": "আমাৰ সৈতে যোগাযোগ"
+    ,"Mysarah Modern Tech Location": "Mysarah Modern Tech অৱস্থান"
+    ,"Solar Installation, Built as a Digital Service Layer": "ডিজিটেল সেৱা স্তৰ ৰূপে গঢ়া সৌৰ সংস্থাপন"
+    ,"Active Sector": "সক্ৰিয় খণ্ড"
+    ,"Start Application": "আবেদন আৰম্ভ কৰক"
+    ,"Speak to Team": "টীমৰ সৈতে কথা পাতক"
+    ,"Digital Flow": "ডিজিটেল প্ৰবাহ"
+    ,"Execution Stack": "কাৰ্য সম্পাদন ষ্টেক"
+    ,"Systematic process for solar deployment": "সৌৰ মোতায়েনৰ বাবে পদ্ধতিগত প্ৰক্ৰিয়া"
+    ,"Application Intake": "আবেদন গ্ৰহণ"
+    ,"Geo Verification": "জিঅ' যাচাই"
+    ,"Technical Qualification": "কাৰিকৰী যোগ্যতা"
+    ,"Execution Planning": "কাৰ্য সম্পাদন পৰিকল্পনা"
+    ,"Customer Application": "গ্ৰাহক আবেদন"
+    ,"Submit your solar installation details": "আপোনাৰ সৌৰ সংস্থাপন তথ্য জমা দিয়ক"
+    ,"Back to Sectors": "খণ্ডসমূহলৈ উভতি যাওক"
+    ,"Let&apos;s plan your project": "আহক আপোনাৰ প্ৰকল্প পৰিকল্পনা কৰোঁ"
+    ,"Field Experience": "ক্ষেত্ৰ অভিজ্ঞতা"
+    ,"Beginning with Solar": "সৌৰৰে আৰম্ভণি"
+    ,"Going Digital": "ডিজিটেলৰ দিশে"
+    ,"Multi-Sector Vision": "বহুখণ্ডীয় দৃষ্টিভংগী"
+    ,"Core Values": "মূল মূল্যবোধ"
+    ,"Future Vision": "ভৱিষ্যৎ দৃষ্টিভংগী"
+    ,"Partnership CTA": "সহযোগিতা CTA"
+    ,"Trust": "বিশ্বাস"
+    ,"Reliability": "বিশ্বস্ততা"
+    ,"Sustainability": "স্থিতিশীলতা"
+    ,"Innovation": "নতুনত্ব"
+    ,"Partnership": "সহযোগিতা"
+    ,"Contact Us": "আমাৰ সৈতে যোগাযোগ কৰক"
+    ,"Get Quote": "কোট লওক"
+    ,"RCC": "RCC"
+    ,"e.g. 4500": "যেনে 4500"
+    ,"e.g. 5": "যেনে 5"
+    ,"e.g. 3": "যেনে 3"
+    ,"e.g. 26.144516": "যেনে 26.144516"
+    ,"e.g. 91.736237": "যেনে 91.736237"
+    ,"Any roof condition, shading, access notes, or preferred call time": "ছাদৰ অৱস্থা, ছাঁ, প্ৰৱেশ টোকা, বা পছন্দৰ ফোন কৰাৰ সময় লিখক"
+    ,"We are focused on disciplined growth, stronger digital execution, and sector expansion that creates durable long-term value.": "আমি শৃঙ্খলাবদ্ধ বিকাশ, অধিক শক্তিশালী ডিজিটেল কাৰ্যসম্পাদন, আৰু দীৰ্ঘম্যাদী টেকসই মূল্য সৃষ্টি কৰা খণ্ড বিস্তাৰৰ ওপৰত মনোনিবেশ কৰি আছোঁ।"
+    ,"Let's Build the Future Together": "আহক একেলগে ভৱিষ্যৎ গঢ়ি তোলোঁ"
+    ,"Connect with our team to start your next project with a company built for reliable execution.": "বিশ্বস্ত কাৰ্যসম্পাদনৰ বাবে গঢ়া কোম্পানীৰ সৈতে আপোনাৰ পৰৱৰ্তী প্ৰকল্প আৰম্ভ কৰিবলৈ আমাৰ টীমৰ সৈতে যোগাযোগ কৰক।"
+    ,"Our Story Hero": "আমাৰ কাহিনীৰ হিৰো অংশ"
+    ,"Field operations and modern infrastructure": "ক্ষেত্ৰ অপাৰেশ্যন আৰু আধুনিক অবকাঠামো"
+    ,"Our Story": "আমাৰ কাহিনী"
+    ,"Rooted in Experience. Growing with Technology.": "অভিজ্ঞতাত শিকড়, প্ৰযুক্তিৰে বিকাশ।"
+    ,"Mysarah Modern Tech Private Limited began with real field operations in Assam and is now evolving into a digitally enabled multi-sector platform built for long-term impact.": "Mysarah Modern Tech Private Limited-এ অসমত বাস্তৱ ক্ষেত্ৰ অপাৰেশ্যনৰ পৰা আৰম্ভ কৰি এতিয়া দীৰ্ঘম্যাদী প্ৰভাৱৰ বাবে ডিজিটেল-সক্ষম বহুখণ্ডীয় প্লেটফৰ্মলৈ বিকশিত হৈ আছে।"
+    ,"Back to top": "ওপৰলৈ উভতি যাওক"
+    ,"Our story chapter navigation": "আমাৰ কাহিনীৰ অধ্যায় নেভিগেশ্যন"
+    ,"Start here: the revenue engines": "ইয়াৰ পৰা আৰম্ভ কৰক: আয়ৰ মুখ্য ইঞ্জিনসমূহ"
+    ,"These are the first services to lead the website and the strongest business drivers.": "এইবোৰে ৱেবছাইটত আগবঢ়োৱা প্ৰথম সেৱাসমূহ আৰু আটাইতকৈ শক্তিশালী ব্যৱসায়িক চালিকা শক্তি।"
+    ,"Commercial and operational sectors": "বাণিজ্যিক আৰু অপাৰেশ্যনেল খণ্ডসমূহ"
+    ,"Industry-facing services that support trading, production, execution, and field operations.": "ব্যৱসায়, উৎপাদন, কাৰ্যসম্পাদন আৰু ক্ষেত্ৰ অপাৰেশ্যনক সহায় কৰা উদ্যোগ-মুখী সেৱাসমূহ।"
+    ,"Public-facing sectors and community services": "জনমুখী খণ্ড আৰু সমাজভিত্তিক সেৱাসমূহ"
+    ,"The service set that supports public engagement, experiences, and everyday life programs.": "জনসম্পৃক্ততা, অভিজ্ঞতা, আৰু দৈনন্দিন জীৱনৰ কাৰ্যসূচীক সহায় কৰা সেৱাসমূহৰ গোট।"
+    ,"Digital growth and intelligence": "ডিজিটেল বিকাশ আৰু বুদ্ধিমত্তা"
+    ,"The future-facing technology sectors that support automation, software, and AI-driven growth.": "স্বয়ংক্ৰিয়কৰণ, সফ্টৱেৰ, আৰু AI-চালিত বিকাশক সহায় কৰা ভৱিষ্যৎমুখী প্ৰযুক্তি খণ্ডসমূহ।"
+    ,"Kept separate as a standalone strength": "স্বতন্ত্ৰ শক্তি হিচাপে পৃথককৈ ৰখা"
+    ,"Agriculture remains its own dedicated vertical because it is a key sector in Assam.": "অসমত কৃষি এটা মুখ্য খণ্ড হোৱাৰ বাবে ইয়াক নিজস্ব পৃথক ভাৰ্টিকেল ৰূপে ৰখা হৈছে।"
+    ,"Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy.": "সৌৰ ওপৰত সক্ৰিয় অৱস্থাত থাকে, তাৰ পাছত বাকী প'ৰ্টফ'লিঅ' অধিক স্পষ্ট ব্যৱসায়িক স্তৰবিন্যাসত গোটাই দিয়া হয়।"
+    ,"summary": "সাৰাংশ"
+    ,"sectors": "খণ্ডসমূহ"
+    ,"Curated for a cleaner business narrative and stronger visual hierarchy.": "অধিক পৰিষ্কাৰ ব্যৱসায়িক দৃষ্টিভংগী আৰু শক্তিশালী দৃশ্যমান স্তৰবিন্যাসৰ বাবে বাছনি কৰা।"
+    ,"Sector showcase slider": "খণ্ড প্ৰদৰ্শনী স্লাইডাৰ"
+    ,"Brand Presence": "ব্ৰেণ্ড উপস্থিতি"
+    ,"Solar EPC": "সৌৰ EPC"
+    ,"Engineering the clean-energy transition": "স্বচ্ছ শক্তি পৰিবৰ্তনৰ ইঞ্জিনিয়াৰিং"
+    ,"Residential rooftops, commercial campuses, and industrial deployments.": "আৱাসিক ছাদ, বাণিজ্যিক ক্যাম্পাছ, আৰু ঔদ্যোগিক মোতায়েন।"
+    ,"EV Infrastructure": "EV অবকাঠামো"
+    ,"Connected charging for the next mobility wave": "পৰৱৰ্তী মোবিলিটি ঢৌৰ বাবে সংযুক্ত চাৰ্জিং"
+    ,"Fast, reliable charging ecosystems for urban and highway growth.": "শহৰ আৰু হাইৱে বিকাশৰ বাবে দ্ৰুত, বিশ্বস্ত চাৰ্জিং ইক'চিষ্টেম।"
+    ,"Smart Buildings": "স্মাৰ্ট বিল্ডিংসমূহ"
+    ,"Digital systems for resilient facilities": "স্থিতিশীল সুবিধাৰ বাবে ডিজিটেল ছিষ্টেম"
+    ,"Automation, security, and energy intelligence in one view.": "একে দৃষ্টিত স্বয়ংক্ৰিয়কৰণ, সুৰক্ষা আৰু শক্তি বুদ্ধিমত্তা।"
+    ,"Go to slide": "স্লাইডলৈ যাওক"
+    ,"Private Limited": "প্ৰাইভেট লিমিটেড"
+    ,"Consult & Assess": "পৰামৰ্শ আৰু মূল্যায়ন"
+    ,"Discovery and Feasibility": "আৱিষ্কাৰ আৰু সম্ভাৱ্যতা"
+    ,"We capture technical baseline, energy patterns, and business goals to build a viable project scope with realistic ROI expectations.": "বাস্তৱসম্মত ROI আশা সহ এক কাৰ্যক্ষম প্ৰকল্প পৰিসৰ গঢ়িবলৈ আমি কাৰিকৰী ভিত্তি, শক্তি ব্যৱহাৰৰ ধৰণ, আৰু ব্যৱসায়িক লক্ষ্যসমূহ ধৰি লওঁ।"
+    ,"Engineer & Plan": "ইঞ্জিনিয়াৰ আৰু পৰিকল্পনা"
+    ,"Design and Execution Planning": "ডিজাইন আৰু কাৰ্যসম্পাদন পৰিকল্পনা"
+    ,"Our team finalizes system sizing, engineering documents, project timeline, and resource plan with clear milestones and accountability.": "আমাৰ টীমে স্পষ্ট মাইলষ্ট'ন আৰু জবাবদিহিতাৰ সৈতে ছিষ্টেম সাইজিং, ইঞ্জিনিয়াৰিং নথি, প্ৰকল্প সময়সীমা, আৰু সম্পদ পৰিকল্পনা চূড়ান্ত কৰে।"
+    ,"Deploy & Optimize": "মোতায়েন আৰু অপ্টিমাইজ"
+    ,"Delivery to Lifecycle Support": "ডেলিভাৰীৰ পৰা লাইফচাইকেল সহায়লৈ"
+    ,"From installation and commissioning to post-go-live performance reviews, we ensure long-term efficiency and expansion readiness.": "ইনষ্টলেশ্যন আৰু কমিশ্যনিঙৰ পৰা go-live-পৰৱৰ্তী কার্যক্ষমতা মূল্যায়নলৈকে, আমি দীৰ্ঘম্যাদী দক্ষতা আৰু বিস্তাৰৰ প্ৰস্তুতি নিশ্চিত কৰোঁ।"
+    ,"blends disciplined governance with fast execution to build long-term value across sectors from": "শৃঙ্খলাবদ্ধ শাসন আৰু দ্ৰুত কাৰ্যসম্পাদন মিলাই বিভিন্ন খণ্ডত দীৰ্ঘম্যাদী মূল্য সৃষ্টি কৰে,"
+    ,"Why": "কিয়"
+    ,"technology": "প্ৰযুক্তি"
+    ,"leads the future of infrastructure": "অবকাঠামোৰ ভৱিষ্যৎ আগবঢ়ায়"
+    ,"We believe the next decade belongs to businesses that combine physical execution with digital intelligence. From planning and deployment to monitoring and optimization, technology converts projects into scalable, measurable systems.": "আমাৰ বিশ্বাস, অহা দশক সেই ব্যৱসায়সমূহৰ যিয়ে ভৌতিক কাৰ্যসম্পাদনক ডিজিটেল বুদ্ধিমত্তাৰ সৈতে সংযুক্ত কৰে। পৰিকল্পনা আৰু মোতায়েনৰ পৰা মনিটৰিং আৰু অপ্টিমাইজেশ্যনলৈকে, প্ৰযুক্তিয়ে প্ৰকল্পসমূহক স্কেল কৰিব পৰা আৰু মাপিব পৰা ছিষ্টেমত ৰূপান্তৰিত কৰে।"
+    ,"Data-backed planning improves technical accuracy, speed, and lifecycle outcomes.": "ডাটাভিত্তিক পৰিকল্পনাই কাৰিকৰী নিৰ্ভুলতা, গতি, আৰু লাইফচাইকেল ফলাফল উন্নত কৰে।"
+    ,"Real-time monitoring and transparent status tracking strengthen trust and execution control.": "ৰিয়েল-টাইম মনিটৰিং আৰু স্বচ্ছ স্থিতি অনুসৰণে বিশ্বাস আৰু কাৰ্যসম্পাদন নিয়ন্ত্ৰণ শক্তিশালী কৰে।"
+    ,"Reusable digital systems make it easier to launch new sectors without rebuilding from zero.": "পুনৰ্ব্যৱহাৰযোগ্য ডিজিটেল ছিষ্টেমে নতুন খণ্ড আৰম্ভ কৰাটো সহজ কৰে, শূন্যৰ পৰা পুনৰ গঢ়ি তুলিব নালাগে।"
+    ,"Every project follows a consistent enterprise-style framework with transparent milestones.": "প্ৰতিটো প্ৰকল্পে স্বচ্ছ মাইলষ্ট'নৰ সৈতে একেধৰণৰ এণ্টাৰপ্ৰাইজ-শৈলীৰ ফ্ৰেমৱৰ্ক অনুসৰণ কৰে।"
+    ,"Solar is active. Additional verticals are structured for phased launches with shared governance and digital foundations.": "সৌৰ খণ্ড সক্ৰিয়। অতিৰিক্ত ভাৰ্টিকেলসমূহক পৰ্যায়ভিত্তিক উন্মোচনৰ বাবে শেয়াৰ্ড গৱৰ্ণেন্স আৰু ডিজিটেল ভিত্তিৰ সৈতে গঠন কৰা হৈছে।"
+    ,"Build your solar transition with boardroom-level clarity": "ব'ৰ্ডৰূম-স্তৰৰ স্পষ্টতাৰে আপোনাৰ সৌৰ ৰূপান্তৰ গঢ়ি তোলোক"
+    ,"From assessment to commissioning, we deliver a structured program for residential and commercial assets.": "মূল্যায়নৰ পৰা কমিশ্যনিঙলৈকে, আমি আৱাসিক আৰু বাণিজ্যিক সম্পত্তিৰ বাবে এক সংগঠিত কাৰ্যসূচী প্ৰদান কৰোঁ।"
+    ,"Each completed installation from the admin panel updates this dashboard with location-wise footprint and progress analytics.": "এডমিন পেনেলৰ প্ৰতিটো সম্পূৰ্ণ ইনষ্টলেশ্যনে এই ডেশ্ব'ৰ্ডক স্থানভিত্তিক footprint আৰু অগ্ৰগতি বিশ্লেষণৰ সৈতে আপডেট কৰে।"
+    ,"Powering Assam with modern solar infrastructure": "আধুনিক সৌৰ অবকাঠামোৰে অসমক শক্তি যোগান"
+    ,"Powering": "শক্তি যোগান"
+    ,"Assam": "অসম"
+    ,"with modern solar infrastructure": "আধুনিক সৌৰ অবকাঠামোৰে"
+    ,"Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions.": "Mysarah Modern Tech Private Limited-এ স্বচ্ছ শক্তি সমাধানৰ পৰা আৰম্ভ কৰি ভৱিষ্যৎ-প্ৰস্তুত বহুখণ্ডীয় প্লেটফৰ্ম গঢ়ি তুলিছে।"
+    ,"Corporate execution with startup speed": "ষ্টাৰ্টআপ গতিৰে কৰ্পোৰেট কাৰ্যসম্পাদন"
+    ,"Corporate": "কৰ্পোৰেট"
+    ,"execution with startup speed": "ষ্টাৰ্টআপ গতিৰে কাৰ্যসম্পাদন"
+    ,"Structured delivery, transparent process, and technology-first field operations for residential and commercial projects.": "আৱাসিক আৰু বাণিজ্যিক প্ৰকল্পৰ বাবে সংগঠিত ডেলিভাৰী, স্বচ্ছ প্ৰক্ৰিয়া, আৰু প্রযুক্তি-প্ৰথম ক্ষেত্ৰ অপাৰেশ্যন।"
+    ,"Designed to scale across sectors": "বিভিন্ন খণ্ডত স্কেল কৰিবলৈ ডিজাইন কৰা"
+    ,"Designed to scale across": "স্কেল কৰিবলৈ ডিজাইন কৰা"
+    ,"A modular service architecture that expands from solar into smart infrastructure without redesigning the business core.": "এটা মডুলাৰ সেৱা স্থাপত্য যি ব্যৱসায়ৰ মূল গঠন পুনৰ ডিজাইন নকৰাকৈ সৌৰৰ পৰা স্মাৰ্ট অবকাঠামোলৈ বিস্তাৰ হয়।"
+    ,"Hero slide indicators": "হিৰো স্লাইড সূচক"
+    ,"Show slide": "স্লাইড দেখুৱাওক"
+    ,"home.blueprint.description": "প্ৰতিটো প্ৰকল্পে স্বচ্ছ মাইলষ্ট'নৰ সৈতে একেধৰণৰ এণ্টাৰপ্ৰাইজ-শৈলীৰ ফ্ৰেমৱৰ্ক অনুসৰণ কৰে।"
+    ,"home.blueprint.card1.title": "পৰামৰ্শ আৰু মূল্যায়ন"
+    ,"home.blueprint.card1.backTitle": "আৱিষ্কাৰ আৰু সম্ভাৱ্যতা"
+    ,"home.blueprint.card1.backText": "বাস্তৱসম্মত ROI আশা সহ এক কাৰ্যক্ষম প্ৰকল্প পৰিসৰ গঢ়িবলৈ আমি কাৰিকৰী ভিত্তি, শক্তি ব্যৱহাৰৰ ধৰণ, আৰু ব্যৱসায়িক লক্ষ্যসমূহ ধৰি লওঁ।"
+    ,"home.blueprint.card2.title": "ইঞ্জিনিয়াৰ আৰু পৰিকল্পনা"
+    ,"home.blueprint.card2.backTitle": "ডিজাইন আৰু কাৰ্যসম্পাদন পৰিকল্পনা"
+    ,"home.blueprint.card2.backText": "আমাৰ টীমে স্পষ্ট মাইলষ্ট'ন আৰু জবাবদিহিতাৰ সৈতে ছিষ্টেম সাইজিং, ইঞ্জিনিয়াৰিং নথি, প্ৰকল্প সময়সীমা, আৰু সম্পদ পৰিকল্পনা চূড়ান্ত কৰে।"
+    ,"home.blueprint.card3.title": "মোতায়েন আৰু অপ্টিমাইজ"
+    ,"home.blueprint.card3.backTitle": "ডেলিভাৰীৰ পৰা লাইফচাইকেল সহায়লৈ"
+    ,"home.blueprint.card3.backText": "ইনষ্টলেশ্যন আৰু কমিশ্যনিঙৰ পৰা go-live-পৰৱৰ্তী কার্যক্ষমতা মূল্যায়নলৈকে, আমি দীৰ্ঘম্যাদী দক্ষতা আৰু বিস্তাৰৰ প্ৰস্তুতি নিশ্চিত কৰোঁ।"
+    ,"We deliver with transparency, realistic commitments, and accountable execution at every stage.": "আমি স্বচ্ছতা, বাস্তৱসম্মত অংগীকাৰ, আৰু প্ৰতিটো ধাপত জবাবদিহিমূলক কাৰ্যসম্পাদনৰ সৈতে কাম কৰোঁ।"
+    ,"Our teams follow repeatable systems so quality remains consistent across projects and timelines.": "আমাৰ টীমে পুনৰাবৃত্তিযোগ্য পদ্ধতি অনুসৰণ কৰে যাতে গুণগত মান প্ৰকল্প আৰু সময়সীমা জুৰি একে ধৰণে থাকে।"
+    ,"From solar adoption to process discipline, we focus on long-term value for communities and clients.": "সৌৰ গ্ৰহণৰ পৰা প্ৰক্ৰিয়াগত শৃঙ্খলালৈকে, আমি সমাজ আৰু গ্ৰাহকৰ বাবে দীৰ্ঘম্যাদী মূল্যত মনোনিবেশ কৰোঁ।"
+    ,"We combine operational learning with digital tools to make each next project smarter than the last.": "আমি অপাৰেশ্যনেল অভিজ্ঞতাক ডিজিটেল টুলৰ সৈতে মিলাই প্ৰতিটো পৰৱৰ্তী প্ৰকল্পক আগৰটাতকৈ অধিক স্মাৰ্ট কৰোঁ।"
+    ,"Field experience built our foundation": "ক্ষেত্ৰ অভিজ্ঞতাই আমাৰ ভেটি গঢ়িছে"
+    ,"Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers.": "আমাৰ যাত্ৰা স্লাইড ডেকৰ পৰা নহয়, ক্ষেত্ৰৰ বাস্তৱতাৰ পৰা আৰম্ভ হৈছিল। বাস্তৱ প্ৰকল্প সম্পাদন, সাইট বাধা-নিষেধ পৰিচালনা, আৰু গ্ৰাহকৰ বাবে মাপিব পৰা ফলাফল দাঙি ধৰি আমি বিশ্বাস গঢ়িছিলোঁ।"
+    ,"Engineers inspecting a solar installation site": "ইঞ্জিনিয়াৰে সৌৰ ইনষ্টলেশ্যন সাইট পৰিদৰ্শন কৰি আছে"
+    ,"We began with residential and commercial solar": "আমি আৱাসিক আৰু বাণিজ্যিক সৌৰৰ সৈতে আৰম্ভ কৰিছিলোঁ"
+    ,"Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking.": "সৌৰ আমাৰ প্ৰথম মুখ্য কাৰ্যসম্পাদন ইঞ্জিন হৈ উঠিল। ইয়াৰ জৰিয়তে প্ৰকল্প পৰিকল্পনা, ইনষ্টলেশ্যন গুণগত মান, গ্ৰাহক সহায়, আৰু ইনষ্টলেশ্যন-পৰৱৰ্তী অনুসৰণত এটা প্ৰমাণিত অপাৰেটিং মডেল পাম।"
+    ,"Large solar panel setup for commercial operations": "বাণিজ্যিক অপাৰেশ্যনৰ বাবে ডাঙৰ সৌৰ পেনেল সেটআপ"
+    ,"Residential rooftop installation programs": "আৱাসিক ৰুফটপ ইনষ্টলেশ্যন কাৰ্যসূচী"
+    ,"Commercial solar deployment and maintenance": "বাণিজ্যিক সৌৰ মোতায়েন আৰু ৰক্ষণাবেক্ষণ"
+    ,"Standardized workflow from survey to commissioning": "চাৰ্ভেৰ পৰা কমিশ্যনিংলৈ মানকৃত ৱৰ্কফ্ল'"
+    ,"Then we started going digital": "তাৰ পিছত আমি ডিজিটেল দিশে আগবাঢ়িলোঁ"
+    ,"As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility.": "প্ৰকল্পৰ পৰিমাণ বৃদ্ধি হোৱাৰ লগে লগে, আমি গ্ৰাহক সংযোগ বিন্দু আৰু অন্তৰ্নিহিত ৱৰ্কফ্ল' ডিজিটেলাইজ কৰাত মন দিলোঁ। ইয়াৰ ফলত সঁহাৰি সময় উন্নত হ'ল, প্ৰৱেশযোগ্যতা বৃদ্ধি পালে, আৰু অপাৰেশ্যনেল দৃশ্যমানতা শক্তিশালী হ'ল।"
+    ,"Modern technology and digital systems workspace": "আধুনিক প্ৰযুক্তি আৰু ডিজিটেল ছিষ্টেমৰ কৰ্মক্ষেত্ৰ"
+    ,"Corporate expansion roadmap and infrastructure planning": "কৰ্পোৰেট বিস্তাৰৰ ৰোডমেপ আৰু অবকাঠামো পৰিকল্পনা"
+    ,"Our vision is multi-sector and future-ready": "আমাৰ দৃষ্টিভংগী বহুখণ্ডীয় আৰু ভৱিষ্যৎ-প্ৰস্তুত"
+    ,"With solar as our proven base, we are preparing structured expansion into electrical services, agriculture-linked initiatives, and smart technology operations.": "সৌৰক আমাৰ প্ৰমাণিত ভিত্তি হিচাপে লৈ, আমি ইলেক্ট্ৰিকেল সেৱা, কৃষি-সংযুক্ত পদক্ষেপ, আৰু স্মাৰ্ট প্ৰযুক্তি অপাৰেশ্যনত সংগঠিত বিস্তাৰৰ প্ৰস্তুতি লৈ আছোঁ।"
+    ,"Electrical": "ইলেক্ট্ৰিকেল"
+    ,"Field reliability and infrastructure-grade execution systems.": "ক্ষেত্ৰভিত্তিক বিশ্বস্ততা আৰু অবকাঠামো-মানৰ কাৰ্যসম্পাদন পদ্ধতি।"
+    ,"Operational models that strengthen productivity and sustainability.": "উৎপাদনশীলতা আৰু স্থায়িত্ব শক্তিশালী কৰা অপাৰেশ্যনেল মডেলসমূহ।"
+    ,"Smart Tech": "স্মাৰ্ট টেক"
+    ,"Digital layers for visibility, control, and scalable growth.": "দৃশ্যমানতা, নিয়ন্ত্ৰণ, আৰু স্কেল কৰিব পৰা বিকাশৰ বাবে ডিজিটেল স্তৰসমূহ।"
+    ,"The principles that shape every decision": "যি নীতিসমূহে প্ৰতিটো সিদ্ধান্তক গঢ়ে"
+    ,"Building a trusted multi-sector corporate platform from Assam for the next decade.": "অসমৰ পৰা অহা দশকৰ বাবে এক বিশ্বস্ত বহুখণ্ডীয় কৰ্পোৰেট প্লেটফৰ্ম গঢ়ি তোলা।"
+  }
+}

@@ -34,10 +34,26 @@ export async function POST(request: Request) {
     }
 
     const lead = await createLead(parsed.data);
-    await sendLeadEmail(parsed.data);
+    let emailWarning: string | null = null;
 
-    return NextResponse.json({ ok: true, data: { id: String(lead._id) } }, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: "Server error." }, { status: 500 });
+    // Lead creation is the primary action. Email alerts are best-effort only.
+    try {
+      await sendLeadEmail(parsed.data);
+    } catch (emailError) {
+      console.warn("[api/leads] email notification failed", emailError);
+      emailWarning = "Lead saved, but email notification failed.";
+    }
+
+    return NextResponse.json({ ok: true, data: { id: String(lead._id) }, warning: emailWarning }, { status: 201 });
+  } catch (error) {
+    console.error("[api/leads] failed", error);
+
+    const message = process.env.NODE_ENV === "development"
+      ? error instanceof Error
+        ? error.message
+        : "Unknown server error."
+      : "Server error.";
+
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

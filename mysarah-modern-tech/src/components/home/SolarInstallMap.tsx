@@ -1,6 +1,7 @@
 "use client";
 
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
+import { useTranslation } from "react-i18next";
 import type { SolarInsights } from "@/types/lead";
 
 interface SolarInstallMapProps {
@@ -10,6 +11,7 @@ interface SolarInstallMapProps {
 const defaultCenter: [number, number] = [22.9734, 78.6569];
 
 export default function SolarInstallMap({ locations }: SolarInstallMapProps) {
+  const { t } = useTranslation();
   const plotted = locations.filter((location) => location.latitude !== null && location.longitude !== null);
 
   return (
@@ -35,7 +37,7 @@ export default function SolarInstallMap({ locations }: SolarInstallMapProps) {
             <Popup>
               <strong>{location.name}</strong>
               <br />
-              {location.count} installs
+              {location.count} {t("installs")}
             </Popup>
           </CircleMarker>
         );

@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import AnimatedImage from "@/components/about/AnimatedImage";
 import StoryBackToTop from "@/components/about/StoryBackToTop";
 import StoryProgress from "@/components/about/StoryProgress";
@@ -9,39 +11,35 @@ import StoryHero from "@/components/about/StoryHero";
 import SectionWrapper from "@/components/about/SectionWrapper";
 import StorySection from "@/components/about/StorySection";
 
-export const metadata: Metadata = {
-  title: "About Us | Mysarah Modern Tech",
-  description:
-    "Rooted in field execution and growing with technology, Mysarah Modern Tech Private Limited is building a premium multi-sector corporate platform from Assam, India.",
-};
-
 export default function AboutPage() {
+  const { t } = useTranslation();
+
   const chapterItems = [
-    { id: "chapter-1", label: "Field Experience" },
-    { id: "chapter-2", label: "Beginning with Solar" },
-    { id: "chapter-3", label: "Going Digital" },
-    { id: "chapter-4", label: "Multi-Sector Vision" },
-    { id: "core-values", label: "Core Values" },
-    { id: "future-vision", label: "Future Vision" },
-    { id: "story-cta", label: "Partnership CTA" },
+    { id: "chapter-1", label: t("Field Experience") },
+    { id: "chapter-2", label: t("Beginning with Solar") },
+    { id: "chapter-3", label: t("Going Digital") },
+    { id: "chapter-4", label: t("Multi-Sector Vision") },
+    { id: "core-values", label: t("Core Values") },
+    { id: "future-vision", label: t("Future Vision") },
+    { id: "story-cta", label: t("Partnership CTA") },
   ];
 
   const valueCards = [
     {
-      title: "Trust",
-      text: "We deliver with transparency, realistic commitments, and accountable execution at every stage.",
+      title: t("Trust"),
+      text: t("We deliver with transparency, realistic commitments, and accountable execution at every stage."),
     },
     {
-      title: "Reliability",
-      text: "Our teams follow repeatable systems so quality remains consistent across projects and timelines.",
+      title: t("Reliability"),
+      text: t("Our teams follow repeatable systems so quality remains consistent across projects and timelines."),
     },
     {
-      title: "Sustainability",
-      text: "From solar adoption to process discipline, we focus on long-term value for communities and clients.",
+      title: t("Sustainability"),
+      text: t("From solar adoption to process discipline, we focus on long-term value for communities and clients."),
     },
     {
-      title: "Innovation",
-      text: "We combine operational learning with digital tools to make each next project smarter than the last.",
+      title: t("Innovation"),
+      text: t("We combine operational learning with digital tools to make each next project smarter than the last."),
     },
   ];
 
@@ -60,25 +58,29 @@ export default function AboutPage() {
           id="chapter-1"
           className="story-tone-a"
           eyebrow=""
-          title="Field experience built our foundation"
-          text="Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers."
+          title={t("Field experience built our foundation")}
+          text={t(
+            "Our journey started on ground realities, not slide decks. We built trust by executing real projects, managing site constraints, and delivering measurable outcomes for customers."
+          )}
           image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80"
-          imageAlt="Engineers inspecting a solar installation site"
+          imageAlt={t("Engineers inspecting a solar installation site")}
         />
 
         <StorySection
           id="chapter-2"
           className="story-tone-b"
           eyebrow=""
-          title="We began with residential and commercial solar"
-          text="Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking."
+          title={t("We began with residential and commercial solar")}
+          text={t(
+            "Solar became our first major execution engine. It gave us a proven operating model across project planning, installation quality, customer support, and post-installation tracking."
+          )}
           image="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1400&q=80"
-          imageAlt="Large solar panel setup for commercial operations"
+          imageAlt={t("Large solar panel setup for commercial operations")}
           reverse
           bullets={[
-            "Residential rooftop installation programs",
-            "Commercial solar deployment and maintenance",
-            "Standardized workflow from survey to commissioning",
+            t("Residential rooftop installation programs"),
+            t("Commercial solar deployment and maintenance"),
+            t("Standardized workflow from survey to commissioning"),
           ]}
         />
 
@@ -86,39 +88,42 @@ export default function AboutPage() {
           id="chapter-3"
           className="story-tone-c"
           eyebrow=""
-          title="Then we started going digital"
-          text="As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility."
+          title={t("Then we started going digital")}
+          text={t(
+            "As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility."
+          )}
           image="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1400&q=80"
-          imageAlt="Modern technology and digital systems workspace"
+          imageAlt={t("Modern technology and digital systems workspace")}
         />
 
         <SectionWrapper id="chapter-4" className="story-tone-d">
           <div className="story-chapter story-chapter-reverse">
             <AnimatedImage
               src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=1400&q=80"
-              alt="Corporate expansion roadmap and infrastructure planning"
+              alt={t("Corporate expansion roadmap and infrastructure planning")}
               direction="left"
             />
 
             <AnimatedText className="story-copy">
               <p className="story-eyebrow"></p>
-              <h2>Our vision is multi-sector and future-ready</h2>
+              <h2>{t("Our vision is multi-sector and future-ready")}</h2>
               <p>
-                With solar as our proven base, we are preparing structured expansion into electrical services,
-                agriculture-linked initiatives, and smart technology operations.
+                {t(
+                  "With solar as our proven base, we are preparing structured expansion into electrical services, agriculture-linked initiatives, and smart technology operations."
+                )}
               </p>
               <div className="story-mini-grid">
                 <article>
-                  <h3>Electrical</h3>
-                  <p>Field reliability and infrastructure-grade execution systems.</p>
+                  <h3>{t("Electrical")}</h3>
+                  <p>{t("Field reliability and infrastructure-grade execution systems.")}</p>
                 </article>
                 <article>
-                  <h3>Agriculture</h3>
-                  <p>Operational models that strengthen productivity and sustainability.</p>
+                  <h3>{t("Agriculture")}</h3>
+                  <p>{t("Operational models that strengthen productivity and sustainability.")}</p>
                 </article>
                 <article>
-                  <h3>Smart Tech</h3>
-                  <p>Digital layers for visibility, control, and scalable growth.</p>
+                  <h3>{t("Smart Tech")}</h3>
+                  <p>{t("Digital layers for visibility, control, and scalable growth.")}</p>
                 </article>
               </div>
             </AnimatedText>
@@ -129,8 +134,8 @@ export default function AboutPage() {
       <SectionWrapper id="core-values" className="story-values-wrap">
         <div className="story-container">
           <AnimatedText className="story-center-head">
-            <p className="story-eyebrow">Core Values</p>
-            <h2>The principles that shape every decision</h2>
+            <p className="story-eyebrow">{t("Core Values")}</p>
+            <h2>{t("The principles that shape every decision")}</h2>
           </AnimatedText>
 
           <div className="story-values-grid">
@@ -149,11 +154,12 @@ export default function AboutPage() {
       <SectionWrapper id="future-vision">
         <div className="story-container story-future-vision">
           <AnimatedText className="story-center-head">
-            <p className="story-eyebrow">Future Vision</p>
-            <h2>Building a trusted multi-sector corporate platform from Assam for the next decade.</h2>
+            <p className="story-eyebrow">{t("Future Vision")}</p>
+            <h2>{t("Building a trusted multi-sector corporate platform from Assam for the next decade.")}</h2>
             <p>
-              We are focused on disciplined growth, stronger digital execution, and sector expansion that creates
-              durable long-term value.
+              {t(
+                "We are focused on disciplined growth, stronger digital execution, and sector expansion that creates durable long-term value."
+              )}
             </p>
           </AnimatedText>
         </div>
@@ -162,16 +168,16 @@ export default function AboutPage() {
       <section id="story-cta" className="story-cta-section">
         <div className="story-container story-cta-shell">
           <AnimatedText className="story-cta-copy">
-            <p className="story-eyebrow">Partnership</p>
-            <h2>Let&apos;s Build the Future Together</h2>
-            <p>Connect with our team to start your next project with a company built for reliable execution.</p>
+            <p className="story-eyebrow">{t("Partnership")}</p>
+            <h2>{t("Let's Build the Future Together")}</h2>
+            <p>{t("Connect with our team to start your next project with a company built for reliable execution.")}</p>
           </AnimatedText>
           <div className="story-cta-row">
             <Link href="/contact" className="story-cta-button">
-              Contact Us
+              {t("Contact Us")}
             </Link>
             <Link href="/sectors/solar" className="story-cta-button story-cta-outline">
-              Get Quote
+              {t("Get Quote")}
             </Link>
           </div>
         </div>

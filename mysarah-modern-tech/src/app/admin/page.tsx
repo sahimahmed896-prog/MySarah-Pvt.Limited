@@ -17,13 +17,19 @@ export default async function AdminPage() {
 
   return (
     <main className="section container">
-      <div className="admin-head">
-        <h1>Lead Dashboard</h1>
-        <form action="/api/admin/logout" method="POST">
-          <button className="button button-outline" type="submit">
-            Logout
-          </button>
-        </form>
+      <div className="admin-shell">
+        <header className="admin-head">
+          <div>
+            <p className="admin-kicker">Operations Console</p>
+            <h1>Lead Dashboard</h1>
+            <p className="admin-subtitle">Manage incoming enquiries, track field visits, and close installations.</p>
+          </div>
+          <form action="/api/admin/logout" method="POST">
+            <button className="button button-outline" type="submit">
+              Logout
+            </button>
+          </form>
+        </header>
       </div>
       <AdminLeadsTable />
     </main>

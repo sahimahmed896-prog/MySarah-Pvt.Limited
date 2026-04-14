@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { company } from "@/lib/constants";
+import { useTranslation } from "react-i18next";
 
 type SlideVariant = "brand" | "lines" | "burst" | "grid";
 
@@ -47,6 +49,9 @@ const slides: SlideItem[] = [
 
 export default function SectorShowcaseSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderImageLoaded, setSliderImageLoaded] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -57,20 +62,39 @@ export default function SectorShowcaseSlider() {
   }, []);
 
   return (
-    <div className="sectors-slider-shell" aria-label="Sector showcase slider">
+    <div className="sectors-slider-shell" aria-label={t("Sector showcase slider")}>
       <div className="sectors-slider">
         <div className="sectors-track">
           {slides.map((slide, index) => (
-            <article
+            <motion.article
               key={slide.label}
-              className={`sectors-slide sectors-slide-${slide.variant} ${index === currentSlide ? "sectors-slide-active" : ""}`}
+              className={`sectors-slide sectors-slide-${slide.variant}`}
               aria-hidden={index !== currentSlide}
+              initial={{ opacity: 0 }}
+              animate={index === currentSlide ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: reduceMotion ? 0.2 : 0.9 }}
             >
+              {!sliderImageLoaded && index === currentSlide ? (
+                <div className="sectors-slide-skeleton" aria-hidden="true" />
+              ) : null}
               <div className="sectors-slide-media">
-                <Image src={slide.image ?? "/images/home.png"} alt={slide.title} fill className="sectors-slide-image" priority={index === 0} />
+                <Image
+                  src={slide.image ?? "/images/home.png"}
+                  alt={slide.variant === "brand" ? company.name : t(slide.title)}
+                  fill
+                  className="sectors-slide-image"
+                  priority={index === 0}
+                  onLoad={() => index === currentSlide && setSliderImageLoaded(true)}
+                />
                 <div className="sectors-slide-overlay" />
                 {slide.variant !== "brand" ? (
-                  <div className="sectors-slide-geometry" aria-hidden="true">
+                  <motion.div
+                    className="sectors-slide-geometry"
+                    aria-hidden="true"
+                    initial={{ opacity: 0 }}
+                    animate={index === currentSlide ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: reduceMotion ? 0 : 1.2, delay: 0.3 }}
+                  >
                     <svg viewBox="0 0 1000 700" className="sectors-geometry-svg" preserveAspectRatio="none">
                       {slide.variant === "lines" ? (
                         <>
@@ -103,22 +127,39 @@ export default function SectorShowcaseSlider() {
                         </>
                       ) : null}
                     </svg>
-                  </div>
+                  </motion.div>
                 ) : null}
-                <div className="sectors-slide-copy">
-                  <p>{slide.label}</p>
-                  <h3>{slide.title}</h3>
-                  <span>{slide.detail}</span>
-                </div>
+                <motion.div
+                  className="sectors-slide-copy"
+                  initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
+                  animate={index === currentSlide ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: reduceMotion ? 0.2 : 0.72, delay: 0.2 }}
+                >
+                  <p>{t(slide.label)}</p>
+                  <h3>{slide.variant === "brand" ? company.name : t(slide.title)}</h3>
+                  <span>{t(slide.detail)}</span>
+                </motion.div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
-        <div className="sectors-dots" aria-hidden="true">
+        <motion.div
+          className="sectors-dots"
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           {slides.map((slide, index) => (
-            <span key={slide.label} className={index === currentSlide ? "sectors-dot active" : "sectors-dot"} />
+            <button
+              key={slide.label}
+              type="button"
+              className={index === currentSlide ? "sectors-dot active" : "sectors-dot"}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`${t("Go to slide")}: ${t(slide.label)}`}
+            />
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

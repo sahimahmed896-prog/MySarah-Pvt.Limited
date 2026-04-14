@@ -3,16 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/sectors", label: "Sectors" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/admin", label: "Admin" },
+  { href: "/", labelKey: "Home" },
+  { href: "/sectors", labelKey: "Sectors" },
+  { href: "/about", labelKey: "About" },
+  { href: "/contact", labelKey: "Contact" },
 ];
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const pathname = usePathname();
 
   function isActive(href: string) {
@@ -50,12 +52,13 @@ export default function Navbar() {
                   prefetch
                   className={isActive(link.href) ? "nav-link active" : "nav-link"}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
+        <LanguageSwitcher />
       </div>
     </header>
   );

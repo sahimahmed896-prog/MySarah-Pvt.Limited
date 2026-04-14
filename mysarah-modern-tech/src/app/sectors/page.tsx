@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+"use client";
+
 import SectorCard from "@/components/shared/SectorCard";
 import SectionHeading from "@/components/shared/SectionHeading";
 import SectorShowcaseSlider from "@/components/sectors/SectorShowcaseSlider";
 import { sectors } from "@/lib/sectors";
+import { useTranslation } from "react-i18next";
 
 const sectorGroups = [
   {
@@ -42,12 +44,8 @@ const sectorGroups = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Sectors | Mysarah Modern Tech",
-  description: "Explore active and upcoming sectors of Mysarah Modern Tech Private Limited.",
-};
-
 export default function SectorsPage() {
+  const { t } = useTranslation();
   const sectorMap = new Map(sectors.map((sector) => [sector.slug, sector] as const));
 
   return (
@@ -59,9 +57,11 @@ export default function SectorsPage() {
       <section className="section section-soft sectors-content">
         <div className="container">
           <SectionHeading
-            eyebrow="Roadmap"
-            title="A structured multi-sector roadmap"
-            description="Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy."
+            eyebrow={t("Roadmap")}
+            title={t("A structured multi-sector roadmap")}
+            description={t(
+              "Solar stays active at the top, then the rest of the portfolio is grouped into a clearer business hierarchy."
+            )}
             align="center"
           />
 
@@ -71,16 +71,16 @@ export default function SectorsPage() {
                 <div className="sectors-group-banner">
                   <div className="sectors-group-banner-main">
                     <SectionHeading
-                      eyebrow={group.eyebrow}
-                      title={group.title}
-                      description={group.description}
+                      eyebrow={t(group.eyebrow)}
+                      title={t(group.title)}
+                      description={t(group.description)}
                     />
                   </div>
 
-                  <aside className="sectors-group-meta" aria-label={`${group.eyebrow} summary`}>
-                    <span className="sectors-group-meta-kicker">Priority cluster</span>
-                    <strong>{group.slugs.length} sectors</strong>
-                    <p>Curated for a cleaner business narrative and stronger visual hierarchy.</p>
+                  <aside className="sectors-group-meta" aria-label={`${t(group.eyebrow)} ${t("summary")}`}>
+                    <span className="sectors-group-meta-kicker">{t("Priority cluster")}</span>
+                    <strong>{group.slugs.length} {t("sectors")}</strong>
+                    <p>{t("Curated for a cleaner business narrative and stronger visual hierarchy.")}</p>
                   </aside>
                 </div>
 
