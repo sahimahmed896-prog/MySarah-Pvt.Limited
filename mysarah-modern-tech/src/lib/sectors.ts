@@ -21,7 +21,7 @@ export const sectors: Sector[] = [
     description:
       "End-to-end solar EPC solutions for residential rooftops, commercial campuses, and industrial facilities.",
     active: true,
-    heroImage: "/images/hero-solar.svg",
+    heroImage: "/images/solarTransition.png",
     category: "core-services",
   },
   {
@@ -30,7 +30,7 @@ export const sectors: Sector[] = [
     subtitle: "Reliable power systems and field execution",
     description: "Commercial, residential, and industrial electrical installation and maintenance services.",
     active: false,
-    heroImage: "/images/hero-grid.svg",
+    heroImage: "/images/electrical-services.jpeg",
     category: "core-services",
   },
   {
@@ -39,7 +39,7 @@ export const sectors: Sector[] = [
     subtitle: "Structured project execution for modern infrastructure",
     description: "End-to-end construction delivery across residential, commercial, and industrial requirements.",
     active: false,
-    heroImage: "/images/hero-grid.svg",
+    heroImage: "/images/construction-workers.jpg",
     category: "core-services",
   },
   {

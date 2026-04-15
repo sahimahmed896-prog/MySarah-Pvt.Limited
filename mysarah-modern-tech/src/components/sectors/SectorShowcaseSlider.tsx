@@ -29,7 +29,7 @@ const slides: SlideItem[] = [
     title: "Engineering the clean-energy transition",
     detail: "Residential rooftops, commercial campuses, and industrial deployments.",
     variant: "lines",
-    image: "/images/hero-solar.svg",
+    image: "/images/Energy-Transition-Challenge.jpg",
   },
   {
     label: "EV Infrastructure",
@@ -50,6 +50,7 @@ const slides: SlideItem[] = [
 export default function SectorShowcaseSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderImageLoaded, setSliderImageLoaded] = useState(false);
+  const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
   const reduceMotion = useReducedMotion();
   const { t } = useTranslation();
 
@@ -65,7 +66,11 @@ export default function SectorShowcaseSlider() {
     <div className="sectors-slider-shell" aria-label={t("Sector showcase slider")}>
       <div className="sectors-slider">
         <div className="sectors-track">
-          {slides.map((slide, index) => (
+          {slides.map((slide, index) => {
+            const imageSrc = slide.image ?? "/images/home.png";
+            const resolvedSrc = brokenImages[imageSrc] ? "/images/home.png" : imageSrc;
+
+            return (
             <motion.article
               key={slide.label}
               className={`sectors-slide sectors-slide-${slide.variant}`}
@@ -79,11 +84,23 @@ export default function SectorShowcaseSlider() {
               ) : null}
               <div className="sectors-slide-media">
                 <Image
-                  src={slide.image ?? "/images/home.png"}
+                  src={resolvedSrc}
                   alt={slide.variant === "brand" ? company.name : t(slide.title)}
                   fill
                   className="sectors-slide-image"
                   priority={index === 0}
+                  onError={() => {
+                    setBrokenImages((prev) => {
+                      if (prev[imageSrc]) {
+                        return prev;
+                      }
+
+                      return {
+                        ...prev,
+                        [imageSrc]: true,
+                      };
+                    });
+                  }}
                   onLoad={() => index === currentSlide && setSliderImageLoaded(true)}
                 />
                 <div className="sectors-slide-overlay" />
@@ -141,7 +158,8 @@ export default function SectorShowcaseSlider() {
                 </motion.div>
               </div>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
         <motion.div
           className="sectors-dots"

@@ -17,6 +17,7 @@ export default function HeroCarousel() {
   const { t } = useTranslation();
   const [active, setActive] = useState(0);
   const [loadedSlides, setLoadedSlides] = useState<boolean[]>(() => [false, false, false]);
+  const [brokenSlides, setBrokenSlides] = useState<boolean[]>(() => [false, false, false]);
   const reduceMotion = useReducedMotion();
 
   const slides: Slide[] = [
@@ -141,13 +142,22 @@ export default function HeroCarousel() {
                   className={"hero-image-wrapper"}
                 >
                   <Image
-                    src={slide.image}
+                    src={brokenSlides[index] ? "/images/home.png" : slide.image}
                     alt={slide.title}
                     width={620}
                     height={460}
                     className={index === active ? "hero-image-slide active" : "hero-image-slide"}
                     priority={index === 0}
                     loading={index === 0 ? undefined : "eager"}
+                    onError={() => {
+                      setBrokenSlides((prev) => {
+                        const next = [...prev];
+                        if (!next[index]) {
+                          next[index] = true;
+                        }
+                        return next;
+                      });
+                    }}
                     onLoad={() => {
                       setLoadedSlides((prev) => {
                         if (prev[index]) {

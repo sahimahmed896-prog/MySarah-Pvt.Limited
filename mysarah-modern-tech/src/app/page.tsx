@@ -25,14 +25,14 @@ export default function Home() {
     {
       id: "02",
       title: t("home.blueprint.card2.title"),
-      image: "/images/hero-grid.svg",
+      image: "/images/images%20engneer%20%26plan.jpeg",
       backTitle: t("home.blueprint.card2.backTitle"),
       backText: t("home.blueprint.card2.backText"),
     },
     {
       id: "03",
       title: t("home.blueprint.card3.title"),
-      image: "/images/hero-ev.svg",
+      image: "/images/deploy-optimize.jpeg",
       backTitle: t("home.blueprint.card3.backTitle"),
       backText: t("home.blueprint.card3.backText"),
     },
