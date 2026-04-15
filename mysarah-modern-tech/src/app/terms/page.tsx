@@ -4,7 +4,7 @@ import { company } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Terms of Service | Mysarah Modern Tech",
   description:
-    "Terms of Service for Mysarah Modern Tech Private Limited covering service scope, responsibilities, and usage conditions.",
+    "Terms of Services for Mysarah Modern Tech Private Limited covering service scopes, responsibilities, and usage conditions.",
 };
 
 export default function TermsPage() {
