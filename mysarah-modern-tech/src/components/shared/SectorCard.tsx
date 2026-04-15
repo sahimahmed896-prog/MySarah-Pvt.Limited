@@ -22,6 +22,7 @@ export default function SectorCard({ sector }: SectorCardProps) {
         src={cardImage}
         alt={sector.title}
         fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="sector-media-image"
         onError={() => {
           if (cardImage !== "/images/hero-grid.svg") {

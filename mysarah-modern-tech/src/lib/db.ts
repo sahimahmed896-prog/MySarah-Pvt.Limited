@@ -27,7 +27,22 @@ export async function connectDb() {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI as string, { dbName: "mysarah_corp" });
+    const connectPromise = mongoose.connect(MONGODB_URI as string, {
+      dbName: "mysarah_corp",
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 8000,
+      connectTimeoutMS: 5000,
+      maxPoolSize: 10,
+      retryWrites: true,
+      retryAttempts: 1,
+    });
+
+    // Add additional timeout safety net
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("MongoDB connection timeout exceeded 8 seconds")), 8000)
+    );
+
+    cached.promise = Promise.race([connectPromise, timeoutPromise]);
   }
 
   cached.conn = await cached.promise;

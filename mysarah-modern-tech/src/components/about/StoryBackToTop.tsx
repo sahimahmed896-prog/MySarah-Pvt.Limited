@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, useScroll } from "framer-motion";
 import { useMotionValueEvent } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -9,10 +9,22 @@ export default function StoryBackToTop() {
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
+  const [enableTracking, setEnableTracking] = useState(false);
   const { t } = useTranslation();
 
+  // Defer scroll tracking until page is idle
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setEnableTracking(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setVisible(latest > 900);
+    if (enableTracking) {
+      setVisible(latest > 900);
+    }
   });
 
   return (

@@ -1,10 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 
 export default function StoryProgress() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
+  const [enableSpring, setEnableSpring] = useState(false);
+
+  // Defer spring animation until after page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setEnableSpring(!reduceMotion);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [reduceMotion]);
 
   const springProgress = useSpring(scrollYProgress, {
     stiffness: 120,
@@ -12,7 +23,7 @@ export default function StoryProgress() {
     mass: 0.22,
   });
 
-  const progress = reduceMotion ? scrollYProgress : springProgress;
+  const progress = reduceMotion || !enableSpring ? scrollYProgress : springProgress;
   const scaleX = useTransform(progress, [0, 1], [0, 1]);
 
   return (

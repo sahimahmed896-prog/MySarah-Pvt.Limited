@@ -36,7 +36,7 @@ const slides: SlideItem[] = [
     title: "Connected charging for the next mobility wave",
     detail: "Fast, reliable charging ecosystems for urban and highway growth.",
     variant: "burst",
-    image: "/images/hero-ev.svg",
+    image: "/images/mobility.jpg",
   },
   {
     label: "Smart Buildings",
@@ -51,6 +51,7 @@ export default function SectorShowcaseSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderImageLoaded, setSliderImageLoaded] = useState(false);
   const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
+  const [imageTimeout, setImageTimeout] = useState<Record<string, boolean>>({});
   const reduceMotion = useReducedMotion();
   const { t } = useTranslation();
 
@@ -62,13 +63,29 @@ export default function SectorShowcaseSlider() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    // Set timeout for image loading to prevent page from hanging
+    const slide = slides[currentSlide];
+    if (slide && slide.image && !sliderImageLoaded) {
+      const timeout = setTimeout(() => {
+        setImageTimeout((prev) => ({
+          ...prev,
+          [slide.image!]: true,
+        }));
+      }, 5000); // 5 second timeout for image
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentSlide, sliderImageLoaded]);
+
   return (
     <div className="sectors-slider-shell" aria-label={t("Sector showcase slider")}>
       <div className="sectors-slider">
         <div className="sectors-track">
           {slides.map((slide, index) => {
             const imageSrc = slide.image ?? "/images/home.png";
-            const resolvedSrc = brokenImages[imageSrc] ? "/images/home.png" : imageSrc;
+            const isTimedOut = imageTimeout[imageSrc];
+            const resolvedSrc = brokenImages[imageSrc] || isTimedOut ? "/images/home.png" : imageSrc;
 
             return (
             <motion.article
@@ -79,7 +96,7 @@ export default function SectorShowcaseSlider() {
               animate={index === currentSlide ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: reduceMotion ? 0.2 : 0.9 }}
             >
-              {!sliderImageLoaded && index === currentSlide ? (
+              {!sliderImageLoaded && !isTimedOut && index === currentSlide ? (
                 <div className="sectors-slide-skeleton" aria-hidden="true" />
               ) : null}
               <div className="sectors-slide-media">
@@ -87,6 +104,7 @@ export default function SectorShowcaseSlider() {
                   src={resolvedSrc}
                   alt={slide.variant === "brand" ? company.name : t(slide.title)}
                   fill
+                  sizes="100vw"
                   className="sectors-slide-image"
                   priority={index === 0}
                   onError={() => {

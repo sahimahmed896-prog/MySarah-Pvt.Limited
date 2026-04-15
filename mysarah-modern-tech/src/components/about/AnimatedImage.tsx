@@ -14,15 +14,31 @@ interface AnimatedImageProps {
 export default function AnimatedImage({ src, alt, direction = "right", className = "" }: AnimatedImageProps) {
   const reduceMotion = useReducedMotion();
   const [imageSrc, setImageSrc] = useState(src);
+  const [enableScrollTracking, setEnableScrollTracking] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+  
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: enableScrollTracking ? ref : null,
     offset: ["start end", "end start"],
   });
 
   useEffect(() => {
     setImageSrc(src);
   }, [src]);
+
+  // Defer scroll tracking setup until page is idle
+  useEffect(() => {
+    if (reduceMotion) {
+      setEnableScrollTracking(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setEnableScrollTracking(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [reduceMotion]);
 
   const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.02, 1.07, 1.02]);
@@ -35,9 +51,9 @@ export default function AnimatedImage({ src, alt, direction = "right", className
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: reduceMotion ? 0.25 : 0.82, ease: [0.22, 1, 0.36, 1] }}
-      style={{ y: reduceMotion ? 0 : y }}
+      style={{ y: reduceMotion || !enableScrollTracking ? 0 : y }}
     >
-      <motion.div className="story-image-inner" style={{ scale: reduceMotion ? 1.02 : scale }}>
+      <motion.div className="story-image-inner" style={{ scale: reduceMotion || !enableScrollTracking ? 1.02 : scale }}>
         <Image
           src={imageSrc}
           alt={alt}

@@ -21,22 +21,36 @@ export default function SolarInsightsPanel() {
       setLoading(true);
       setError("");
       try {
-        const response = await fetch("/api/insights/solar", { method: "GET", cache: "no-store" });
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000); // 12 second timeout (allows 8s DB + 4s network)
+
+        const response = await fetch("/api/insights/solar", { 
+          method: "GET", 
+          cache: "no-store",
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
         const data = await response.json();
         if (!response.ok) {
           setError(data.error || t("Unable to load insights."));
           return;
         }
         setInsights(data.data);
-      } catch {
-        setError(t("Unable to load insights."));
+      } catch (err) {
+        if (err instanceof Error && err.name === 'AbortError') {
+          setError(t("Insights are taking longer than expected. The app will continue without them."));
+        } else {
+          setError(t("Unable to load installation analytics."));
+        }
       } finally {
         setLoading(false);
       }
     }
 
     loadInsights();
-  }, []);
+  }, [t]);
 
   if (loading) {
     return <p className="insights-loading">{t("Loading installation analytics...")}</p>;

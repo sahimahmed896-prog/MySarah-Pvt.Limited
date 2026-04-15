@@ -3009,6 +3009,7 @@ a {
 }
 
 .story-image-shell {
+  position: relative;
   border-radius: 1rem;
   box-shadow: 0 28px 54px rgba(13, 40, 24, 0.18);
 }
