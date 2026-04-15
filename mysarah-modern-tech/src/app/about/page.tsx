@@ -17,7 +17,7 @@ export default function AboutPage() {
   const chapterItems = [
     { id: "chapter-1", label: t("Field Experience") },
     { id: "chapter-2", label: t("Beginning with Solar") },
-    { id: "chapter-3", label: t("Going Digital") },
+    { id: "chapter-3", label: t("Solar Installation") },
     { id: "chapter-4", label: t("Multi-Sector Vision") },
     { id: "core-values", label: t("Core Values") },
     { id: "future-vision", label: t("Future Vision") },
@@ -84,17 +84,33 @@ export default function AboutPage() {
           ]}
         />
 
-        <StorySection
-          id="chapter-3"
-          className="story-tone-c"
-          eyebrow=""
-          title={t("Then we started going digital")}
-          text={t(
-            "As project volume increased, we focused on digitizing customer touchpoints and internal workflows. This improved response times, expanded accessibility, and strengthened operational visibility."
-          )}
-          image="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1400&q=80"
-          imageAlt={t("Modern technology and digital systems workspace")}
-        />
+        <SectionWrapper id="chapter-3" className="story-tone-c story-solar-video-wrap">
+          <div className="story-solar-video-shell">
+            <video
+              className="story-solar-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/solarTransition.png"
+            >
+              <source src="/videos/about.mp4" type="video/mp4" />
+            </video>
+            <div className="story-solar-video-overlay" />
+
+            <div className="story-container story-solar-video-content">
+              <AnimatedText className="story-solar-video-copy">
+                <p className="story-eyebrow">Solar Installation</p>
+                <h2>Execution-driven solar installation at business scale</h2>
+                <p>
+                  Our solar operations are built for measurable outcomes across residential, commercial, and
+                  institutional projects. From site assessment and engineering to commissioning and lifecycle support,
+                  we deliver with disciplined process, quality control, and long-term service accountability.
+                </p>
+              </AnimatedText>
+            </div>
+          </div>
+        </SectionWrapper>
 
         <SectionWrapper id="chapter-4" className="story-tone-d">
           <div className="story-chapter story-chapter-reverse">

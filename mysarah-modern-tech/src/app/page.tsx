@@ -32,7 +32,7 @@ export default function Home() {
     {
       id: "03",
       title: t("home.blueprint.card3.title"),
-      image: "/images/Deploy%20and%20optimize.jpg",
+      image: "/images/deploy.png",
       backTitle: t("home.blueprint.card3.backTitle"),
       backText: t("home.blueprint.card3.backText"),
     },
@@ -44,6 +44,18 @@ export default function Home() {
 
       <section className="section media-story-section">
         <div className="media-story-image-shell">
+          <video
+            className="media-story-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/solarTransition.png"
+          >
+            <source src="/videos/about.mp4" type="video/mp4" />
+          </video>
+          <div className="media-story-overlay" />
+
           <div className="container media-story-content">
             <p className="eyebrow">{t("Who We Are")}</p>
             <h2>{t("A premium operational model built for scale")}</h2>

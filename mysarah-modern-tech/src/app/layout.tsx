@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import I18nProvider from "@/components/layout/I18nProvider";
 import Navbar from "@/components/layout/Navbar";
 import Analytics from "@/components/shared/Analytics";
+import EmailButton from "@/components/shared/EmailButton";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { seo } from "@/lib/constants";
 import "./globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <EmailButton />
           <WhatsAppButton />
         </I18nProvider>
       </body>

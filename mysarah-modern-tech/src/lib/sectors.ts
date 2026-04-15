@@ -49,7 +49,7 @@ export const sectors: Sector[] = [
     subtitle: "Professional planning and operational control",
     description: "Corporate and public event management with complete planning, coordination, and on-ground execution.",
     active: false,
-    heroImage: "/images/EventMg.jpeg",
+    heroImage: "/images/event.png",
     imageFit: "contain",
     category: "lifestyle-public-services",
   },
@@ -59,7 +59,7 @@ export const sectors: Sector[] = [
     subtitle: "Technology-backed farm growth programs",
     description: "Agriculture initiatives focused on productivity, supply quality, and sustainable field operations.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/agriculture.png",
     category: "agriculture",
   },
   {
@@ -68,7 +68,7 @@ export const sectors: Sector[] = [
     subtitle: "Skill and knowledge ecosystem development",
     description: "Education and training programs designed to build future-ready talent and local opportunity.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/Education.png",
     category: "lifestyle-public-services",
   },
   {
@@ -77,7 +77,7 @@ export const sectors: Sector[] = [
     subtitle: "Grassroots to organized performance initiatives",
     description: "Sports programs and event initiatives that support participation, training, and community engagement.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/sports.png",
     category: "lifestyle-public-services",
   },
   {
@@ -86,7 +86,7 @@ export const sectors: Sector[] = [
     subtitle: "Destination development and travel services",
     description: "Tourism services and destination-focused initiatives to support local and regional economic growth.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/tourism.webp",
     category: "lifestyle-public-services",
   },
   {
@@ -95,7 +95,7 @@ export const sectors: Sector[] = [
     subtitle: "Accessible wellness and healthcare support",
     description: "Health sector initiatives oriented toward service accessibility, awareness, and coordinated care delivery.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/health.png",
     category: "lifestyle-public-services",
   },
   {
@@ -113,7 +113,7 @@ export const sectors: Sector[] = [
     subtitle: "Cross-border trade operations",
     description: "Export and import services with process coordination, compliance awareness, and supply-chain support.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/import.png",
     category: "business-industry",
   },
   {
@@ -122,7 +122,7 @@ export const sectors: Sector[] = [
     subtitle: "Scalable production and operations",
     description: "Manufacturing-focused initiatives for process discipline, quality output, and growth-oriented production.",
     active: false,
-    heroImage: "/images/hero-grid.svg",
+    heroImage: "/images/manufacture.png",
     category: "business-industry",
   },
   {
@@ -131,7 +131,7 @@ export const sectors: Sector[] = [
     subtitle: "Procurement and distribution channels",
     description: "Integrated purchase and sales operations to support reliable sourcing and customer-side delivery.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/sales.png",
     category: "business-industry",
   },
   {
@@ -140,7 +140,7 @@ export const sectors: Sector[] = [
     subtitle: "Project contracts and field execution",
     description: "Contract-based execution services covering manpower coordination, timelines, and field delivery quality.",
     active: false,
-    heroImage: "/images/hero-grid.svg",
+    heroImage: "/images/field.png",
     category: "business-industry",
   },
   {
@@ -149,7 +149,7 @@ export const sectors: Sector[] = [
     subtitle: "Digital platforms and technology services",
     description: "IT services spanning software systems, digital operations, and business process enablement.",
     active: false,
-    heroImage: "/images/hero-ev.svg",
+    heroImage: "/images/ITfield.png",
     category: "technology-innovation",
   },
   {
@@ -158,7 +158,7 @@ export const sectors: Sector[] = [
     subtitle: "Intelligent systems for future operations",
     description: "AI initiatives focused on automation, insight generation, and high-efficiency decision support.",
     active: false,
-    heroImage: "/images/hero-grid.svg",
+    heroImage: "/images/Ai.png",
     category: "technology-innovation",
   },
 ];

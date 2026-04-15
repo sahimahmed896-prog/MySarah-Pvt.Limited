@@ -29,7 +29,7 @@ export default function HeroCarousel() {
         </>
       ),
       subtitle: t("Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions."),
-      image: "/images/home.png",
+      image: "/images/home1.png",
     },
     {
       title: t("Corporate execution with startup speed"),
@@ -39,7 +39,7 @@ export default function HeroCarousel() {
         </>
       ),
       subtitle: t("Structured delivery, transparent process, and technology-first field operations for residential and commercial projects."),
-      image: "/images/startup.jpg",
+      image: "/images/offer3.png",
     },
     {
       title: t("Designed to scale across sectors"),
@@ -49,7 +49,7 @@ export default function HeroCarousel() {
         </>
       ),
       subtitle: t("A modular service architecture that expands from solar into smart infrastructure without redesigning the business core."),
-      image: "/images/Design%20to%20scale.jpeg",
+      image: "/images/startup.jpg",
     },
   ];
 
@@ -142,7 +142,7 @@ export default function HeroCarousel() {
                   className={"hero-image-wrapper"}
                 >
                   <Image
-                    src={brokenSlides[index] ? "/images/home.png" : slide.image}
+                    src={brokenSlides[index] ? "/images/home1.png" : slide.image}
                     alt={slide.title}
                     width={620}
                     height={460}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
@@ -16,6 +17,11 @@ const links = [
 export default function Navbar() {
   const { t } = useTranslation();
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   function isActive(href: string) {
     if (href === "/") {
@@ -43,7 +49,25 @@ export default function Navbar() {
             <small>Private Limited</small>
           </div>
         </Link>
-        <nav aria-label="Primary navigation">
+
+        <button
+          type="button"
+          className={menuOpen ? "mobile-menu-toggle is-open" : "mobile-menu-toggle"}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="site-primary-menu"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav
+          id="site-primary-menu"
+          className={menuOpen ? "site-nav is-open" : "site-nav"}
+          aria-label="Primary navigation"
+        >
           <ul className="nav-list">
             {links.map((link) => (
               <li key={link.href}>
@@ -57,8 +81,15 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          <div className="nav-mobile-language">
+            <LanguageSwitcher />
+          </div>
         </nav>
-        <LanguageSwitcher />
+
+        <div className="nav-desktop-language">
+          <LanguageSwitcher />
+        </div>
       </div>
     </header>
   );

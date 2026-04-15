@@ -19,31 +19,31 @@ interface SlideItem {
 const slides: SlideItem[] = [
   {
     label: "Brand Presence",
-    title: company.name,
-    detail: "Private Limited",
-    variant: "brand",
-    image: "/images/home.png",
+    title: " ",
+    detail: " ",
+    variant: "",
+    image: "/images/sector1.png",
   },
   {
     label: "Solar EPC",
     title: "Engineering the clean-energy transition",
     detail: "Residential rooftops, commercial campuses, and industrial deployments.",
     variant: "lines",
-    image: "/images/Energy-Transition-Challenge.jpg",
+    image: "/images/sector2.jpg",
   },
   {
     label: "EV Infrastructure",
     title: "Connected charging for the next mobility wave",
     detail: "Fast, reliable charging ecosystems for urban and highway growth.",
     variant: "burst",
-    image: "/images/connected%20charging%20for%20mobility.jpg",
+    image: "/images/sector3.png",
   },
   {
     label: "Smart Buildings",
     title: "Digital systems for resilient facilities",
     detail: "Automation, security, and energy intelligence in one view.",
     variant: "grid",
-    image: "/images/hero-grid.svg",
+    image: "/images/sector4.png",
   },
 ];
 

@@ -35,7 +35,6 @@ export default function SectorCard({ sector }: SectorCardProps) {
       />
       <div className="sector-media-overlay" />
       <p className="sector-state">{sector.active ? "Active" : "Coming Soon"}</p>
-      {!sector.active ? <span className="sector-seal">Coming Soon</span> : null}
       <div className="sector-content">
         <h3>{sector.title}</h3>
         <p>{sector.description}</p>
