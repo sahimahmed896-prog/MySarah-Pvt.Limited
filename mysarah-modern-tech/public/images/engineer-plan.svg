@@ -1,0 +1,33 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Engineer and Plan</title>
+  <desc id="desc">Blueprint-style illustration for engineering and execution planning.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0b3b62"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <rect x="160" y="140" width="1280" height="720" rx="28" fill="#ffffff" fill-opacity="0.05"/>
+  <rect x="220" y="220" width="520" height="300" rx="20" fill="#0f2438" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="4"/>
+  <rect x="820" y="220" width="520" height="300" rx="20" fill="#0f2438" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="4"/>
+  <rect x="220" y="570" width="1120" height="200" rx="20" fill="#0f2438" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="4"/>
+
+  <line x1="300" y1="320" x2="660" y2="320" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.75"/>
+  <line x1="300" y1="380" x2="660" y2="380" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.55"/>
+  <line x1="900" y1="320" x2="1260" y2="320" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.75"/>
+  <line x1="900" y1="380" x2="1260" y2="380" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.55"/>
+  <line x1="300" y1="650" x2="1260" y2="650" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.65"/>
+  <line x1="300" y1="710" x2="900" y2="710" stroke="#67e8f9" stroke-width="4" stroke-opacity="0.5"/>
+
+  <circle cx="780" cy="520" r="68" fill="url(#accent)" fill-opacity="0.2" stroke="#22d3ee" stroke-width="6"/>
+  <path d="M780 472 V568 M732 520 H828" stroke="#22d3ee" stroke-width="8" stroke-linecap="round"/>
+
+  <text x="800" y="915" text-anchor="middle" font-size="58" fill="#e2f5ff" font-family="Segoe UI, Arial, sans-serif">Engineer &amp; Plan</text>
+</svg>
