@@ -39,7 +39,7 @@ export default function HeroCarousel() {
         </>
       ),
       subtitle: t("Structured delivery, transparent process, and technology-first field operations for residential and commercial projects."),
-      image: "/images/hero-grid.svg",
+      image: "/images/startup.jpg",
     },
     {
       title: t("Designed to scale across sectors"),
@@ -49,7 +49,7 @@ export default function HeroCarousel() {
         </>
       ),
       subtitle: t("A modular service architecture that expands from solar into smart infrastructure without redesigning the business core."),
-      image: "/images/hero-ev.svg",
+      image: "/images/Design%20to%20scale.jpeg",
     },
   ];
 
@@ -146,6 +146,8 @@ export default function HeroCarousel() {
                     alt={slide.title}
                     width={620}
                     height={460}
+                    quality={95}
+                    sizes="(max-width: 1024px) 100vw, 620px"
                     className={index === active ? "hero-image-slide active" : "hero-image-slide"}
                     priority={index === 0}
                     loading={index === 0 ? undefined : "eager"}

@@ -5,6 +5,7 @@ export interface Sector {
   description: string;
   active: boolean;
   heroImage: string;
+  imageFit?: "cover" | "contain";
   category:
     | "core-services"
     | "business-industry"
@@ -30,7 +31,7 @@ export const sectors: Sector[] = [
     subtitle: "Reliable power systems and field execution",
     description: "Commercial, residential, and industrial electrical installation and maintenance services.",
     active: false,
-    heroImage: "/images/electrical-services.jpeg",
+    heroImage: "/images/electrical-srevices.jpg",
     category: "core-services",
   },
   {
@@ -39,7 +40,7 @@ export const sectors: Sector[] = [
     subtitle: "Structured project execution for modern infrastructure",
     description: "End-to-end construction delivery across residential, commercial, and industrial requirements.",
     active: false,
-    heroImage: "/images/construction-workers.jpg",
+    heroImage: "/images/construction.jpg",
     category: "core-services",
   },
   {
@@ -48,7 +49,8 @@ export const sectors: Sector[] = [
     subtitle: "Professional planning and operational control",
     description: "Corporate and public event management with complete planning, coordination, and on-ground execution.",
     active: false,
-    heroImage: "/images/home.png",
+    heroImage: "/images/EventMg.jpeg",
+    imageFit: "contain",
     category: "lifestyle-public-services",
   },
   {

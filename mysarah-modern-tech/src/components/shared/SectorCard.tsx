@@ -11,6 +11,7 @@ interface SectorCardProps {
 
 export default function SectorCard({ sector }: SectorCardProps) {
   const [cardImage, setCardImage] = useState(sector.heroImage);
+  const imageFitClass = sector.imageFit === "contain" ? "sector-media-image-contain" : "";
 
   useEffect(() => {
     setCardImage(sector.heroImage);
@@ -22,8 +23,10 @@ export default function SectorCard({ sector }: SectorCardProps) {
         src={cardImage}
         alt={sector.title}
         fill
+        quality={95}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="sector-media-image"
+        className={`sector-media-image ${imageFitClass}`.trim()}
+        style={{ objectFit: sector.imageFit ?? "cover", objectPosition: "center" }}
         onError={() => {
           if (cardImage !== "/images/hero-grid.svg") {
             setCardImage("/images/hero-grid.svg");

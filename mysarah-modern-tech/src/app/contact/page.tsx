@@ -42,6 +42,7 @@ export default function ContactPage() {
               src="/images/query.png"
               alt="Professional discussion and project planning"
               fill
+              quality={95}
               priority
               sizes="(max-width: 1024px) 100vw, 48vw"
               className="contact-hero-image"

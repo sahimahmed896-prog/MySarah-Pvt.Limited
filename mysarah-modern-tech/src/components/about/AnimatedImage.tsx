@@ -58,6 +58,7 @@ export default function AnimatedImage({ src, alt, direction = "right", className
           src={imageSrc}
           alt={alt}
           fill
+          quality={95}
           sizes="(max-width: 768px) 100vw, 50vw"
           loading="lazy"
           onError={() => {

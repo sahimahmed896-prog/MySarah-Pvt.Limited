@@ -14,9 +14,10 @@ export default function StoryHero() {
       {!loaded ? <div className="story-hero-skeleton" aria-hidden="true" /> : null}
 
       <Image
-        src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=80"
+        src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2200&q=95"
         alt={t("Field operations and modern infrastructure")}
         fill
+        quality={95}
         priority
         sizes="100vw"
         className="story-hero-image"

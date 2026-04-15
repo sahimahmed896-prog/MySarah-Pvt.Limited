@@ -36,7 +36,7 @@ const slides: SlideItem[] = [
     title: "Connected charging for the next mobility wave",
     detail: "Fast, reliable charging ecosystems for urban and highway growth.",
     variant: "burst",
-    image: "/images/mobility.jpg",
+    image: "/images/connected%20charging%20for%20mobility.jpg",
   },
   {
     label: "Smart Buildings",
@@ -104,6 +104,7 @@ export default function SectorShowcaseSlider() {
                   src={resolvedSrc}
                   alt={slide.variant === "brand" ? company.name : t(slide.title)}
                   fill
+                  quality={95}
                   sizes="100vw"
                   className="sectors-slide-image"
                   priority={index === 0}

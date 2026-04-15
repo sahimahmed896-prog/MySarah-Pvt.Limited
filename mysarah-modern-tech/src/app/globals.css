@@ -977,7 +977,7 @@ a {
   inset: 0;
   object-fit: cover;
   z-index: 0;
-  transform: scale(1.02);
+  transform: scale(1);
   transition: transform 0.35s ease;
 }
 
@@ -995,7 +995,7 @@ a {
 }
 
 .sector-card:hover .sector-media-image {
-  transform: scale(1.07);
+  transform: scale(1.03);
 }
 
 .sector-card:hover .sector-media-overlay {
