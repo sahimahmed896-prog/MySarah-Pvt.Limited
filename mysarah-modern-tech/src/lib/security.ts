@@ -11,12 +11,26 @@ export function getClientIp(request: Request) {
 
 function getAllowedOrigins(request: Request) {
   const ownOrigin = new URL(request.url).origin;
+  const requestUrl = new URL(request.url);
+  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
+  const host = request.headers.get("host")?.split(",")[0]?.trim();
+  const originHost = forwardedHost || host;
+  const forwardedProto = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim();
+  const protocol = forwardedProto || requestUrl.protocol.replace(":", "");
   const configured = (process.env.ALLOWED_ORIGINS || "")
     .split(",")
     .map((origin) => origin.trim())
     .filter(Boolean);
 
-  return new Set([ownOrigin, ...configured]);
+  const inferredOrigins = originHost
+    ? [
+        `${protocol}://${originHost}`,
+        `http://${originHost}`,
+        `https://${originHost}`,
+      ]
+    : [];
+
+  return new Set([ownOrigin, ...inferredOrigins, ...configured]);
 }
 
 export function isCrossSiteBlocked(request: Request) {

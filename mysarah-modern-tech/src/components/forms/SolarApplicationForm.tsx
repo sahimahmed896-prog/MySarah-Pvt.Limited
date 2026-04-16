@@ -226,6 +226,11 @@ export default function SolarApplicationForm() {
   function handleUseCurrentLocation() {
     setGpsStatus("");
 
+    if (!window.isSecureContext) {
+      setGpsStatus(t("GPS requires HTTPS (or localhost). Open this site on localhost or secure HTTPS URL to enable location."));
+      return;
+    }
+
     if (!("geolocation" in navigator)) {
       setGpsStatus(t("GPS is not available in this browser."));
       return;
