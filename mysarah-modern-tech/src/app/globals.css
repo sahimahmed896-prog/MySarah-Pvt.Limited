@@ -1311,7 +1311,6 @@ a {
 
     radial-gradient(circle at 82% 8%, rgba(176, 139, 58, 0.16), transparent 22%);
   border-radius: 0;
-=======
 }
 
 .sectors-hero::before,
@@ -2047,6 +2046,64 @@ a {
   padding: 0.1rem 0.2rem;
 }
 
+.permission-gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 125;
+  background: rgba(9, 22, 14, 0.42);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.permission-gate-card {
+  width: min(520px, 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(18, 69, 42, 0.18);
+  background: linear-gradient(180deg, #ffffff 0%, #f4faf5 100%);
+  box-shadow: 0 26px 58px rgba(8, 30, 18, 0.3);
+  padding: 1rem;
+  display: grid;
+  gap: 0.68rem;
+}
+
+.permission-gate-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  color: #1e7a45;
+  font-weight: 700;
+}
+
+.permission-gate-card h3 {
+  font-size: 1.2rem;
+}
+
+.permission-gate-card > p {
+  color: #3f5f4f;
+  font-size: 0.92rem;
+}
+
+.permission-gate-message {
+  border: 1px solid rgba(165, 39, 39, 0.22);
+  border-radius: 10px;
+  background: rgba(252, 239, 239, 0.92);
+  color: #972727;
+  font-size: 0.84rem;
+  padding: 0.55rem 0.62rem;
+}
+
+.permission-gate-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.permission-gate-actions .button {
+  min-height: auto;
+  padding: 0.52rem 0.85rem;
+}
+
 .admin-error-banner {
   margin-bottom: 0.8rem;
   border: 1px solid rgba(165, 39, 39, 0.25);
@@ -2065,6 +2122,13 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .permission-gate-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -4738,6 +4802,178 @@ a {
   gap: 0.45rem;
 }
 
+.solar-submit-helper {
+  font-size: 0.8rem;
+  color: #3f5f4f;
+}
+
+.solar-document-section {
+  border: 1px solid rgba(14, 63, 38, 0.13);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f7fbf7 0%, #eef7f0 100%);
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.solar-document-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.solar-document-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.66rem;
+  color: #1b7b43;
+  font-weight: 700;
+}
+
+.solar-document-head h4 {
+  margin-top: 0.35rem;
+  font-size: 1rem;
+}
+
+.solar-document-note {
+  border-radius: 999px;
+  border: 1px solid rgba(14, 63, 38, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  color: #145d33;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.solar-document-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.solar-document-card {
+  border: 1px solid rgba(14, 63, 38, 0.11);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.72rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.solar-document-card-captured {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(236, 245, 238, 0.92));
+}
+
+.solar-document-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+
+.solar-document-card-head h5 {
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  color: #173b28;
+}
+
+.solar-document-card-head p {
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: #4c6959;
+}
+
+.solar-document-badge {
+  border-radius: 999px;
+  border: 1px solid rgba(14, 63, 38, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  color: #496452;
+  padding: 0.24rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.solar-document-badge.is-complete {
+  border-color: rgba(27, 123, 67, 0.26);
+  background: rgba(27, 123, 67, 0.09);
+  color: #145d33;
+}
+
+.solar-document-card input[type="file"] {
+  padding: 0.56rem 0.7rem;
+  background: rgba(252, 254, 253, 0.95);
+}
+
+.solar-document-meta {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: #496452;
+}
+
+.solar-document-error {
+  color: var(--danger);
+}
+
+.solar-document-files {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.solar-document-files li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.55rem;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(243, 248, 244, 0.94);
+  border: 1px solid rgba(14, 63, 38, 0.08);
+  padding: 0.42rem 0.55rem;
+  font-size: 0.76rem;
+}
+
+.solar-document-remove {
+  border: 0;
+  background: transparent;
+  color: #145d33;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-attachments {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.admin-attachments ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.admin-attachments li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  border: 1px solid rgba(14, 63, 38, 0.1);
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+  background: rgba(247, 251, 247, 0.92);
+}
+
+.admin-attachments a {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
 @media (max-width: 1080px) {
   .solar-hero-panel {
     grid-template-columns: 1fr;
@@ -4763,9 +4999,15 @@ a {
 
   .solar-gps-head,
   .solar-gps-grid,
-  .solar-gps-actions {
+  .solar-gps-actions,
+  .solar-document-grid {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .solar-document-head,
+  .solar-document-card-head {
+    flex-direction: column;
   }
 
   .solar-form-topbar {

@@ -1,11 +1,19 @@
 import { z } from "zod";
 
+const leadAttachmentSchema = z.object({
+  label: z.string().trim().min(2, "Attachment label is required.").max(80, "Attachment label is too long."),
+  url: z.string().trim().url("Attachment URL must be valid.").max(1000, "Attachment URL is too long."),
+  fileName: z.string().trim().min(1, "Attachment file name is required.").max(200, "Attachment file name is too long."),
+  publicId: z.string().trim().min(1, "Attachment public ID is required.").max(200, "Attachment public ID is too long."),
+});
+
 export const leadSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters.").max(80, "Name is too long.").regex(/^[A-Za-z0-9 .,'-]+$/, "Name contains invalid characters."),
   phone: z.string().trim().min(7, "Phone number is too short.").max(20, "Phone number is too long.").regex(/^[0-9+\- ()]+$/, "Phone number contains invalid characters."),
   location: z.string().trim().min(2, "Location is required.").max(120, "Location is too long."),
   type: z.enum(["quote", "contact", "order"]),
   message: z.string().trim().min(10, "Message must be at least 10 characters.").max(1200, "Message is too long."),
+  attachments: z.array(leadAttachmentSchema).max(20, "Too many attachments.").default([]),
 });
 
 export const adminLoginSchema = z.object({

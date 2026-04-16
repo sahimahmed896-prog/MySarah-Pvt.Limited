@@ -34,7 +34,6 @@ export async function connectDb() {
       connectTimeoutMS: 5000,
       maxPoolSize: 10,
       retryWrites: true,
-      retryAttempts: 1,
     });
 
     // Add additional timeout safety net

@@ -24,6 +24,106 @@ interface SolarFormData {
   notes: string;
 }
 
+type UploadDocumentKey =
+  | "aadhaarCard"
+  | "panCard"
+  | "electricityBill"
+  | "bankPassbook"
+  | "jamaBandiCertificate"
+  | "gpsPhoto"
+  | "signature"
+  | "passportSizePhotos";
+
+interface UploadedDocument {
+  label: string;
+  url: string;
+  fileName: string;
+  publicId: string;
+}
+
+interface ChecklistItem {
+  key: UploadDocumentKey;
+  label: string;
+  helper: string;
+  acceptedFiles: string;
+  requiredCount: number;
+  multiple?: boolean;
+}
+
+const documentChecklist: Array<ChecklistItem | { key: "contactNumber" | "emailId"; label: string; helper: string; kind: "captured" }> = [
+  {
+    key: "aadhaarCard",
+    label: "Aadhaar Card",
+    helper: "Upload a clear front-side scan/photo or PDF.",
+    acceptedFiles: "image/*,application/pdf",
+    requiredCount: 1,
+  },
+  {
+    key: "panCard",
+    label: "PAN Card",
+    helper: "Upload a readable image or PDF copy of the PAN card.",
+    acceptedFiles: "image/*,application/pdf",
+    requiredCount: 1,
+  },
+  {
+    key: "electricityBill",
+    label: "Latest Electricity Bill",
+    helper: "Upload the most recent bill image or PDF.",
+    acceptedFiles: "image/*,application/pdf",
+    requiredCount: 1,
+  },
+  {
+    key: "bankPassbook",
+    label: "Bank Passbook",
+    helper: "Upload the front page as an image or PDF.",
+    acceptedFiles: "image/*,application/pdf",
+    requiredCount: 1,
+  },
+  {
+    key: "jamaBandiCertificate",
+    label: "Jama Bandi / Khajna Receipt / Gaon Bura Certificate",
+    helper: "Upload any one ownership/site verification image or PDF.",
+    acceptedFiles: "image/*,application/pdf",
+    requiredCount: 1,
+  },
+  {
+    key: "gpsPhoto",
+    label: "GPS Photo (Solar Installation Area)",
+    helper: "Upload a photo that shows the installation area clearly.",
+    acceptedFiles: "image/*",
+    requiredCount: 1,
+  },
+  {
+    key: "signature",
+    label: "Signature",
+    helper: "Upload a clean signature image on plain paper.",
+    acceptedFiles: "image/*",
+    requiredCount: 1,
+  },
+  {
+    key: "contactNumber",
+    label: "Contact Number (with registered Aadhaar and electricity bill phone number)",
+    helper: "Captured in the phone field above.",
+    kind: "captured",
+  },
+  {
+    key: "emailId",
+    label: "E-mail ID",
+    helper: "Captured in the email field above.",
+    kind: "captured",
+  },
+  {
+    key: "passportSizePhotos",
+    label: "2 Copy Passport Size Photo",
+    helper: "Upload two recent passport-size photos.",
+    acceptedFiles: "image/*",
+    requiredCount: 2,
+    multiple: true,
+  },
+];
+
+const uploadItems = documentChecklist.filter((item): item is ChecklistItem => item.key !== "contactNumber" && item.key !== "emailId");
+
 const initialForm: SolarFormData = {
   firstName: "",
   lastName: "",
@@ -44,6 +144,47 @@ const initialForm: SolarFormData = {
   notes: "",
 };
 
+function createEmptyUploads() {
+  return uploadItems.reduce<Record<UploadDocumentKey, UploadedDocument[]>>((accumulator, item) => {
+    accumulator[item.key] = [];
+    return accumulator;
+  }, {} as Record<UploadDocumentKey, UploadedDocument[]>);
+}
+
+async function uploadToCloudinary(file: File) {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  let response: Response;
+  try {
+    response = await fetch("/api/uploads/cloudinary", {
+      method: "POST",
+      body: formData,
+    });
+  } catch {
+    throw new Error("Unable to reach upload service. Check internet/VPN/firewall and try again.");
+  }
+
+  const data = (await response.json().catch(() => null)) as
+    | { error?: string; url?: string; publicId?: string; fileName?: string }
+    | null;
+
+  if (!response.ok) {
+    throw new Error(data?.error || "Unable to upload document right now.");
+  }
+
+  if (!data?.url || !data.publicId) {
+    throw new Error("Cloudinary did not return a secure file URL.");
+  }
+
+  return {
+    label: file.name,
+    url: data.url,
+    fileName: data.fileName || file.name,
+    publicId: data.publicId,
+  } satisfies UploadedDocument;
+}
+
 export default function SolarApplicationForm() {
   const { t } = useTranslation();
   const [form, setForm] = useState<SolarFormData>(initialForm);
@@ -51,10 +192,25 @@ export default function SolarApplicationForm() {
   const [gpsLoading, setGpsLoading] = useState(false);
   const [gpsStatus, setGpsStatus] = useState("");
   const [notice, setNotice] = useState<{ message: string; tone: "success" | "error" } | null>(null);
+  const [uploads, setUploads] = useState<Record<UploadDocumentKey, UploadedDocument[]>>(createEmptyUploads);
+  const [uploadingDocument, setUploadingDocument] = useState<UploadDocumentKey | null>(null);
+  const [documentErrors, setDocumentErrors] = useState<Partial<Record<UploadDocumentKey, string>>>({});
 
   const isDisabled = useMemo(() => {
-    return !form.firstName || !form.lastName || !form.phone || !form.addressLine || !form.city || !form.pincode;
-  }, [form]);
+    const requiredUploadsComplete = uploadItems.every((item) => uploads[item.key].length >= item.requiredCount);
+
+    return (
+      !form.firstName ||
+      !form.lastName ||
+      !form.phone ||
+      !form.addressLine ||
+      !form.city ||
+      !form.pincode ||
+      !requiredUploadsComplete ||
+      Boolean(uploadingDocument) ||
+      loading
+    );
+  }, [form, loading, uploadingDocument, uploads]);
 
   const addressForMaps = `${form.addressLine}, ${form.city}, ${form.state}, ${form.pincode}`.trim();
 
@@ -87,18 +243,85 @@ export default function SolarApplicationForm() {
         setGpsStatus(t("GPS captured successfully."));
         setGpsLoading(false);
       },
-      () => {
-        setGpsStatus(t("Unable to fetch GPS. Please allow location permission and try again."));
+      (error) => {
+        if (error.code === error.PERMISSION_DENIED) {
+          setGpsStatus(t("Location access is blocked. Allow location permission for this site and retry."));
+        } else if (error.code === error.POSITION_UNAVAILABLE) {
+          setGpsStatus(t("Location is currently unavailable. Try moving to an open area and retry."));
+        } else if (error.code === error.TIMEOUT) {
+          setGpsStatus(t("GPS request timed out. Please try again."));
+        } else {
+          setGpsStatus(t("Unable to fetch GPS. Please allow location permission and try again."));
+        }
         setGpsLoading(false);
       },
       { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 },
     );
   }
 
+  async function handleDocumentUpload(key: UploadDocumentKey, files: FileList | null) {
+    if (!files || files.length === 0) {
+      return;
+    }
+
+    const item = uploadItems.find((entry) => entry.key === key);
+    if (!item) {
+      return;
+    }
+
+    setNotice(null);
+    setDocumentErrors((previous) => ({ ...previous, [key]: "" }));
+    setUploadingDocument(key);
+
+    try {
+      const existingCount = uploads[key].length;
+      const remainingSlots = Math.max(item.requiredCount - existingCount, 0);
+      const selectedFiles = Array.from(files).slice(0, remainingSlots || item.requiredCount);
+
+      if (selectedFiles.length === 0) {
+        setDocumentErrors((previous) => ({
+          ...previous,
+          [key]: `Maximum ${item.requiredCount} file(s) allowed for this document.`,
+        }));
+        return;
+      }
+
+      const uploadedFiles = await Promise.all(selectedFiles.map((file) => uploadToCloudinary(file)));
+
+      setUploads((previous) => ({
+        ...previous,
+        [key]: [...previous[key], ...uploadedFiles].slice(0, item.requiredCount),
+      }));
+    } catch (error) {
+      setDocumentErrors((previous) => ({
+        ...previous,
+        [key]: error instanceof Error ? error.message : t("Unable to upload document right now."),
+      }));
+    } finally {
+      setUploadingDocument(null);
+    }
+  }
+
+  function removeUploadedDocument(key: UploadDocumentKey, index: number) {
+    setUploads((previous) => ({
+      ...previous,
+      [key]: previous[key].filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setNotice(null);
     setLoading(true);
+
+    const attachments = uploadItems.flatMap((item) =>
+      uploads[item.key].map((uploadedFile) => ({
+        label: item.label,
+        url: uploadedFile.url,
+        fileName: uploadedFile.fileName,
+        publicId: uploadedFile.publicId,
+      })),
+    );
 
     const payload = {
       name: `${form.firstName} ${form.lastName}`.trim(),
@@ -117,8 +340,18 @@ export default function SolarApplicationForm() {
         `${t("Desired Capacity")}: ${form.desiredCapacity || t("Not provided")}`,
         `${t("Installation Timeline")}: ${form.timeline}`,
         `GPS: ${form.latitude && form.longitude ? `${form.latitude}, ${form.longitude}` : t("Not provided")}`,
+        "Required Documents:",
+        ...documentChecklist.map((item) => {
+          if ("kind" in item && item.kind === "captured") {
+            return `${item.label}: ${t("Captured above")}`;
+          }
+
+          const uploadedCount = uploads[item.key].length;
+          return `${item.label}: ${uploadedCount}/${item.requiredCount} uploaded`;
+        }),
         `${t("Notes")}: ${form.notes || t("None")}`,
       ].join("\n"),
+      attachments,
     };
 
     try {
@@ -139,6 +372,8 @@ export default function SolarApplicationForm() {
       } else {
         setNotice({ message: t("Application submitted successfully. Our team will review and contact you."), tone: "success" });
         setForm(initialForm);
+        setUploads(createEmptyUploads());
+        setDocumentErrors({});
         setGpsStatus("");
       }
     } catch {
@@ -156,7 +391,7 @@ export default function SolarApplicationForm() {
           <p className="solar-form-kicker">{t("Digital Intake")}</p>
           <h3>{t("Solar Installation Application")}</h3>
         </div>
-        <span className="solar-form-badge">{t("Structured and trackable")}</span>
+        <span className="solar-form-badge">{t("Cloudinary-backed uploads")}</span>
       </div>
 
       <form className="solar-form" onSubmit={handleSubmit}>
@@ -165,7 +400,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.firstName}
-            onChange={(event) => setForm((prev) => ({ ...prev, firstName: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, firstName: event.target.value }))}
             placeholder={t("Your given name")}
             minLength={2}
             maxLength={40}
@@ -179,7 +414,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.lastName}
-            onChange={(event) => setForm((prev) => ({ ...prev, lastName: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, lastName: event.target.value }))}
             placeholder={t("Your surname")}
             minLength={2}
             maxLength={40}
@@ -193,7 +428,7 @@ export default function SolarApplicationForm() {
           <input
             type="tel"
             value={form.phone}
-            onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, phone: event.target.value }))}
             placeholder={t("10-digit mobile number")}
             minLength={7}
             maxLength={20}
@@ -208,7 +443,7 @@ export default function SolarApplicationForm() {
           <input
             type="email"
             value={form.email}
-            onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, email: event.target.value }))}
             placeholder={t("yourname@example.com")}
             autoComplete="email"
           />
@@ -219,7 +454,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.addressLine}
-            onChange={(event) => setForm((prev) => ({ ...prev, addressLine: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, addressLine: event.target.value }))}
             placeholder={t("Street address or building name")}
             minLength={2}
             maxLength={120}
@@ -233,7 +468,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.city}
-            onChange={(event) => setForm((prev) => ({ ...prev, city: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, city: event.target.value }))}
             placeholder={t("City or town")}
             minLength={2}
             maxLength={80}
@@ -247,7 +482,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.state}
-            onChange={(event) => setForm((prev) => ({ ...prev, state: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, state: event.target.value }))}
             placeholder={t("State or province")}
             minLength={2}
             maxLength={80}
@@ -260,7 +495,7 @@ export default function SolarApplicationForm() {
           <input
             type="text"
             value={form.pincode}
-            onChange={(event) => setForm((prev) => ({ ...prev, pincode: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, pincode: event.target.value }))}
             placeholder={t("6-digit postal code")}
             minLength={4}
             maxLength={10}
@@ -274,8 +509,8 @@ export default function SolarApplicationForm() {
           <select
             value={form.propertyType}
             onChange={(event) =>
-              setForm((prev) => ({
-                ...prev,
+              setForm((previous) => ({
+                ...previous,
                 propertyType: event.target.value as SolarFormData["propertyType"],
               }))
             }
@@ -291,8 +526,8 @@ export default function SolarApplicationForm() {
           <select
             value={form.roofType}
             onChange={(event) =>
-              setForm((prev) => ({
-                ...prev,
+              setForm((previous) => ({
+                ...previous,
                 roofType: event.target.value as SolarFormData["roofType"],
               }))
             }
@@ -311,7 +546,7 @@ export default function SolarApplicationForm() {
             min="0"
             max="999999"
             value={form.monthlyBill}
-            onChange={(event) => setForm((prev) => ({ ...prev, monthlyBill: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, monthlyBill: event.target.value }))}
             placeholder={t("e.g. 4500")}
           />
         </label>
@@ -324,7 +559,7 @@ export default function SolarApplicationForm() {
             step="0.1"
             max="999999"
             value={form.sanctionedLoad}
-            onChange={(event) => setForm((prev) => ({ ...prev, sanctionedLoad: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, sanctionedLoad: event.target.value }))}
             placeholder={t("e.g. 5")}
           />
         </label>
@@ -337,7 +572,7 @@ export default function SolarApplicationForm() {
             step="0.1"
             max="999999"
             value={form.desiredCapacity}
-            onChange={(event) => setForm((prev) => ({ ...prev, desiredCapacity: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, desiredCapacity: event.target.value }))}
             placeholder={t("e.g. 3")}
           />
         </label>
@@ -347,8 +582,8 @@ export default function SolarApplicationForm() {
           <select
             value={form.timeline}
             onChange={(event) =>
-              setForm((prev) => ({
-                ...prev,
+              setForm((previous) => ({
+                ...previous,
                 timeline: event.target.value as SolarFormData["timeline"],
               }))
             }
@@ -359,6 +594,79 @@ export default function SolarApplicationForm() {
             <option value="planning">{t("Just exploring")}</option>
           </select>
         </label>
+
+        <section className="solar-document-section solar-form-col-2">
+          <div className="solar-document-head">
+            <div>
+              <p className="solar-document-kicker">{t("Required documents")}</p>
+              <h4>{t("Upload the documents listed for the solar application")}</h4>
+            </div>
+            <span className="solar-document-note">{t("Saved securely in Cloudinary")}</span>
+          </div>
+
+          <div className="solar-document-grid">
+            {documentChecklist.map((item) => {
+              if ("kind" in item && item.kind === "captured") {
+                return (
+                  <article key={item.key} className="solar-document-card solar-document-card-captured">
+                    <div className="solar-document-card-head">
+                      <div>
+                        <h5>{t(item.label)}</h5>
+                        <p>{t(item.helper)}</p>
+                      </div>
+                      <span className="solar-document-badge">{t("Captured")}</span>
+                    </div>
+                  </article>
+                );
+              }
+
+              const uploaded = uploads[item.key] || [];
+              const countLabel = `${uploaded.length}/${item.requiredCount}`;
+
+              return (
+                <article key={item.key} className="solar-document-card">
+                  <div className="solar-document-card-head">
+                    <div>
+                      <h5>{t(item.label)}</h5>
+                      <p>{t(item.helper)}</p>
+                    </div>
+                    <span className={`solar-document-badge ${uploaded.length >= item.requiredCount ? "is-complete" : ""}`}>
+                      {countLabel}
+                    </span>
+                  </div>
+
+                  <input
+                    type="file"
+                    accept={item.acceptedFiles}
+                    multiple={item.multiple}
+                    onChange={(event) => {
+                      void handleDocumentUpload(item.key, event.currentTarget.files);
+                      event.currentTarget.value = "";
+                    }}
+                  />
+
+                  <div className="solar-document-meta">
+                    <span>{uploadingDocument === item.key ? t("Uploading to Cloudinary...") : t("Images and PDF scans are stored as secure URLs.")}</span>
+                    {documentErrors[item.key] ? <span className="solar-document-error">{documentErrors[item.key]}</span> : null}
+                  </div>
+
+                  {uploaded.length > 0 ? (
+                    <ul className="solar-document-files">
+                      {uploaded.map((file, index) => (
+                        <li key={`${file.publicId}-${index}`}>
+                          <span>{file.fileName}</span>
+                          <button type="button" className="solar-document-remove" onClick={() => removeUploadedDocument(item.key, index)}>
+                            {t("Remove")}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+        </section>
 
         <div className="solar-gps-card solar-form-col-2">
           <div className="solar-gps-head">
@@ -379,7 +687,7 @@ export default function SolarApplicationForm() {
               <input
                 type="text"
                 value={form.latitude}
-                onChange={(event) => setForm((prev) => ({ ...prev, latitude: event.target.value }))}
+                onChange={(event) => setForm((previous) => ({ ...previous, latitude: event.target.value }))}
                 placeholder={t("e.g. 26.144516")}
               />
             </label>
@@ -388,7 +696,7 @@ export default function SolarApplicationForm() {
               <input
                 type="text"
                 value={form.longitude}
-                onChange={(event) => setForm((prev) => ({ ...prev, longitude: event.target.value }))}
+                onChange={(event) => setForm((previous) => ({ ...previous, longitude: event.target.value }))}
                 placeholder={t("e.g. 91.736237")}
               />
             </label>
@@ -403,14 +711,17 @@ export default function SolarApplicationForm() {
           <textarea
             rows={4}
             value={form.notes}
-            onChange={(event) => setForm((prev) => ({ ...prev, notes: event.target.value }))}
+            onChange={(event) => setForm((previous) => ({ ...previous, notes: event.target.value }))}
             placeholder={t("Any roof condition, shading, access notes, or preferred call time")}
             maxLength={1200}
           />
         </label>
 
         <div className="solar-submit-row solar-form-col-2">
-          <button type="submit" className="button" disabled={loading || isDisabled}>
+          <p className="solar-submit-helper">
+            {t("Please verify that your contact number and email match the uploaded identity and utility documents.")}
+          </p>
+          <button type="submit" className="button" disabled={isDisabled}>
             {loading ? t("Submitting Application...") : t("Submit Digital Application")}
           </button>
         </div>

@@ -2,6 +2,13 @@ export type LeadType = "quote" | "contact" | "order";
 
 export type LeadStatus = "new" | "in-progress" | "closed";
 
+export interface LeadAttachment {
+  label: string;
+  url: string;
+  fileName: string;
+  publicId: string;
+}
+
 export interface LeadProgressUpdate {
   status?: LeadStatus;
   visitConfirmed?: boolean;
@@ -14,6 +21,7 @@ export interface LeadInput {
   location: string;
   type: LeadType;
   message: string;
+  attachments?: LeadAttachment[];
 }
 
 export interface LeadRecord extends LeadInput {
@@ -23,6 +31,7 @@ export interface LeadRecord extends LeadInput {
   installationCompleted: boolean;
   installedAt?: string | null;
   createdAt: string;
+  attachments: LeadAttachment[];
 }
 
 export interface SolarInsights {

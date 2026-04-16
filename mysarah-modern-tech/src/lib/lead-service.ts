@@ -43,7 +43,7 @@ async function geocodeLocation(locationName: string) {
 
 export async function createLead(input: LeadInput) {
   await connectDb();
-  return Lead.create(input);
+  return Lead.create({ ...input, attachments: input.attachments || [] });
 }
 
 export async function getLeads() {

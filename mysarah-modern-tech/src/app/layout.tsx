@@ -5,6 +5,7 @@ import I18nProvider from "@/components/layout/I18nProvider";
 import Navbar from "@/components/layout/Navbar";
 import Analytics from "@/components/shared/Analytics";
 import EmailButton from "@/components/shared/EmailButton";
+import PermissionGate from "@/components/shared/PermissionGate";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { seo } from "@/lib/constants";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body>
         <I18nProvider>
           <Analytics />
+          <PermissionGate />
           <Navbar />
           {children}
           <Footer />

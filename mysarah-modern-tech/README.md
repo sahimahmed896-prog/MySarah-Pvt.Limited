@@ -112,8 +112,12 @@ Optional:
 - `SMTP_USER`
 - `SMTP_PASS`
 - `ALERT_EMAIL_TO`
+- `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`
+- `NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET`
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_GA_ID`
+
+The solar application form uploads document images directly to Cloudinary using an unsigned upload preset. Set the two Cloudinary variables above before testing the document workflow.
 
 To generate admin password hash:
 

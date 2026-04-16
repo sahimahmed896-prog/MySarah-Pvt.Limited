@@ -305,6 +305,21 @@ export default function AdminLeadsTable() {
             <strong>Message</strong>
             <span>{selected.message || "No message provided."}</span>
           </p>
+          {selected.attachments?.length ? (
+            <div className="admin-attachments">
+              <strong>Uploaded Documents</strong>
+              <ul>
+                {selected.attachments.map((attachment) => (
+                  <li key={`${attachment.label}-${attachment.publicId}`}>
+                    <span>{attachment.label}</span>
+                    <a href={attachment.url} target="_blank" rel="noreferrer">
+                      View file
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </>

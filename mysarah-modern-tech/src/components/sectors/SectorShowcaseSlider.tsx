@@ -21,7 +21,7 @@ const slides: SlideItem[] = [
     label: "Brand Presence",
     title: " ",
     detail: " ",
-    variant: "",
+    variant: "brand",
     image: "/images/sector1.png",
   },
   {

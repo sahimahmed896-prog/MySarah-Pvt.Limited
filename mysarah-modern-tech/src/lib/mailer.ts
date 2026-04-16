@@ -12,6 +12,12 @@ export async function sendLeadEmail(lead: LeadInput) {
     return;
   }
 
+  const attachmentSummary = lead.attachments && lead.attachments.length > 0
+    ? `\n\nUploaded Documents:\n${lead.attachments
+        .map((attachment) => `${attachment.label}: ${attachment.url}`)
+        .join("\n")}`
+    : "";
+
   const transporter = nodemailer.createTransport({
     host,
     port: Number(port),
@@ -26,6 +32,6 @@ export async function sendLeadEmail(lead: LeadInput) {
     from: `Mysarah Website <${user}>`,
     to,
     subject: `New ${lead.type.toUpperCase()} lead from ${lead.name}`,
-    text: `Name: ${lead.name}\nPhone: ${lead.phone}\nLocation: ${lead.location}\nType: ${lead.type}\nMessage: ${lead.message}`,
+    text: `Name: ${lead.name}\nPhone: ${lead.phone}\nLocation: ${lead.location}\nType: ${lead.type}\nMessage: ${lead.message}${attachmentSummary}`,
   });
 }
