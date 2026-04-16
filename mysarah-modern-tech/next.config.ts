@@ -3,6 +3,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const configDir = path.dirname(fileURLToPath(import.meta.url));
+const allowedDevOriginsFromEnv = (process.env.NEXT_DEV_ALLOWED_ORIGINS || "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 const nextConfig: NextConfig = {
   images: {
@@ -14,7 +18,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  allowedDevOrigins: ["192.168.29.41"],
+  allowedDevOrigins: [
+    "localhost",
+    "127.0.0.1",
+    "192.168.29.114",
+    ...allowedDevOriginsFromEnv,
+  ],
   turbopack: {
     root: configDir,
   },

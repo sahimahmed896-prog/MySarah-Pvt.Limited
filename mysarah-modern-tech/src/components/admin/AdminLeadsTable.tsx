@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { LeadProgressUpdate, LeadRecord } from "@/types/lead";
 import StatusPopup from "@/components/shared/StatusPopup";
@@ -9,7 +10,6 @@ export default function AdminLeadsTable() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState<{ message: string; tone: "success" | "error" } | null>(null);
-  const [selected, setSelected] = useState<LeadRecord | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | LeadRecord["status"]>("all");
   const [progressFilter, setProgressFilter] = useState<"all" | "visit-pending" | "visit-confirmed" | "installed">("all");
@@ -243,9 +243,9 @@ export default function AdminLeadsTable() {
                 <td>
                   <div className="table-actions">
                     <span className={`admin-status-badge admin-status-${lead.status}`}>{lead.status}</span>
-                    <button type="button" className="button button-outline" onClick={() => setSelected(lead)}>
+                    <Link className="button button-outline" href={`/admin/leads/${lead._id}`}>
                       View
-                    </button>
+                    </Link>
                     <button type="button" className="button button-danger" onClick={() => removeLead(lead._id)}>
                       Delete
                     </button>
@@ -258,70 +258,6 @@ export default function AdminLeadsTable() {
       </div>
 
       {filteredLeads.length === 0 ? <p className="admin-empty-state">No leads matched your current filters.</p> : null}
-
-      {selected ? (
-        <div className="content-card admin-detail-card" style={{ marginTop: "1rem" }}>
-          <div className="admin-detail-head">
-            <h3>Lead Details</h3>
-            <button type="button" className="button button-outline" onClick={() => setSelected(null)}>
-              Close
-            </button>
-          </div>
-          <div className="admin-detail-grid">
-            <p>
-              <strong>Name</strong>
-              <span>{selected.name}</span>
-            </p>
-            <p>
-              <strong>Phone</strong>
-              <span>{selected.phone}</span>
-            </p>
-            <p>
-              <strong>Location</strong>
-              <span>{selected.location}</span>
-            </p>
-            <p>
-              <strong>Type</strong>
-              <span>{selected.type}</span>
-            </p>
-            <p>
-              <strong>Status</strong>
-              <span>{selected.status}</span>
-            </p>
-            <p>
-              <strong>Visit Confirmed</strong>
-              <span>{selected.visitConfirmed ? "Yes" : "No"}</span>
-            </p>
-            <p>
-              <strong>Installation Completed</strong>
-              <span>{selected.installationCompleted ? "Yes" : "No"}</span>
-            </p>
-            <p>
-              <strong>Submitted At</strong>
-              <span>{new Date(selected.createdAt).toLocaleString()}</span>
-            </p>
-          </div>
-          <p className="admin-detail-message">
-            <strong>Message</strong>
-            <span>{selected.message || "No message provided."}</span>
-          </p>
-          {selected.attachments?.length ? (
-            <div className="admin-attachments">
-              <strong>Uploaded Documents</strong>
-              <ul>
-                {selected.attachments.map((attachment) => (
-                  <li key={`${attachment.label}-${attachment.publicId}`}>
-                    <span>{attachment.label}</span>
-                    <a href={attachment.url} target="_blank" rel="noreferrer">
-                      View file
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
-      ) : null}
     </>
   );
 }

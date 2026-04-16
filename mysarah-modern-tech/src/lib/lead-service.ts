@@ -4,6 +4,10 @@ import type { LeadInput, LeadProgressUpdate, LeadStatus } from "@/types/lead";
 
 const geocodeCache = new Map<string, { latitude: number | null; longitude: number | null }>();
 
+function toPlainLead<T>(value: T) {
+  return JSON.parse(JSON.stringify(value)) as T;
+}
+
 async function geocodeLocation(locationName: string) {
   const key = locationName.trim().toLowerCase();
   if (geocodeCache.has(key)) {
@@ -49,6 +53,12 @@ export async function createLead(input: LeadInput) {
 export async function getLeads() {
   await connectDb();
   return Lead.find().sort({ createdAt: -1 }).lean();
+}
+
+export async function getLeadById(id: string) {
+  await connectDb();
+  const lead = await Lead.findById(id).lean();
+  return lead ? toPlainLead(lead) : null;
 }
 
 export async function updateLeadStatus(id: string, status: LeadStatus) {

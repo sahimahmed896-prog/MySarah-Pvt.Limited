@@ -17,6 +17,12 @@ export default function PermissionGate() {
       return;
     }
 
+    if (!window.isSecureContext) {
+      setVisible(true);
+      setMessage(t("Location needs a secure context. Use localhost or HTTPS to enable GPS permission."));
+      return;
+    }
+
     const granted = localStorage.getItem(LOCATION_GRANTED_KEY) === "1";
     if (granted) {
       setVisible(false);
@@ -106,6 +112,11 @@ export default function PermissionGate() {
   function requestLocationPermission() {
     if (!("geolocation" in navigator)) {
       setMessage(t("GPS is not available in this browser."));
+      return;
+    }
+
+    if (!window.isSecureContext) {
+      setMessage(t("Location needs HTTPS or localhost. This HTTP IP address cannot request GPS permission."));
       return;
     }
 
