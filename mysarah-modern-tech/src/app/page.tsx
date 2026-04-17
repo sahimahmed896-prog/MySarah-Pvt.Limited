@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import HeroCarousel from "@/components/home/HeroCarousel";
+import OfferNotification from "@/components/home/OfferNotification";
 import SolarInsightsPanel from "@/components/home/SolarInsightsPanel";
 import AnimatedHeading from "@/components/shared/AnimatedHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
@@ -251,6 +252,8 @@ export default function Home() {
           <SolarInsightsPanel />
         </div>
       </section>
+
+      <OfferNotification />
     </main>
   );
 }

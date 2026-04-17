@@ -30,7 +30,7 @@ export default function HeroCarousel() {
           </>
         ),
         subtitle: t("Mysarah Modern Tech Private Limited is building a future-ready multi-sector platform, starting with clean energy solutions."),
-        image: "/images/home1.png",
+        image: "/images/Home.png",
       },
       {
         title: t("Corporate execution with startup speed"),
@@ -40,7 +40,7 @@ export default function HeroCarousel() {
           </>
         ),
         subtitle: t("Structured delivery, transparent process, and technology-first field operations for residential and commercial projects."),
-        image: "/images/offer3.png",
+        image: "/images/startup.jpg",
       },
       {
         title: t("Designed to scale across sectors"),
@@ -50,7 +50,7 @@ export default function HeroCarousel() {
           </>
         ),
         subtitle: t("A modular service architecture that expands from solar into smart infrastructure without redesigning the business core."),
-        image: "/images/startup.jpg",
+        image: "/images/scale across.jpg",
       },
     ],
     [t],
@@ -138,7 +138,7 @@ export default function HeroCarousel() {
             <div className="hero-image-stack" aria-live="polite">
               {slides.map((slide, index) => (
                 <motion.div
-                  key={slide.image}
+                  key={`${slide.title}-${index}`}
                   initial={{ opacity: 0 }}
                   animate={index === active ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: reduceMotion ? 0.2 : 0.8 }}

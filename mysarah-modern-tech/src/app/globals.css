@@ -122,6 +122,240 @@ a {
   align-items: center;
 }
 
+.offer-notice {
+  position: fixed;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translate(-50%, 130%);
+  width: min(1040px, calc(100vw - 2rem));
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(18, 86, 45, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(8, 30, 17, 0.16);
+  padding: 0.95rem 1rem;
+  transition: transform 0.36s ease, opacity 0.36s ease;
+  opacity: 0;
+  backdrop-filter: blur(8px);
+}
+
+.offer-notice.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.offer-notice-content {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.offer-notice-title {
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: #124b2a;
+}
+
+.offer-notice-text {
+  font-size: 0.92rem;
+  color: #355843;
+}
+
+.offer-notice-actions {
+  display: inline-flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.offer-notice-primary,
+.offer-notice-secondary {
+  min-width: 120px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.offer-page {
+  background: linear-gradient(180deg, #f4f8f4 0%, #ecf3ed 100%);
+}
+
+.offer-hero {
+  position: relative;
+  min-height: clamp(320px, 48vw, 470px);
+  display: grid;
+  align-items: end;
+  color: #fff;
+  background:
+    linear-gradient(110deg, rgba(6, 32, 18, 0.84), rgba(8, 44, 24, 0.58)),
+    url("/images/solarTransition.png") center / cover no-repeat;
+}
+
+.offer-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(176, 139, 58, 0.3), transparent 30%),
+    linear-gradient(0deg, rgba(5, 24, 14, 0.42), rgba(5, 24, 14, 0));
+  pointer-events: none;
+}
+
+.offer-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.6rem, 6vw, 4rem) 0;
+  max-width: 760px;
+}
+
+.offer-hero-inner h1 {
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  margin-top: 0.55rem;
+}
+
+.offer-hero-inner p {
+  margin-top: 0.8rem;
+  font-size: 1.05rem;
+  color: rgba(241, 251, 245, 0.92);
+  max-width: 62ch;
+}
+
+.offer-overview-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.2rem;
+}
+
+.offer-overview-grid article {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(16, 89, 42, 0.1);
+  border-radius: 18px;
+  padding: 1.3rem 1.2rem;
+  box-shadow: 0 16px 36px rgba(13, 33, 21, 0.08);
+}
+
+.offer-overview-grid h2,
+.offer-visuals h2,
+.offer-cta-shell h2 {
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+  color: #153722;
+}
+
+.offer-overview-grid p {
+  color: #31503d;
+  margin-top: 0.7rem;
+}
+
+.offer-benefits ul {
+  list-style: none;
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.offer-benefits li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: #294734;
+}
+
+.offer-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #218848, #196838);
+}
+
+.offer-visual-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.offer-visual-card {
+  position: relative;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(19, 90, 47, 0.14);
+  box-shadow: 0 16px 34px rgba(10, 30, 18, 0.12);
+  background: #eaf3eb;
+}
+
+.offer-visual-card img {
+  object-fit: cover;
+}
+
+.offer-cta-section {
+  padding-top: 1.4rem;
+}
+
+.offer-cta-shell {
+  border: 1px solid rgba(18, 86, 45, 0.12);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(235, 245, 237, 0.9));
+  box-shadow: 0 16px 34px rgba(9, 29, 17, 0.08);
+  padding: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.offer-cta-shell p {
+  color: #355642;
+  margin-top: 0.5rem;
+}
+
+.offer-cta-actions {
+  display: inline-flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 980px) {
+  .offer-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-cta-shell {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 780px) {
+  .offer-notice {
+    width: min(680px, calc(100vw - 1rem));
+    bottom: 0.6rem;
+    border-radius: 14px;
+    padding: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .offer-notice-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .offer-notice-primary,
+  .offer-notice-secondary {
+    min-width: 108px;
+  }
+}
+
 .nav-desktop-language {
   display: inline-flex;
   align-items: center;
