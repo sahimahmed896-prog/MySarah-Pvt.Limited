@@ -87,6 +87,8 @@ export async function sendLeadEmail(lead: LeadInput) {
     verifiedTransporter = true;
   }
 
+  const leadType = (lead.type || "contact").toUpperCase();
+
   const attachmentSummary = lead.attachments && lead.attachments.length > 0
     ? `\n\nUploaded Documents:\n${lead.attachments
         .map((attachment) => `${attachment.label}: ${attachment.url}`)
@@ -102,15 +104,15 @@ export async function sendLeadEmail(lead: LeadInput) {
   await transporter.sendMail({
     from: `Mysarah Website <${from}>`,
     to,
-    subject: `New ${lead.type.toUpperCase()} lead from ${lead.name}`,
-    text: `Name: ${lead.name}\nPhone: ${lead.phone}\nLocation: ${lead.location}\nType: ${lead.type}\nMessage: ${lead.message}${attachmentSummary}`,
+    subject: `New ${leadType} lead from ${lead.name}`,
+    text: `Name: ${lead.name}\nPhone: ${lead.phone}\nLocation: ${lead.location}\nType: ${lead.type || "contact"}\nMessage: ${lead.message}${attachmentSummary}`,
     html: `
       <div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.5;color:#103421;">
-        <h2 style="margin:0 0 10px;">New ${lead.type.toUpperCase()} Lead</h2>
+        <h2 style="margin:0 0 10px;">New ${leadType} Lead</h2>
         <p style="margin:0 0 8px;"><strong>Name:</strong> ${lead.name}</p>
         <p style="margin:0 0 8px;"><strong>Phone:</strong> ${lead.phone}</p>
         <p style="margin:0 0 8px;"><strong>Location:</strong> ${lead.location}</p>
-        <p style="margin:0 0 8px;"><strong>Type:</strong> ${lead.type}</p>
+        <p style="margin:0 0 8px;"><strong>Type:</strong> ${lead.type || "contact"}</p>
         <p style="margin:0 0 8px;"><strong>Message:</strong></p>
         <p style="margin:0 0 8px;white-space:pre-wrap;">${lead.message}</p>
         ${htmlAttachmentList}

@@ -37,8 +37,8 @@ export async function connectDb() {
     });
 
     // Add additional timeout safety net
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("MongoDB connection timeout exceeded 8 seconds")), 8000)
+    const timeoutPromise = new Promise<typeof mongoose>((_, reject) =>
+      setTimeout(() => reject(new Error("MongoDB connection timeout exceeded 8 seconds")), 8000),
     );
 
     cached.promise = Promise.race([connectPromise, timeoutPromise]);

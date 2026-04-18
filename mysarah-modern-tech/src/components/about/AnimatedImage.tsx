@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { RefObject } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
@@ -18,7 +19,7 @@ export default function AnimatedImage({ src, alt, direction = "right", className
   const ref = useRef<HTMLDivElement | null>(null);
   
   const { scrollYProgress } = useScroll({
-    target: enableScrollTracking ? ref : null,
+    target: enableScrollTracking ? (ref as unknown as RefObject<HTMLElement>) : undefined,
     offset: ["start end", "end start"],
   });
 

@@ -123,7 +123,11 @@ const documentChecklist: Array<ChecklistItem | { key: "contactNumber" | "emailId
   },
 ];
 
-const uploadItems = documentChecklist.filter((item): item is ChecklistItem => item.key !== "contactNumber" && item.key !== "emailId");
+function isUploadChecklistItem(item: (typeof documentChecklist)[number]): item is ChecklistItem {
+  return !("kind" in item);
+}
+
+const uploadItems = documentChecklist.filter(isUploadChecklistItem);
 
 const initialForm: SolarFormData = {
   firstName: "",
@@ -389,14 +393,13 @@ export default function SolarApplicationForm() {
         `${t("Installation Timeline")}: ${form.timeline}`,
         `GPS: ${form.latitude && form.longitude ? `${form.latitude}, ${form.longitude}` : t("Not provided")}`,
         "Required Documents:",
-        ...documentChecklist.map((item) => {
-          if ("kind" in item && item.kind === "captured") {
-            return `${item.label}: ${t("Captured above")}`;
-          }
-
+        ...uploadItems.map((item) => {
           const uploadedCount = uploads[item.key].length;
           return `${item.label}: ${uploadedCount}/${item.requiredCount} uploaded`;
         }),
+        ...documentChecklist
+          .filter((item): item is Extract<(typeof documentChecklist)[number], { kind: "captured" }> => "kind" in item)
+          .map((item) => `${item.label}: ${t("Captured above")}`),
         `${t("Notes")}: ${form.notes || t("None")}`,
       ].join("\n"),
       attachments,
@@ -676,22 +679,8 @@ export default function SolarApplicationForm() {
           </div>
 
           <div className="solar-document-grid">
-            {documentChecklist.map((item) => {
-              if ("kind" in item && item.kind === "captured") {
-                return (
-                  <article key={item.key} className="solar-document-card solar-document-card-captured">
-                    <div className="solar-document-card-head">
-                      <div>
-                        <h5>{t(item.label)}</h5>
-                        <p>{t(item.helper)}</p>
-                      </div>
-                      <span className="solar-document-badge">{t("Captured")}</span>
-                    </div>
-                  </article>
-                );
-              }
-
-              const uploaded = uploads[item.key] || [];
+            {uploadItems.map((item) => {
+              const uploaded = uploads[item.key];
               const countLabel = `${uploaded.length}/${item.requiredCount}`;
 
               return (
@@ -736,6 +725,20 @@ export default function SolarApplicationForm() {
                 </article>
               );
             })}
+
+            {documentChecklist
+              .filter((item): item is Extract<(typeof documentChecklist)[number], { kind: "captured" }> => "kind" in item)
+              .map((item) => (
+                <article key={item.key} className="solar-document-card solar-document-card-captured">
+                  <div className="solar-document-card-head">
+                    <div>
+                      <h5>{t(item.label)}</h5>
+                      <p>{t(item.helper)}</p>
+                    </div>
+                    <span className="solar-document-badge">{t("Captured")}</span>
+                  </div>
+                </article>
+              ))}
           </div>
         </section>
 
