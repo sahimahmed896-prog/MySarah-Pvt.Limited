@@ -1,39 +1,17 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import type { SolarInsights } from "@/types/lead";
 import { useTranslation } from "react-i18next";
 
-const CLIENT_INSIGHTS_TTL_MS = 30_000;
-
-let insightsClientCache:
-  | {
-      data: SolarInsights;
-      expiresAt: number;
-    }
-  | null = null;
-
 export default function SolarInsightsPanel() {
   const { t } = useTranslation();
-  const SolarInstallMap = dynamic(() => import("@/components/home/SolarInstallMap"), {
-    ssr: false,
-    loading: () => <p className="insights-loading">{t("Loading map...")}</p>,
-  });
-
   const [insights, setInsights] = useState<SolarInsights | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadInsights() {
-      const now = Date.now();
-      if (insightsClientCache && insightsClientCache.expiresAt > now) {
-        setInsights(insightsClientCache.data);
-        setLoading(false);
-        return;
-      }
-
       setLoading(true);
       setError("");
       try {
@@ -42,6 +20,7 @@ export default function SolarInsightsPanel() {
 
         const response = await fetch("/api/insights/solar", {
           method: "GET",
+          cache: "no-store",
           signal: controller.signal,
         });
 
@@ -52,11 +31,6 @@ export default function SolarInsightsPanel() {
           setError(data.error || t("Unable to load insights."));
           return;
         }
-
-        insightsClientCache = {
-          data: data.data,
-          expiresAt: now + CLIENT_INSIGHTS_TTL_MS,
-        };
 
         setInsights(data.data);
       } catch (err) {
@@ -87,27 +61,11 @@ export default function SolarInsightsPanel() {
 
   return (
     <div className="insights-grid">
-      <article className="insights-map-card">
+      <article className="insights-chart-card">
         <div className="insights-head">
           <p className="eyebrow">{t("Live Impact")}</p>
-          <h3>{t("Solar installation footprint")}</h3>
+          <h3>{t("Solar installation performance")}</h3>
         </div>
-
-        <div className="insights-map-shell">
-          <SolarInstallMap locations={insights.locations.slice(0, 6)} />
-        </div>
-
-        <ul className="insights-location-list">
-          {insights.locations.slice(0, 6).map((location) => (
-            <li key={location.name}>
-              <strong>{location.name}</strong>
-              <span>{location.count} {t("installs")}</span>
-            </li>
-          ))}
-        </ul>
-      </article>
-
-      <article className="insights-chart-card">
         <div className="insights-metric-rows">
           <div className="insights-metric-row">
             <small>{t("Solar Installed")}</small>

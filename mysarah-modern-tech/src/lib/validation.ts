@@ -11,7 +11,7 @@ export const leadSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters.").max(80, "Name is too long.").regex(/^[A-Za-z0-9 .,'-]+$/, "Name contains invalid characters."),
   phone: z.string().trim().min(7, "Phone number is too short.").max(20, "Phone number is too long.").regex(/^[0-9+\- ()]+$/, "Phone number contains invalid characters."),
   location: z.string().trim().min(2, "Location is required.").max(120, "Location is too long."),
-  type: z.enum(["quote", "contact", "order"]),
+  type: z.enum(["quote", "contact", "order"]).optional().default("contact"),
   message: z.string().trim().min(10, "Message must be at least 10 characters.").max(1200, "Message is too long."),
   attachments: z.array(leadAttachmentSchema).max(20, "Too many attachments.").default([]),
 });

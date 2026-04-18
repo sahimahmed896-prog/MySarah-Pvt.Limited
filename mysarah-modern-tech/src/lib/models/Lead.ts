@@ -8,7 +8,7 @@ const LeadSchema = new Schema(
     type: {
       type: String,
       enum: ["quote", "contact", "order"],
-      required: true,
+      default: "contact",
     },
     message: { type: String, required: true, trim: true },
     attachments: {

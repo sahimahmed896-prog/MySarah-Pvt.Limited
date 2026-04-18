@@ -5407,6 +5407,10 @@ a {
   padding: 1.2rem;
 }
 
+.insights-grid > .insights-chart-card:only-child {
+  grid-column: 1 / -1;
+}
+
 .insights-head h3 {
   font-size: 1.45rem;
   margin-top: 0.25rem;

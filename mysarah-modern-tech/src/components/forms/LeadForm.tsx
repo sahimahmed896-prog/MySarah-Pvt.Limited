@@ -16,7 +16,6 @@ interface FormData {
   name: string;
   phone: string;
   location: string;
-  type: LeadType;
   message: string;
 }
 
@@ -32,13 +31,12 @@ const initialForm: FormData = {
   name: "",
   phone: "",
   location: "",
-  type: "quote",
   message: "",
 };
 
 export default function LeadForm({ variant, title }: LeadFormProps) {
   const { t } = useTranslation();
-  const [form, setForm] = useState<FormData>({ ...initialForm, type: variant ?? "quote" });
+  const [form, setForm] = useState<FormData>({ ...initialForm });
   const [loading, setLoading] = useState(false);
   const [notice, setNotice] = useState<{ message: string; tone: "success" | "error" } | null>(null);
 
@@ -54,7 +52,7 @@ export default function LeadForm({ variant, title }: LeadFormProps) {
     setNotice(null);
 
     trackEvent("lead_form_submit_attempt", {
-      lead_type: form.type,
+      lead_type: variant ?? "contact",
       form_name: "lead_form",
     });
 
@@ -67,14 +65,17 @@ export default function LeadForm({ variant, title }: LeadFormProps) {
           "Content-Type": "application/json",
           "x-idempotency-key": idempotencyKey,
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          ...(variant ? { type: variant } : {}),
+        }),
       });
 
       const payload = await response.json();
 
       if (!response.ok) {
         trackEvent("lead_form_submit_failed", {
-          lead_type: form.type,
+          lead_type: variant ?? "contact",
           form_name: "lead_form",
           status_code: response.status,
         });
@@ -86,16 +87,16 @@ export default function LeadForm({ variant, title }: LeadFormProps) {
         });
       } else {
         trackEvent("lead_form_submit_success", {
-          lead_type: form.type,
+          lead_type: variant ?? "contact",
           form_name: "lead_form",
         });
 
         setNotice({ message: t("Thank you. Our team will contact you shortly."), tone: "success" });
-        setForm({ ...initialForm, type: variant ?? "quote" });
+        setForm({ ...initialForm });
       }
     } catch {
       trackEvent("lead_form_submit_failed", {
-        lead_type: form.type,
+        lead_type: variant ?? "contact",
         form_name: "lead_form",
         status_code: 0,
       });
@@ -152,19 +153,6 @@ export default function LeadForm({ variant, title }: LeadFormProps) {
             required
             autoComplete="street-address"
           />
-        </label>
-
-        <label>
-          {t("Request Type")}
-          <select
-            value={form.type}
-            onChange={(event) => setForm((prev) => ({ ...prev, type: event.target.value as LeadType }))}
-            disabled={Boolean(variant)}
-          >
-            <option value="quote">{t("Quote")}</option>
-            <option value="contact">{t("Contact")}</option>
-            <option value="order">{t("Order")}</option>
-          </select>
         </label>
 
         <label>

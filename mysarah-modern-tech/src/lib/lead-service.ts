@@ -1,53 +1,49 @@
 import { connectDb } from "@/lib/db";
 import { Lead } from "@/lib/models/Lead";
+import { SolarCounter } from "@/lib/models/SolarCounter";
 import type { LeadInput, LeadProgressUpdate, LeadStatus } from "@/types/lead";
 
-const geocodeCache = new Map<string, { latitude: number | null; longitude: number | null }>();
+const HISTORICAL_BASELINE = 1200;
 
 function toPlainLead<T>(value: T) {
   return JSON.parse(JSON.stringify(value)) as T;
 }
 
-async function geocodeLocation(locationName: string) {
-  const key = locationName.trim().toLowerCase();
-  if (geocodeCache.has(key)) {
-    return geocodeCache.get(key) as { latitude: number | null; longitude: number | null };
+async function ensureSolarCounter() {
+  const existing = await SolarCounter.findOne({ scope: "global" }).lean();
+  if (existing) {
+    return existing;
   }
 
   try {
-    const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(locationName)}`;
-    const response = await fetch(url, {
-      headers: {
-        "User-Agent": "mysarah-modern-tech/1.0",
-      },
-      cache: "force-cache",
+    await SolarCounter.create({
+      scope: "global",
+      installedTotal: HISTORICAL_BASELINE,
+      visitConfirmedTotal: HISTORICAL_BASELINE,
     });
-
-    if (!response.ok) {
-      geocodeCache.set(key, { latitude: null, longitude: null });
-      return { latitude: null, longitude: null };
-    }
-
-    const data = (await response.json()) as Array<{ lat: string; lon: string }>;
-    const first = data[0];
-    const coordinates = first
-      ? {
-          latitude: Number(first.lat),
-          longitude: Number(first.lon),
-        }
-      : { latitude: null, longitude: null };
-
-    geocodeCache.set(key, coordinates);
-    return coordinates;
   } catch {
-    geocodeCache.set(key, { latitude: null, longitude: null });
-    return { latitude: null, longitude: null };
+    // Another request may have initialized the singleton counter concurrently.
   }
+
+  const persisted = await SolarCounter.findOne({ scope: "global" }).lean();
+  if (persisted) {
+    return persisted;
+  }
+
+  return {
+    scope: "global",
+    installedTotal: HISTORICAL_BASELINE,
+    visitConfirmedTotal: HISTORICAL_BASELINE,
+  };
 }
 
 export async function createLead(input: LeadInput) {
   await connectDb();
-  return Lead.create({ ...input, attachments: input.attachments || [] });
+  return Lead.create({
+    ...input,
+    type: input.type || "contact",
+    attachments: input.attachments || [],
+  });
 }
 
 export async function getLeads() {
@@ -105,7 +101,7 @@ export async function updateLeadProgress(id: string, update: LeadProgressUpdate)
     ? current.installedAt || new Date()
     : null;
 
-  return Lead.findByIdAndUpdate(
+  const updated = await Lead.findByIdAndUpdate(
     id,
     {
       ...update,
@@ -116,63 +112,70 @@ export async function updateLeadProgress(id: string, update: LeadProgressUpdate)
     },
     { new: true },
   ).lean();
+
+  const inc: { installedTotal?: number; visitConfirmedTotal?: number } = {};
+  if (!current.visitConfirmed && nextVisitConfirmed) {
+    inc.visitConfirmedTotal = 1;
+  }
+  if (!current.installationCompleted && nextInstallationCompleted) {
+    inc.installedTotal = 1;
+  }
+
+  if (inc.installedTotal || inc.visitConfirmedTotal) {
+    await ensureSolarCounter();
+    await SolarCounter.updateOne({ scope: "global" }, { $inc: inc });
+  }
+
+  return updated;
 }
 
 export async function getSolarInsights() {
   await connectDb();
 
-  const [installedLeads, visitConfirmedCount, pipelineOpenCount, totalLeads] = await Promise.all([
-    Lead.find(
-      { installationCompleted: true },
-      { _id: 1, name: 1, location: 1, installedAt: 1, updatedAt: 1, createdAt: 1 },
-    )
-      .sort({ installedAt: -1, updatedAt: -1 })
-      .lean(),
+  const [counter, installedFromLeads, visitConfirmedFromLeads, pipelineOpenCount] = await Promise.all([
+    ensureSolarCounter(),
+    Lead.countDocuments({ installationCompleted: true }),
     Lead.countDocuments({ visitConfirmed: true }),
     Lead.countDocuments({ installationCompleted: false }),
-    Lead.countDocuments(),
   ]);
 
-  const locationsMap = new Map<string, number>();
-  for (const lead of installedLeads) {
-    const key = String(lead.location || "Unknown").trim() || "Unknown";
-    locationsMap.set(key, (locationsMap.get(key) || 0) + 1);
+  const observedInstalled = HISTORICAL_BASELINE + installedFromLeads;
+  const observedVisitConfirmed = HISTORICAL_BASELINE + visitConfirmedFromLeads;
+
+  let installedCount = counter.installedTotal ?? HISTORICAL_BASELINE;
+  let visitConfirmedCount = counter.visitConfirmedTotal ?? HISTORICAL_BASELINE;
+
+  const syncInstalledTo = Math.max(installedCount, observedInstalled);
+  const syncVisitTo = Math.max(visitConfirmedCount, observedVisitConfirmed);
+
+  if (syncInstalledTo !== installedCount || syncVisitTo !== visitConfirmedCount) {
+    await SolarCounter.updateOne(
+      { scope: "global" },
+      {
+        $set: {
+          installedTotal: syncInstalledTo,
+          visitConfirmedTotal: syncVisitTo,
+        },
+      },
+    );
+
+    installedCount = syncInstalledTo;
+    visitConfirmedCount = syncVisitTo;
   }
 
-  const baseLocations = Array.from(locationsMap.entries())
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
-
-  const locations = await Promise.all(
-    baseLocations.map(async (location) => {
-      const coordinates = await geocodeLocation(location.name);
-      return {
-        ...location,
-        latitude: coordinates.latitude,
-        longitude: coordinates.longitude,
-      };
-    }),
-  );
-
-  const recentInstallations = installedLeads.slice(0, 6).map((lead) => ({
-    id: String(lead._id),
-    name: lead.name,
-    location: lead.location,
-    installedAt: new Date(lead.installedAt || lead.updatedAt || lead.createdAt).toISOString(),
-  }));
-
-  const installedCount = installedLeads.length;
+  const completionRate = visitConfirmedCount > 0
+    ? Math.min(100, Math.round((installedCount / visitConfirmedCount) * 100))
+    : 0;
 
   return {
     totals: {
       installed: installedCount,
       visitConfirmed: visitConfirmedCount,
       pipelineOpen: pipelineOpenCount,
-      completionRate: totalLeads > 0 ? Math.round((installedCount / totalLeads) * 100) : 0,
+      completionRate,
     },
-    locations,
-    recentInstallations,
+    locations: [],
+    recentInstallations: [],
   };
 }
 

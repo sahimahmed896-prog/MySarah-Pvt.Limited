@@ -19,13 +19,14 @@ export interface LeadInput {
   name: string;
   phone: string;
   location: string;
-  type: LeadType;
+  type?: LeadType;
   message: string;
   attachments?: LeadAttachment[];
 }
 
-export interface LeadRecord extends LeadInput {
+export interface LeadRecord extends Omit<LeadInput, "type"> {
   _id: string;
+  type: LeadType;
   status: LeadStatus;
   visitConfirmed: boolean;
   installationCompleted: boolean;
